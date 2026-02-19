@@ -1,0 +1,1521 @@
+2025-08-21:12:22:58 [ours.py]: [Dataset] Aircraft
+2025-08-21:12:22:58 [ours.py]: [LR] 0.008
+Namespace(model='ViT-B/16', batch_size=64, batch_size_eval=128, lr=[0.008, 0.008, 0.008, 0.008, 0.008, 0.008, 0.008, 0.008, 0.02, 0.02, 0.02], min_lr=0.0, wd=0.0, ls=0.2, warmup_length=0, beta2=0.999, seed=42, epochs=None, iterations=1000, eval_interval=500, loss_interval=1000, eval_every_epoch=False, eval_only=False, method='ours', train_mode='whole', data_location='/home/evelynchee/data/', train_dataset=None, eval_datasets=None, text_datasets=None, template=None, few_shot=-1, save='ckpts/oursV1_guidedmixls_gengcam_lambda^2', load=None, load_federate=None, fair=False, we=False, we_wise=False, we_wise_alpha=0.98, moving_avg=False, avg_freq=100, mv_avg_decay=0.999, mv_avg_model='n', l2=0, fc_init=False, fc_setnone=False, dataset_shift=False, n_class=10, ref_wise_alpha=0.8, ref_wise=False, ref_dataset=None, ref_model=None, ref_sentences=None, T=2.0, num=64, dataset_order=['Aircraft', 'Caltech101', 'CIFAR100', 'DTD', 'EuroSAT', 'Flowers', 'Food', 'MNIST', 'OxfordPet', 'StanfordCars', 'SUN397'], memory_size=10000, weight_adjust=False, feature_mse=False, image_loss=False, text_loss=False, ablation_loss_2=False, wise_merge=False, wise_ft=False, wise_ft_model='n', wise_ft_alpha=0.8, exp_name=None, results_db='results.jsonl', cache_dir=None, freeze_encoder=False, freeze_fc=0, lwf=False, basic_model_load=None, fc_load=None, keep_old_heads=0, baseline=False, trio=False, control_dataset=None, control_dataset_add=None, noise=True, rff=False, alpha=0.5, fisher=None, fisher_floor=1e-08, device='cuda')
+2025-08-21:12:23:00 [ours.py]: Generating GradCAM
+2025-08-21:12:24:10 [ours.py]: Iterations per epoch: 53
+2025-08-21:12:24:10 [ours.py]: Total iterations: 1000
+2025-08-21:12:24:10 [ours.py]: [Training mode] Prompts
+2025-08-21:12:24:10 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:12:24:10 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:12:24:10 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:12:24:10 [ours.py]: Using devices [0]
+2025-08-21:12:24:26 [ours.py]: Epoch 1: clf_loss: 3.268, aux_loss: 0.471, mixclf_loss: 0.387, acc: 0.323
+2025-08-21:12:24:42 [ours.py]: Epoch 2: clf_loss: 2.906, aux_loss: 0.331, mixclf_loss: 0.359, acc: 0.443
+2025-08-21:12:24:57 [ours.py]: Epoch 3: clf_loss: 2.724, aux_loss: 0.291, mixclf_loss: 0.343, acc: 0.521
+2025-08-21:12:25:13 [ours.py]: Epoch 4: clf_loss: 2.578, aux_loss: 0.264, mixclf_loss: 0.334, acc: 0.594
+2025-08-21:12:25:29 [ours.py]: Epoch 5: clf_loss: 2.457, aux_loss: 0.24, mixclf_loss: 0.325, acc: 0.636
+2025-08-21:12:25:44 [ours.py]: Epoch 6: clf_loss: 2.369, aux_loss: 0.22, mixclf_loss: 0.319, acc: 0.681
+2025-08-21:12:26:00 [ours.py]: Epoch 7: clf_loss: 2.263, aux_loss: 0.205, mixclf_loss: 0.312, acc: 0.733
+2025-08-21:12:26:16 [ours.py]: Epoch 8: clf_loss: 2.184, aux_loss: 0.192, mixclf_loss: 0.31, acc: 0.771
+2025-08-21:12:26:32 [ours.py]: Epoch 9: clf_loss: 2.101, aux_loss: 0.185, mixclf_loss: 0.302, acc: 0.817
+2025-08-21:12:26:41 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:26:48 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:26:48 [evaluation.py]: Novel images: 0
+2025-08-21:12:26:48 [evaluation.py]: Top-1 accuracy: 53.50
+2025-08-21:12:26:55 [ours.py]: Epoch 10: clf_loss: 2.024, aux_loss: 0.18, mixclf_loss: 0.295, acc: 0.845
+2025-08-21:12:27:12 [ours.py]: Epoch 11: clf_loss: 1.975, aux_loss: 0.172, mixclf_loss: 0.296, acc: 0.869
+2025-08-21:12:27:28 [ours.py]: Epoch 12: clf_loss: 1.929, aux_loss: 0.169, mixclf_loss: 0.291, acc: 0.89
+2025-08-21:12:27:44 [ours.py]: Epoch 13: clf_loss: 1.889, aux_loss: 0.168, mixclf_loss: 0.288, acc: 0.909
+2025-08-21:12:28:00 [ours.py]: Epoch 14: clf_loss: 1.856, aux_loss: 0.164, mixclf_loss: 0.286, acc: 0.926
+2025-08-21:12:28:16 [ours.py]: Epoch 15: clf_loss: 1.828, aux_loss: 0.164, mixclf_loss: 0.287, acc: 0.941
+2025-08-21:12:28:31 [ours.py]: Epoch 16: clf_loss: 1.804, aux_loss: 0.163, mixclf_loss: 0.285, acc: 0.949
+2025-08-21:12:28:46 [ours.py]: Epoch 17: clf_loss: 1.791, aux_loss: 0.158, mixclf_loss: 0.284, acc: 0.958
+2025-08-21:12:29:01 [ours.py]: Epoch 18: clf_loss: 1.783, aux_loss: 0.16, mixclf_loss: 0.283, acc: 0.963
+2025-08-21:12:29:14 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:29:21 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:29:21 [evaluation.py]: Novel images: 0
+2025-08-21:12:29:21 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:29:21 [ours.py]: Computing threshold
+2025-08-21:12:29:39 [ours.py]: Novelty threshold: [0.62615013]
+2025-08-21:12:29:40 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/Aircraft.pth
+2025-08-21:12:29:47 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:29:47 [evaluation.py]: Novel images: 0
+2025-08-21:12:29:47 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:29:47 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:29:47 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:29:51 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:29:51 [evaluation.py]: Novel images: 1736
+2025-08-21:12:29:51 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:29:51 [evaluation.py]: Top-1 accuracy: 88.36
+2025-08-21:12:29:51 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:30:02 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:30:02 [evaluation.py]: Novel images: 10000
+2025-08-21:12:30:02 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:02 [evaluation.py]: Top-1 accuracy: 68.26
+2025-08-21:12:30:02 [evaluation.py]: Evaluating on DTD
+2025-08-21:12:30:05 [evaluation.py]: Total images: 1880.0
+2025-08-21:12:30:05 [evaluation.py]: Novel images: 1880
+2025-08-21:12:30:05 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:05 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-21:12:30:05 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:12:30:10 [evaluation.py]: Total images: 5400.0
+2025-08-21:12:30:10 [evaluation.py]: Novel images: 5400
+2025-08-21:12:30:10 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:10 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-21:12:30:10 [evaluation.py]: Evaluating on Flowers
+2025-08-21:12:30:18 [evaluation.py]: Total images: 6149.0
+2025-08-21:12:30:18 [evaluation.py]: Novel images: 6149
+2025-08-21:12:30:18 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:18 [evaluation.py]: Top-1 accuracy: 71.04
+2025-08-21:12:30:18 [evaluation.py]: Evaluating on Food
+2025-08-21:12:30:41 [evaluation.py]: Total images: 25250.0
+2025-08-21:12:30:41 [evaluation.py]: Novel images: 25250
+2025-08-21:12:30:41 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:41 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:12:30:41 [evaluation.py]: Evaluating on MNIST
+2025-08-21:12:30:49 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:30:49 [evaluation.py]: Novel images: 10000
+2025-08-21:12:30:49 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:49 [evaluation.py]: Top-1 accuracy: 59.35
+2025-08-21:12:30:49 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:12:30:54 [evaluation.py]: Total images: 3669.0
+2025-08-21:12:30:54 [evaluation.py]: Novel images: 3669
+2025-08-21:12:30:54 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:30:54 [evaluation.py]: Top-1 accuracy: 89.10
+2025-08-21:12:30:54 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:12:31:05 [evaluation.py]: Total images: 8041.0
+2025-08-21:12:31:05 [evaluation.py]: Novel images: 8041
+2025-08-21:12:31:05 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:31:05 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:12:31:05 [evaluation.py]: Evaluating on SUN397
+2025-08-21:12:31:34 [evaluation.py]: Total images: 21751.0
+2025-08-21:12:31:34 [evaluation.py]: Novel images: 21751
+2025-08-21:12:31:34 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:31:34 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:12:31:34 [ours.py]: [Dataset] Caltech101
+2025-08-21:12:31:34 [ours.py]: [LR] 0.008
+Files already downloaded and verified
+2025-08-21:12:31:35 [ours.py]: Generating GradCAM
+2025-08-21:12:32:38 [ours.py]: Iterations per epoch: 109
+2025-08-21:12:32:38 [ours.py]: Total iterations: 1000
+2025-08-21:12:32:38 [ours.py]: [Training mode] Prompts
+2025-08-21:12:32:38 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:12:32:38 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:12:32:38 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:12:32:38 [ours.py]: Using devices [0]
+2025-08-21:12:33:05 [ours.py]: Epoch 1: clf_loss: 1.671, aux_loss: 0.496, mixclf_loss: 0.028, acc: 0.946
+2025-08-21:12:33:32 [ours.py]: Epoch 2: clf_loss: 1.544, aux_loss: 0.407, mixclf_loss: 0.025, acc: 0.976
+2025-08-21:12:34:00 [ours.py]: Epoch 3: clf_loss: 1.509, aux_loss: 0.391, mixclf_loss: 0.024, acc: 0.984
+2025-08-21:12:34:27 [ours.py]: Epoch 4: clf_loss: 1.49, aux_loss: 0.379, mixclf_loss: 0.023, acc: 0.99
+2025-08-21:12:34:43 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:34:51 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:34:51 [evaluation.py]: Novel images: 0
+2025-08-21:12:34:51 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:34:51 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:34:56 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:34:56 [evaluation.py]: Novel images: 0
+2025-08-21:12:34:56 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-21:12:35:07 [ours.py]: Epoch 5: clf_loss: 1.474, aux_loss: 0.368, mixclf_loss: 0.023, acc: 0.993
+2025-08-21:12:35:34 [ours.py]: Epoch 6: clf_loss: 1.461, aux_loss: 0.361, mixclf_loss: 0.023, acc: 0.996
+2025-08-21:12:36:02 [ours.py]: Epoch 7: clf_loss: 1.453, aux_loss: 0.357, mixclf_loss: 0.022, acc: 0.997
+2025-08-21:12:36:29 [ours.py]: Epoch 8: clf_loss: 1.448, aux_loss: 0.356, mixclf_loss: 0.022, acc: 0.999
+2025-08-21:12:36:56 [ours.py]: Epoch 9: clf_loss: 1.446, aux_loss: 0.355, mixclf_loss: 0.022, acc: 0.999
+2025-08-21:12:37:02 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:37:09 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:37:09 [evaluation.py]: Novel images: 0
+2025-08-21:12:37:09 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:37:09 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:37:15 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:37:15 [evaluation.py]: Novel images: 0
+2025-08-21:12:37:15 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:12:37:15 [ours.py]: Computing threshold
+2025-08-21:12:37:48 [ours.py]: Novelty threshold: [0.62615013, 0.6205453]
+2025-08-21:12:37:49 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/Caltech101.pth
+2025-08-21:12:37:56 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:37:56 [evaluation.py]: Novel images: 0
+2025-08-21:12:37:56 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:37:56 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:37:56 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:38:02 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:38:02 [evaluation.py]: Novel images: 384
+2025-08-21:12:38:02 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:38:02 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:12:38:02 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:38:14 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:38:14 [evaluation.py]: Novel images: 10000
+2025-08-21:12:38:14 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:38:14 [evaluation.py]: Top-1 accuracy: 68.26
+2025-08-21:12:38:14 [evaluation.py]: Evaluating on DTD
+2025-08-21:12:38:18 [evaluation.py]: Total images: 1880.0
+2025-08-21:12:38:18 [evaluation.py]: Novel images: 1880
+2025-08-21:12:38:18 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:38:18 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-21:12:38:18 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:12:38:23 [evaluation.py]: Total images: 5400.0
+2025-08-21:12:38:23 [evaluation.py]: Novel images: 5400
+2025-08-21:12:38:23 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:38:23 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-21:12:38:23 [evaluation.py]: Evaluating on Flowers
+2025-08-21:12:38:31 [evaluation.py]: Total images: 6149.0
+2025-08-21:12:38:31 [evaluation.py]: Novel images: 6149
+2025-08-21:12:38:31 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:38:31 [evaluation.py]: Top-1 accuracy: 71.04
+2025-08-21:12:38:31 [evaluation.py]: Evaluating on Food
+2025-08-21:12:38:54 [evaluation.py]: Total images: 25250.0
+2025-08-21:12:38:54 [evaluation.py]: Novel images: 25250
+2025-08-21:12:38:54 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:38:54 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:12:38:54 [evaluation.py]: Evaluating on MNIST
+2025-08-21:12:39:05 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:39:05 [evaluation.py]: Novel images: 2064
+2025-08-21:12:39:05 [evaluation.py]: Key count: [  0. 744.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:39:05 [evaluation.py]: Top-1 accuracy: 69.71
+2025-08-21:12:39:05 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:12:39:10 [evaluation.py]: Total images: 3669.0
+2025-08-21:12:39:10 [evaluation.py]: Novel images: 3541
+2025-08-21:12:39:10 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:12:39:10 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:12:39:10 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:12:39:23 [evaluation.py]: Total images: 8041.0
+2025-08-21:12:39:23 [evaluation.py]: Novel images: 8041
+2025-08-21:12:39:23 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:39:23 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:12:39:23 [evaluation.py]: Evaluating on SUN397
+2025-08-21:12:39:57 [evaluation.py]: Total images: 21751.0
+2025-08-21:12:39:57 [evaluation.py]: Novel images: 21751
+2025-08-21:12:39:57 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:39:57 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:12:39:57 [ours.py]: [Dataset] CIFAR100
+2025-08-21:12:39:57 [ours.py]: [LR] 0.008
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:39:59 [ours.py]: Generating GradCAM
+2025-08-21:12:46:48 [ours.py]: Iterations per epoch: 782
+2025-08-21:12:46:48 [ours.py]: Total iterations: 1000
+2025-08-21:12:46:48 [ours.py]: [Training mode] Prompts
+2025-08-21:12:46:48 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:12:46:48 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:12:46:48 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:12:46:48 [ours.py]: Using devices [0]
+2025-08-21:12:48:43 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:48:51 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:48:51 [evaluation.py]: Novel images: 0
+2025-08-21:12:48:51 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:48:51 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:48:58 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:48:58 [evaluation.py]: Novel images: 0
+2025-08-21:12:48:58 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:12:48:58 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:49:15 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:49:15 [evaluation.py]: Novel images: 0
+2025-08-21:12:49:15 [evaluation.py]: Top-1 accuracy: 84.60
+2025-08-21:12:50:20 [ours.py]: Epoch 1: clf_loss: 1.912, aux_loss: 0.407, mixclf_loss: 0.251, acc: 0.834
+2025-08-21:12:51:10 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:12:51:18 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:51:18 [evaluation.py]: Novel images: 0
+2025-08-21:12:51:18 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:51:18 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:51:25 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:51:25 [evaluation.py]: Novel images: 0
+2025-08-21:12:51:25 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:12:51:25 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:51:41 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:51:41 [evaluation.py]: Novel images: 0
+2025-08-21:12:51:41 [evaluation.py]: Top-1 accuracy: 86.15
+2025-08-21:12:51:41 [ours.py]: Computing threshold
+2025-08-21:12:55:38 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397]
+2025-08-21:12:55:39 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/CIFAR100.pth
+2025-08-21:12:55:47 [evaluation.py]: Total images: 3333.0
+2025-08-21:12:55:47 [evaluation.py]: Novel images: 0
+2025-08-21:12:55:47 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:55:47 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:12:55:47 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:12:55:54 [evaluation.py]: Total images: 1736.0
+2025-08-21:12:55:54 [evaluation.py]: Novel images: 384
+2025-08-21:12:55:54 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:55:54 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:12:55:54 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:12:56:10 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:56:10 [evaluation.py]: Novel images: 0
+2025-08-21:12:56:10 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:56:10 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:12:56:10 [evaluation.py]: Evaluating on DTD
+2025-08-21:12:56:14 [evaluation.py]: Total images: 1880.0
+2025-08-21:12:56:14 [evaluation.py]: Novel images: 1880
+2025-08-21:12:56:14 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:56:14 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-21:12:56:14 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:12:56:19 [evaluation.py]: Total images: 5400.0
+2025-08-21:12:56:19 [evaluation.py]: Novel images: 5400
+2025-08-21:12:56:19 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:56:19 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-21:12:56:19 [evaluation.py]: Evaluating on Flowers
+2025-08-21:12:56:28 [evaluation.py]: Total images: 6149.0
+2025-08-21:12:56:28 [evaluation.py]: Novel images: 5381
+2025-08-21:12:56:28 [evaluation.py]: Key count: [ 0.  0. 72.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:12:56:28 [evaluation.py]: Top-1 accuracy: 71.25
+2025-08-21:12:56:28 [evaluation.py]: Evaluating on Food
+2025-08-21:12:56:53 [evaluation.py]: Total images: 25250.0
+2025-08-21:12:56:53 [evaluation.py]: Novel images: 25250
+2025-08-21:12:56:53 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:56:53 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:12:56:53 [evaluation.py]: Evaluating on MNIST
+2025-08-21:12:57:04 [evaluation.py]: Total images: 10000.0
+2025-08-21:12:57:04 [evaluation.py]: Novel images: 1936
+2025-08-21:12:57:04 [evaluation.py]: Key count: [  0. 708.  48.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:12:57:04 [evaluation.py]: Top-1 accuracy: 69.35
+2025-08-21:12:57:04 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:12:57:09 [evaluation.py]: Total images: 3669.0
+2025-08-21:12:57:09 [evaluation.py]: Novel images: 3541
+2025-08-21:12:57:09 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:12:57:09 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:12:57:09 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:12:57:23 [evaluation.py]: Total images: 8041.0
+2025-08-21:12:57:23 [evaluation.py]: Novel images: 8041
+2025-08-21:12:57:23 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:57:23 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:12:57:23 [evaluation.py]: Evaluating on SUN397
+2025-08-21:12:58:00 [evaluation.py]: Total images: 21751.0
+2025-08-21:12:58:00 [evaluation.py]: Novel images: 21751
+2025-08-21:12:58:00 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:12:58:00 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:12:58:00 [ours.py]: [Dataset] DTD
+2025-08-21:12:58:00 [ours.py]: [LR] 0.008
+2025-08-21:12:58:01 [ours.py]: Generating GradCAM
+2025-08-21:12:58:22 [ours.py]: Iterations per epoch: 30
+2025-08-21:12:58:22 [ours.py]: Total iterations: 1000
+2025-08-21:12:58:22 [ours.py]: [Training mode] Prompts
+2025-08-21:12:58:22 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:12:58:22 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:12:58:22 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:12:58:22 [ours.py]: Using devices [0]
+2025-08-21:12:58:30 [ours.py]: Epoch 1: clf_loss: 2.334, aux_loss: 0.617, mixclf_loss: 0.357, acc: 0.599
+2025-08-21:12:58:38 [ours.py]: Epoch 2: clf_loss: 1.924, aux_loss: 0.487, mixclf_loss: 0.324, acc: 0.779
+2025-08-21:12:58:47 [ours.py]: Epoch 3: clf_loss: 1.791, aux_loss: 0.449, mixclf_loss: 0.31, acc: 0.83
+2025-08-21:12:58:55 [ours.py]: Epoch 4: clf_loss: 1.69, aux_loss: 0.432, mixclf_loss: 0.301, acc: 0.876
+2025-08-21:12:59:03 [ours.py]: Epoch 5: clf_loss: 1.62, aux_loss: 0.424, mixclf_loss: 0.298, acc: 0.907
+2025-08-21:12:59:12 [ours.py]: Epoch 6: clf_loss: 1.565, aux_loss: 0.419, mixclf_loss: 0.286, acc: 0.932
+2025-08-21:12:59:20 [ours.py]: Epoch 7: clf_loss: 1.511, aux_loss: 0.414, mixclf_loss: 0.286, acc: 0.961
+2025-08-21:12:59:28 [ours.py]: Epoch 8: clf_loss: 1.465, aux_loss: 0.412, mixclf_loss: 0.277, acc: 0.978
+2025-08-21:12:59:37 [ours.py]: Epoch 9: clf_loss: 1.425, aux_loss: 0.407, mixclf_loss: 0.277, acc: 0.99
+2025-08-21:12:59:45 [ours.py]: Epoch 10: clf_loss: 1.398, aux_loss: 0.406, mixclf_loss: 0.271, acc: 0.996
+2025-08-21:12:59:54 [ours.py]: Epoch 11: clf_loss: 1.378, aux_loss: 0.4, mixclf_loss: 0.263, acc: 0.996
+2025-08-21:13:00:02 [ours.py]: Epoch 12: clf_loss: 1.366, aux_loss: 0.402, mixclf_loss: 0.266, acc: 0.998
+2025-08-21:13:00:10 [ours.py]: Epoch 13: clf_loss: 1.351, aux_loss: 0.4, mixclf_loss: 0.259, acc: 0.998
+2025-08-21:13:00:19 [ours.py]: Epoch 14: clf_loss: 1.342, aux_loss: 0.396, mixclf_loss: 0.258, acc: 0.999
+2025-08-21:13:00:27 [ours.py]: Epoch 15: clf_loss: 1.336, aux_loss: 0.395, mixclf_loss: 0.256, acc: 0.999
+2025-08-21:13:00:36 [ours.py]: Epoch 16: clf_loss: 1.324, aux_loss: 0.395, mixclf_loss: 0.252, acc: 1.0
+2025-08-21:13:00:42 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:00:51 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:00:51 [evaluation.py]: Novel images: 0
+2025-08-21:13:00:51 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:00:51 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:00:59 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:00:59 [evaluation.py]: Novel images: 0
+2025-08-21:13:00:59 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:00:59 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:01:17 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:01:17 [evaluation.py]: Novel images: 0
+2025-08-21:13:01:17 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:01:17 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:01:21 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:01:21 [evaluation.py]: Novel images: 0
+2025-08-21:13:01:21 [evaluation.py]: Top-1 accuracy: 78.24
+2025-08-21:13:01:24 [ours.py]: Epoch 17: clf_loss: 1.318, aux_loss: 0.394, mixclf_loss: 0.248, acc: 1.0
+2025-08-21:13:01:32 [ours.py]: Epoch 18: clf_loss: 1.313, aux_loss: 0.393, mixclf_loss: 0.249, acc: 0.999
+2025-08-21:13:01:40 [ours.py]: Epoch 19: clf_loss: 1.31, aux_loss: 0.391, mixclf_loss: 0.247, acc: 1.0
+2025-08-21:13:01:49 [ours.py]: Epoch 20: clf_loss: 1.307, aux_loss: 0.392, mixclf_loss: 0.246, acc: 1.0
+2025-08-21:13:01:57 [ours.py]: Epoch 21: clf_loss: 1.302, aux_loss: 0.392, mixclf_loss: 0.244, acc: 1.0
+2025-08-21:13:02:05 [ours.py]: Epoch 22: clf_loss: 1.297, aux_loss: 0.391, mixclf_loss: 0.242, acc: 1.0
+2025-08-21:13:02:14 [ours.py]: Epoch 23: clf_loss: 1.295, aux_loss: 0.391, mixclf_loss: 0.242, acc: 1.0
+2025-08-21:13:02:22 [ours.py]: Epoch 24: clf_loss: 1.293, aux_loss: 0.391, mixclf_loss: 0.24, acc: 1.0
+2025-08-21:13:02:31 [ours.py]: Epoch 25: clf_loss: 1.292, aux_loss: 0.389, mixclf_loss: 0.241, acc: 1.0
+2025-08-21:13:02:39 [ours.py]: Epoch 26: clf_loss: 1.29, aux_loss: 0.389, mixclf_loss: 0.239, acc: 1.0
+2025-08-21:13:02:47 [ours.py]: Epoch 27: clf_loss: 1.289, aux_loss: 0.39, mixclf_loss: 0.237, acc: 1.0
+2025-08-21:13:02:56 [ours.py]: Epoch 28: clf_loss: 1.288, aux_loss: 0.389, mixclf_loss: 0.238, acc: 1.0
+2025-08-21:13:03:04 [ours.py]: Epoch 29: clf_loss: 1.287, aux_loss: 0.389, mixclf_loss: 0.237, acc: 1.0
+2025-08-21:13:03:13 [ours.py]: Epoch 30: clf_loss: 1.287, aux_loss: 0.388, mixclf_loss: 0.237, acc: 1.0
+2025-08-21:13:03:21 [ours.py]: Epoch 31: clf_loss: 1.286, aux_loss: 0.388, mixclf_loss: 0.238, acc: 1.0
+2025-08-21:13:03:29 [ours.py]: Epoch 32: clf_loss: 1.286, aux_loss: 0.387, mixclf_loss: 0.24, acc: 1.0
+2025-08-21:13:03:38 [ours.py]: Epoch 33: clf_loss: 1.286, aux_loss: 0.39, mixclf_loss: 0.237, acc: 1.0
+2025-08-21:13:03:42 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:03:51 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:03:51 [evaluation.py]: Novel images: 0
+2025-08-21:13:03:51 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:03:51 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:03:59 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:03:59 [evaluation.py]: Novel images: 0
+2025-08-21:13:03:59 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:03:59 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:04:16 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:04:16 [evaluation.py]: Novel images: 0
+2025-08-21:13:04:16 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:04:16 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:04:21 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:04:21 [evaluation.py]: Novel images: 0
+2025-08-21:13:04:21 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:04:21 [ours.py]: Computing threshold
+2025-08-21:13:04:32 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437]
+2025-08-21:13:04:33 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/DTD.pth
+2025-08-21:13:04:42 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:04:42 [evaluation.py]: Novel images: 0
+2025-08-21:13:04:42 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:04:42 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:04:42 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:04:50 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:04:50 [evaluation.py]: Novel images: 384
+2025-08-21:13:04:50 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:04:50 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:13:04:50 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:05:07 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:05:07 [evaluation.py]: Novel images: 0
+2025-08-21:13:05:07 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:05:07 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:05:07 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:05:12 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:05:12 [evaluation.py]: Novel images: 128
+2025-08-21:13:05:12 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:05:12 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:13:05:12 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:05:17 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:05:17 [evaluation.py]: Novel images: 5400
+2025-08-21:13:05:17 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:05:17 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-21:13:05:17 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:05:28 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:05:28 [evaluation.py]: Novel images: 2821
+2025-08-21:13:05:28 [evaluation.py]: Key count: [  0.   0.  72. 240.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:05:28 [evaluation.py]: Top-1 accuracy: 68.65
+2025-08-21:13:05:28 [evaluation.py]: Evaluating on Food
+2025-08-21:13:05:53 [evaluation.py]: Total images: 25250.0
+2025-08-21:13:05:53 [evaluation.py]: Novel images: 25250
+2025-08-21:13:05:53 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:05:53 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:13:05:53 [evaluation.py]: Evaluating on MNIST
+2025-08-21:13:06:04 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:06:04 [evaluation.py]: Novel images: 1936
+2025-08-21:13:06:04 [evaluation.py]: Key count: [  0. 708.  48.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:06:04 [evaluation.py]: Top-1 accuracy: 69.35
+2025-08-21:13:06:04 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:13:06:09 [evaluation.py]: Total images: 3669.0
+2025-08-21:13:06:09 [evaluation.py]: Novel images: 3541
+2025-08-21:13:06:09 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:13:06:09 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:13:06:09 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:13:06:26 [evaluation.py]: Total images: 8041.0
+2025-08-21:13:06:26 [evaluation.py]: Novel images: 8041
+2025-08-21:13:06:26 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:06:26 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:13:06:26 [evaluation.py]: Evaluating on SUN397
+2025-08-21:13:07:06 [evaluation.py]: Total images: 21751.0
+2025-08-21:13:07:06 [evaluation.py]: Novel images: 21751
+2025-08-21:13:07:06 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:07:06 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:13:07:06 [ours.py]: [Dataset] EuroSAT
+2025-08-21:13:07:06 [ours.py]: [LR] 0.008
+2025-08-21:13:07:07 [ours.py]: Generating GradCAM
+2025-08-21:13:09:56 [ours.py]: Iterations per epoch: 338
+2025-08-21:13:09:56 [ours.py]: Total iterations: 1000
+2025-08-21:13:09:56 [ours.py]: [Training mode] Prompts
+2025-08-21:13:09:56 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:13:09:56 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:13:09:56 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:13:09:56 [ours.py]: Using devices [0]
+2025-08-21:13:11:11 [ours.py]: Epoch 1: clf_loss: 0.982, aux_loss: 0.421, mixclf_loss: 0.264, acc: 0.956
+2025-08-21:13:11:47 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:11:57 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:11:57 [evaluation.py]: Novel images: 0
+2025-08-21:13:11:57 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:11:57 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:12:06 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:12:06 [evaluation.py]: Novel images: 0
+2025-08-21:13:12:06 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:12:06 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:12:24 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:12:24 [evaluation.py]: Novel images: 0
+2025-08-21:13:12:24 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:12:24 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:12:29 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:12:29 [evaluation.py]: Novel images: 0
+2025-08-21:13:12:29 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:12:29 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:12:36 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:12:36 [evaluation.py]: Novel images: 0
+2025-08-21:13:12:36 [evaluation.py]: Top-1 accuracy: 98.20
+2025-08-21:13:13:15 [ours.py]: Epoch 2: clf_loss: 0.909, aux_loss: 0.378, mixclf_loss: 0.229, acc: 0.983
+2025-08-21:13:14:26 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:14:36 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:14:36 [evaluation.py]: Novel images: 0
+2025-08-21:13:14:36 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:14:36 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:14:45 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:14:45 [evaluation.py]: Novel images: 0
+2025-08-21:13:14:45 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:14:45 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:15:03 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:15:03 [evaluation.py]: Novel images: 0
+2025-08-21:13:15:03 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:15:03 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:15:09 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:15:09 [evaluation.py]: Novel images: 0
+2025-08-21:13:15:09 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:15:09 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:15:16 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:15:16 [evaluation.py]: Novel images: 0
+2025-08-21:13:15:16 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:15:16 [ours.py]: Computing threshold
+2025-08-21:13:16:49 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985]
+2025-08-21:13:16:50 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/EuroSAT.pth
+2025-08-21:13:17:00 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:17:00 [evaluation.py]: Novel images: 0
+2025-08-21:13:17:00 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:00 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:17:00 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:17:08 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:17:08 [evaluation.py]: Novel images: 384
+2025-08-21:13:17:08 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:08 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:13:17:08 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:17:27 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:17:27 [evaluation.py]: Novel images: 0
+2025-08-21:13:17:27 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:27 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:17:27 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:17:32 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:17:32 [evaluation.py]: Novel images: 128
+2025-08-21:13:17:32 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:32 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:13:17:32 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:17:39 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:17:39 [evaluation.py]: Novel images: 0
+2025-08-21:13:17:39 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:39 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:17:39 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:17:51 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:17:51 [evaluation.py]: Novel images: 2821
+2025-08-21:13:17:51 [evaluation.py]: Key count: [  0.   0.  72. 240.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:17:51 [evaluation.py]: Top-1 accuracy: 68.65
+2025-08-21:13:17:51 [evaluation.py]: Evaluating on Food
+2025-08-21:13:18:16 [evaluation.py]: Total images: 25250.0
+2025-08-21:13:18:16 [evaluation.py]: Novel images: 25250
+2025-08-21:13:18:16 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:18:16 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:13:18:16 [evaluation.py]: Evaluating on MNIST
+2025-08-21:13:18:28 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:18:28 [evaluation.py]: Novel images: 1936
+2025-08-21:13:18:28 [evaluation.py]: Key count: [  0. 708.  48.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:18:28 [evaluation.py]: Top-1 accuracy: 69.35
+2025-08-21:13:18:28 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:13:18:33 [evaluation.py]: Total images: 3669.0
+2025-08-21:13:18:33 [evaluation.py]: Novel images: 3541
+2025-08-21:13:18:33 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:13:18:33 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:13:18:33 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:13:18:51 [evaluation.py]: Total images: 8041.0
+2025-08-21:13:18:51 [evaluation.py]: Novel images: 8041
+2025-08-21:13:18:51 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:18:51 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:13:18:51 [evaluation.py]: Evaluating on SUN397
+2025-08-21:13:19:35 [evaluation.py]: Total images: 21751.0
+2025-08-21:13:19:35 [evaluation.py]: Novel images: 21751
+2025-08-21:13:19:35 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:19:35 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:13:19:35 [ours.py]: [Dataset] Flowers
+2025-08-21:13:19:35 [ours.py]: [LR] 0.008
+2025-08-21:13:19:36 [ours.py]: Generating GradCAM
+2025-08-21:13:19:48 [ours.py]: Iterations per epoch: 16
+2025-08-21:13:19:48 [ours.py]: Total iterations: 1000
+2025-08-21:13:19:48 [ours.py]: [Training mode] Prompts
+2025-08-21:13:19:48 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:13:19:48 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:13:19:48 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:13:19:48 [ours.py]: Using devices [0]
+2025-08-21:13:19:54 [ours.py]: Epoch 1: clf_loss: 2.606, aux_loss: 0.652, mixclf_loss: 0.339, acc: 0.696
+2025-08-21:13:19:59 [ours.py]: Epoch 2: clf_loss: 2.127, aux_loss: 0.451, mixclf_loss: 0.298, acc: 0.881
+2025-08-21:13:20:05 [ours.py]: Epoch 3: clf_loss: 1.909, aux_loss: 0.414, mixclf_loss: 0.278, acc: 0.944
+2025-08-21:13:20:11 [ours.py]: Epoch 4: clf_loss: 1.79, aux_loss: 0.386, mixclf_loss: 0.265, acc: 0.983
+2025-08-21:13:20:16 [ours.py]: Epoch 5: clf_loss: 1.716, aux_loss: 0.364, mixclf_loss: 0.255, acc: 0.999
+2025-08-21:13:20:22 [ours.py]: Epoch 6: clf_loss: 1.672, aux_loss: 0.346, mixclf_loss: 0.254, acc: 1.0
+2025-08-21:13:20:27 [ours.py]: Epoch 7: clf_loss: 1.652, aux_loss: 0.337, mixclf_loss: 0.245, acc: 0.999
+2025-08-21:13:20:33 [ours.py]: Epoch 8: clf_loss: 1.633, aux_loss: 0.334, mixclf_loss: 0.24, acc: 1.0
+2025-08-21:13:20:38 [ours.py]: Epoch 9: clf_loss: 1.606, aux_loss: 0.331, mixclf_loss: 0.237, acc: 1.0
+2025-08-21:13:20:44 [ours.py]: Epoch 10: clf_loss: 1.591, aux_loss: 0.329, mixclf_loss: 0.234, acc: 1.0
+2025-08-21:13:20:49 [ours.py]: Epoch 11: clf_loss: 1.579, aux_loss: 0.326, mixclf_loss: 0.232, acc: 1.0
+2025-08-21:13:20:55 [ours.py]: Epoch 12: clf_loss: 1.566, aux_loss: 0.323, mixclf_loss: 0.225, acc: 1.0
+2025-08-21:13:21:00 [ours.py]: Epoch 13: clf_loss: 1.558, aux_loss: 0.32, mixclf_loss: 0.222, acc: 1.0
+2025-08-21:13:21:06 [ours.py]: Epoch 14: clf_loss: 1.549, aux_loss: 0.316, mixclf_loss: 0.219, acc: 1.0
+2025-08-21:13:21:11 [ours.py]: Epoch 15: clf_loss: 1.537, aux_loss: 0.316, mixclf_loss: 0.222, acc: 1.0
+2025-08-21:13:21:17 [ours.py]: Epoch 16: clf_loss: 1.537, aux_loss: 0.313, mixclf_loss: 0.221, acc: 1.0
+2025-08-21:13:21:22 [ours.py]: Epoch 17: clf_loss: 1.528, aux_loss: 0.309, mixclf_loss: 0.216, acc: 1.0
+2025-08-21:13:21:28 [ours.py]: Epoch 18: clf_loss: 1.519, aux_loss: 0.309, mixclf_loss: 0.214, acc: 1.0
+2025-08-21:13:21:33 [ours.py]: Epoch 19: clf_loss: 1.517, aux_loss: 0.306, mixclf_loss: 0.213, acc: 1.0
+2025-08-21:13:21:39 [ours.py]: Epoch 20: clf_loss: 1.512, aux_loss: 0.306, mixclf_loss: 0.213, acc: 1.0
+2025-08-21:13:21:44 [ours.py]: Epoch 21: clf_loss: 1.51, aux_loss: 0.305, mixclf_loss: 0.21, acc: 1.0
+2025-08-21:13:21:50 [ours.py]: Epoch 22: clf_loss: 1.511, aux_loss: 0.302, mixclf_loss: 0.213, acc: 1.0
+2025-08-21:13:21:55 [ours.py]: Epoch 23: clf_loss: 1.503, aux_loss: 0.301, mixclf_loss: 0.21, acc: 1.0
+2025-08-21:13:22:01 [ours.py]: Epoch 24: clf_loss: 1.496, aux_loss: 0.299, mixclf_loss: 0.208, acc: 1.0
+2025-08-21:13:22:07 [ours.py]: Epoch 25: clf_loss: 1.493, aux_loss: 0.299, mixclf_loss: 0.204, acc: 1.0
+2025-08-21:13:22:12 [ours.py]: Epoch 26: clf_loss: 1.487, aux_loss: 0.296, mixclf_loss: 0.208, acc: 1.0
+2025-08-21:13:22:18 [ours.py]: Epoch 27: clf_loss: 1.484, aux_loss: 0.296, mixclf_loss: 0.208, acc: 1.0
+2025-08-21:13:22:23 [ours.py]: Epoch 28: clf_loss: 1.48, aux_loss: 0.294, mixclf_loss: 0.202, acc: 1.0
+2025-08-21:13:22:29 [ours.py]: Epoch 29: clf_loss: 1.478, aux_loss: 0.295, mixclf_loss: 0.205, acc: 1.0
+2025-08-21:13:22:34 [ours.py]: Epoch 30: clf_loss: 1.478, aux_loss: 0.295, mixclf_loss: 0.203, acc: 1.0
+2025-08-21:13:22:40 [ours.py]: Epoch 31: clf_loss: 1.476, aux_loss: 0.293, mixclf_loss: 0.202, acc: 1.0
+2025-08-21:13:22:42 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:22:54 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:22:54 [evaluation.py]: Novel images: 0
+2025-08-21:13:22:54 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:22:54 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:23:03 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:23:03 [evaluation.py]: Novel images: 0
+2025-08-21:13:23:03 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:23:03 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:23:23 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:23:23 [evaluation.py]: Novel images: 0
+2025-08-21:13:23:23 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:23:23 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:23:29 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:23:29 [evaluation.py]: Novel images: 0
+2025-08-21:13:23:29 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:23:29 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:23:36 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:23:36 [evaluation.py]: Novel images: 0
+2025-08-21:13:23:36 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:23:36 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:23:49 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:23:49 [evaluation.py]: Novel images: 0
+2025-08-21:13:23:49 [evaluation.py]: Top-1 accuracy: 96.06
+2025-08-21:13:23:52 [ours.py]: Epoch 32: clf_loss: 1.473, aux_loss: 0.294, mixclf_loss: 0.202, acc: 1.0
+2025-08-21:13:23:57 [ours.py]: Epoch 33: clf_loss: 1.47, aux_loss: 0.293, mixclf_loss: 0.201, acc: 1.0
+2025-08-21:13:24:03 [ours.py]: Epoch 34: clf_loss: 1.468, aux_loss: 0.291, mixclf_loss: 0.201, acc: 1.0
+2025-08-21:13:24:09 [ours.py]: Epoch 35: clf_loss: 1.468, aux_loss: 0.292, mixclf_loss: 0.198, acc: 1.0
+2025-08-21:13:24:14 [ours.py]: Epoch 36: clf_loss: 1.466, aux_loss: 0.292, mixclf_loss: 0.199, acc: 1.0
+2025-08-21:13:24:20 [ours.py]: Epoch 37: clf_loss: 1.463, aux_loss: 0.291, mixclf_loss: 0.197, acc: 1.0
+2025-08-21:13:24:25 [ours.py]: Epoch 38: clf_loss: 1.463, aux_loss: 0.291, mixclf_loss: 0.196, acc: 1.0
+2025-08-21:13:24:31 [ours.py]: Epoch 39: clf_loss: 1.462, aux_loss: 0.289, mixclf_loss: 0.196, acc: 1.0
+2025-08-21:13:24:37 [ours.py]: Epoch 40: clf_loss: 1.461, aux_loss: 0.29, mixclf_loss: 0.196, acc: 1.0
+2025-08-21:13:24:42 [ours.py]: Epoch 41: clf_loss: 1.459, aux_loss: 0.291, mixclf_loss: 0.197, acc: 1.0
+2025-08-21:13:24:48 [ours.py]: Epoch 42: clf_loss: 1.458, aux_loss: 0.288, mixclf_loss: 0.195, acc: 1.0
+2025-08-21:13:24:53 [ours.py]: Epoch 43: clf_loss: 1.457, aux_loss: 0.286, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:24:59 [ours.py]: Epoch 44: clf_loss: 1.456, aux_loss: 0.289, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:25:04 [ours.py]: Epoch 45: clf_loss: 1.456, aux_loss: 0.288, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:25:10 [ours.py]: Epoch 46: clf_loss: 1.455, aux_loss: 0.29, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:25:15 [ours.py]: Epoch 47: clf_loss: 1.454, aux_loss: 0.291, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:25:21 [ours.py]: Epoch 48: clf_loss: 1.453, aux_loss: 0.288, mixclf_loss: 0.195, acc: 1.0
+2025-08-21:13:25:26 [ours.py]: Epoch 49: clf_loss: 1.453, aux_loss: 0.288, mixclf_loss: 0.193, acc: 1.0
+2025-08-21:13:25:32 [ours.py]: Epoch 50: clf_loss: 1.452, aux_loss: 0.287, mixclf_loss: 0.196, acc: 1.0
+2025-08-21:13:25:37 [ours.py]: Epoch 51: clf_loss: 1.452, aux_loss: 0.287, mixclf_loss: 0.193, acc: 1.0
+2025-08-21:13:25:43 [ours.py]: Epoch 52: clf_loss: 1.451, aux_loss: 0.287, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:25:49 [ours.py]: Epoch 53: clf_loss: 1.451, aux_loss: 0.286, mixclf_loss: 0.193, acc: 1.0
+2025-08-21:13:25:54 [ours.py]: Epoch 54: clf_loss: 1.451, aux_loss: 0.288, mixclf_loss: 0.193, acc: 1.0
+2025-08-21:13:26:00 [ours.py]: Epoch 55: clf_loss: 1.45, aux_loss: 0.286, mixclf_loss: 0.196, acc: 1.0
+2025-08-21:13:26:05 [ours.py]: Epoch 56: clf_loss: 1.45, aux_loss: 0.287, mixclf_loss: 0.192, acc: 1.0
+2025-08-21:13:26:11 [ours.py]: Epoch 57: clf_loss: 1.45, aux_loss: 0.289, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:26:16 [ours.py]: Epoch 58: clf_loss: 1.45, aux_loss: 0.288, mixclf_loss: 0.192, acc: 1.0
+2025-08-21:13:26:22 [ours.py]: Epoch 59: clf_loss: 1.45, aux_loss: 0.289, mixclf_loss: 0.194, acc: 1.0
+2025-08-21:13:26:27 [ours.py]: Epoch 60: clf_loss: 1.45, aux_loss: 0.287, mixclf_loss: 0.191, acc: 1.0
+2025-08-21:13:26:33 [ours.py]: Epoch 61: clf_loss: 1.45, aux_loss: 0.286, mixclf_loss: 0.191, acc: 1.0
+2025-08-21:13:26:39 [ours.py]: Epoch 62: clf_loss: 1.45, aux_loss: 0.286, mixclf_loss: 0.191, acc: 1.0
+2025-08-21:13:26:42 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:26:53 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:26:53 [evaluation.py]: Novel images: 0
+2025-08-21:13:26:53 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:26:53 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:27:03 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:27:03 [evaluation.py]: Novel images: 0
+2025-08-21:13:27:03 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:27:03 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:27:23 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:27:23 [evaluation.py]: Novel images: 0
+2025-08-21:13:27:23 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:27:23 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:27:28 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:27:28 [evaluation.py]: Novel images: 0
+2025-08-21:13:27:28 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:27:28 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:27:35 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:27:35 [evaluation.py]: Novel images: 0
+2025-08-21:13:27:35 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:27:35 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:27:48 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:27:48 [evaluation.py]: Novel images: 0
+2025-08-21:13:27:48 [evaluation.py]: Top-1 accuracy: 96.08
+2025-08-21:13:27:48 [ours.py]: Computing threshold
+2025-08-21:13:27:55 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062]
+2025-08-21:13:27:56 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/Flowers.pth
+2025-08-21:13:28:07 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:28:07 [evaluation.py]: Novel images: 0
+2025-08-21:13:28:07 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:28:07 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:28:07 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:28:17 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:28:17 [evaluation.py]: Novel images: 384
+2025-08-21:13:28:17 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:28:17 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:13:28:17 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:28:36 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:28:36 [evaluation.py]: Novel images: 0
+2025-08-21:13:28:36 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:28:36 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:28:36 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:28:42 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:28:42 [evaluation.py]: Novel images: 128
+2025-08-21:13:28:42 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:28:42 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:13:28:42 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:28:49 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:28:49 [evaluation.py]: Novel images: 0
+2025-08-21:13:28:49 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:28:49 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:28:49 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:29:01 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:29:01 [evaluation.py]: Novel images: 1408
+2025-08-21:13:29:01 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:13:29:01 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:13:29:01 [evaluation.py]: Evaluating on Food
+2025-08-21:13:29:29 [evaluation.py]: Total images: 25250.0
+2025-08-21:13:29:29 [evaluation.py]: Novel images: 25250
+2025-08-21:13:29:29 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:29:29 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-21:13:29:29 [evaluation.py]: Evaluating on MNIST
+2025-08-21:13:29:41 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:29:41 [evaluation.py]: Novel images: 1936
+2025-08-21:13:29:41 [evaluation.py]: Key count: [  0. 708.  48.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:29:41 [evaluation.py]: Top-1 accuracy: 69.35
+2025-08-21:13:29:41 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:13:29:47 [evaluation.py]: Total images: 3669.0
+2025-08-21:13:29:47 [evaluation.py]: Novel images: 3541
+2025-08-21:13:29:47 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:13:29:47 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:13:29:47 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:13:30:06 [evaluation.py]: Total images: 8041.0
+2025-08-21:13:30:06 [evaluation.py]: Novel images: 8041
+2025-08-21:13:30:06 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:30:06 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:13:30:06 [evaluation.py]: Evaluating on SUN397
+2025-08-21:13:30:52 [evaluation.py]: Total images: 21751.0
+2025-08-21:13:30:52 [evaluation.py]: Novel images: 21751
+2025-08-21:13:30:52 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:13:30:52 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:13:30:52 [ours.py]: [Dataset] Food
+2025-08-21:13:30:52 [ours.py]: [LR] 0.008
+2025-08-21:13:30:54 [ours.py]: Generating GradCAM
+2025-08-21:13:44:36 [ours.py]: Iterations per epoch: 1184
+2025-08-21:13:44:36 [ours.py]: Total iterations: 1000
+2025-08-21:13:44:36 [ours.py]: [Training mode] Prompts
+2025-08-21:13:44:36 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:13:44:36 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:13:44:36 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:13:44:36 [ours.py]: Using devices [0]
+2025-08-21:13:46:35 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:46:47 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:46:47 [evaluation.py]: Novel images: 0
+2025-08-21:13:46:47 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:46:47 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:46:58 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:46:58 [evaluation.py]: Novel images: 0
+2025-08-21:13:46:58 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:46:58 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:47:18 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:47:18 [evaluation.py]: Novel images: 0
+2025-08-21:13:47:18 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:47:18 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:47:25 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:47:25 [evaluation.py]: Novel images: 0
+2025-08-21:13:47:25 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:47:25 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:47:32 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:47:32 [evaluation.py]: Novel images: 0
+2025-08-21:13:47:32 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:47:32 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:47:46 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:47:46 [evaluation.py]: Novel images: 0
+2025-08-21:13:47:46 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:13:47:46 [evaluation.py]: Evaluating on Food
+2025-08-21:13:48:21 [evaluation.py]: Total images: 25250.0
+2025-08-21:13:48:21 [evaluation.py]: Novel images: 0
+2025-08-21:13:48:21 [evaluation.py]: Top-1 accuracy: 91.80
+2025-08-21:13:50:17 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:13:50:30 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:50:30 [evaluation.py]: Novel images: 0
+2025-08-21:13:50:30 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:50:30 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:50:41 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:50:41 [evaluation.py]: Novel images: 0
+2025-08-21:13:50:41 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:13:50:41 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:51:01 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:51:01 [evaluation.py]: Novel images: 0
+2025-08-21:13:51:01 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:51:01 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:51:07 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:51:07 [evaluation.py]: Novel images: 0
+2025-08-21:13:51:07 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:13:51:07 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:51:15 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:51:15 [evaluation.py]: Novel images: 0
+2025-08-21:13:51:15 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:51:15 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:51:28 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:51:28 [evaluation.py]: Novel images: 0
+2025-08-21:13:51:28 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:13:51:28 [evaluation.py]: Evaluating on Food
+2025-08-21:13:52:03 [evaluation.py]: Total images: 25250.0
+2025-08-21:13:52:03 [evaluation.py]: Novel images: 0
+2025-08-21:13:52:03 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:13:52:03 [ours.py]: Computing threshold
+2025-08-21:13:58:14 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062, 0.59613246]
+2025-08-21:13:58:15 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/Food.pth
+2025-08-21:13:58:28 [evaluation.py]: Total images: 3333.0
+2025-08-21:13:58:28 [evaluation.py]: Novel images: 0
+2025-08-21:13:58:28 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:58:28 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:13:58:28 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:13:58:39 [evaluation.py]: Total images: 1736.0
+2025-08-21:13:58:39 [evaluation.py]: Novel images: 384
+2025-08-21:13:58:39 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:58:39 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:13:58:39 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:13:58:59 [evaluation.py]: Total images: 10000.0
+2025-08-21:13:58:59 [evaluation.py]: Novel images: 0
+2025-08-21:13:58:59 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:58:59 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:13:58:59 [evaluation.py]: Evaluating on DTD
+2025-08-21:13:59:05 [evaluation.py]: Total images: 1880.0
+2025-08-21:13:59:05 [evaluation.py]: Novel images: 128
+2025-08-21:13:59:05 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:59:05 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:13:59:05 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:13:59:12 [evaluation.py]: Total images: 5400.0
+2025-08-21:13:59:12 [evaluation.py]: Novel images: 0
+2025-08-21:13:59:12 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:13:59:12 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:13:59:12 [evaluation.py]: Evaluating on Flowers
+2025-08-21:13:59:26 [evaluation.py]: Total images: 6149.0
+2025-08-21:13:59:26 [evaluation.py]: Novel images: 1408
+2025-08-21:13:59:26 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:13:59:26 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:13:59:26 [evaluation.py]: Evaluating on Food
+2025-08-21:14:00:01 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:00:01 [evaluation.py]: Novel images: 512
+2025-08-21:14:00:01 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0. 2328.    0.    0.    0.    0.]
+2025-08-21:14:00:01 [evaluation.py]: Top-1 accuracy: 92.19
+2025-08-21:14:00:01 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:00:13 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:00:13 [evaluation.py]: Novel images: 1936
+2025-08-21:14:00:13 [evaluation.py]: Key count: [  0. 708.  48.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:00:13 [evaluation.py]: Top-1 accuracy: 69.35
+2025-08-21:14:00:13 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:00:20 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:00:20 [evaluation.py]: Novel images: 3541
+2025-08-21:14:00:20 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:14:00:20 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:14:00:20 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:00:41 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:00:41 [evaluation.py]: Novel images: 8041
+2025-08-21:14:00:41 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:00:41 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:14:00:41 [evaluation.py]: Evaluating on SUN397
+2025-08-21:14:01:31 [evaluation.py]: Total images: 21751.0
+2025-08-21:14:01:31 [evaluation.py]: Novel images: 21751
+2025-08-21:14:01:31 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:01:31 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:14:01:32 [ours.py]: [Dataset] MNIST
+2025-08-21:14:01:32 [ours.py]: [LR] 0.008
+2025-08-21:14:01:32 [ours.py]: Generating GradCAM
+2025-08-21:14:09:41 [ours.py]: Iterations per epoch: 938
+2025-08-21:14:09:41 [ours.py]: Total iterations: 1000
+2025-08-21:14:09:41 [ours.py]: [Training mode] Prompts
+2025-08-21:14:09:41 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:14:09:41 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:14:09:41 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:14:09:41 [ours.py]: Using devices [0]
+2025-08-21:14:11:26 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:11:39 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:11:39 [evaluation.py]: Novel images: 0
+2025-08-21:14:11:39 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:11:39 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:11:51 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:11:51 [evaluation.py]: Novel images: 0
+2025-08-21:14:11:51 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:11:51 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:12:13 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:12:13 [evaluation.py]: Novel images: 0
+2025-08-21:14:12:13 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:12:13 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:12:21 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:12:21 [evaluation.py]: Novel images: 0
+2025-08-21:14:12:21 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:12:21 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:12:28 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:12:28 [evaluation.py]: Novel images: 0
+2025-08-21:14:12:28 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:12:28 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:12:43 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:12:43 [evaluation.py]: Novel images: 0
+2025-08-21:14:12:43 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:12:43 [evaluation.py]: Evaluating on Food
+2025-08-21:14:13:20 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:13:20 [evaluation.py]: Novel images: 0
+2025-08-21:14:13:20 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:13:20 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:13:33 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:13:33 [evaluation.py]: Novel images: 0
+2025-08-21:14:13:33 [evaluation.py]: Top-1 accuracy: 99.27
+2025-08-21:14:15:03 [ours.py]: Epoch 1: clf_loss: 0.914, aux_loss: 0.203, mixclf_loss: 0.118, acc: 0.984
+2025-08-21:14:15:16 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:15:29 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:15:29 [evaluation.py]: Novel images: 0
+2025-08-21:14:15:29 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:15:29 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:15:42 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:15:42 [evaluation.py]: Novel images: 0
+2025-08-21:14:15:42 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:15:42 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:16:04 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:16:04 [evaluation.py]: Novel images: 0
+2025-08-21:14:16:04 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:16:04 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:16:11 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:16:11 [evaluation.py]: Novel images: 0
+2025-08-21:14:16:11 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:16:11 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:16:18 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:16:18 [evaluation.py]: Novel images: 0
+2025-08-21:14:16:18 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:16:18 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:16:33 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:16:33 [evaluation.py]: Novel images: 0
+2025-08-21:14:16:33 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:16:33 [evaluation.py]: Evaluating on Food
+2025-08-21:14:17:09 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:17:09 [evaluation.py]: Novel images: 0
+2025-08-21:14:17:09 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:17:09 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:17:21 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:17:21 [evaluation.py]: Novel images: 0
+2025-08-21:14:17:21 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:17:22 [ours.py]: Computing threshold
+2025-08-21:14:21:15 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062, 0.59613246, 0.6728554]
+2025-08-21:14:21:16 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/MNIST.pth
+2025-08-21:14:21:29 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:21:29 [evaluation.py]: Novel images: 0
+2025-08-21:14:21:29 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:21:29 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:21:29 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:21:41 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:21:41 [evaluation.py]: Novel images: 384
+2025-08-21:14:21:41 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:21:41 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:14:21:41 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:22:02 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:22:02 [evaluation.py]: Novel images: 0
+2025-08-21:14:22:02 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:22:02 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:22:02 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:22:09 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:22:09 [evaluation.py]: Novel images: 128
+2025-08-21:14:22:09 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:22:09 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:14:22:09 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:22:16 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:22:16 [evaluation.py]: Novel images: 0
+2025-08-21:14:22:16 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:22:16 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:22:16 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:22:30 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:22:30 [evaluation.py]: Novel images: 1408
+2025-08-21:14:22:30 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:14:22:30 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:14:22:30 [evaluation.py]: Evaluating on Food
+2025-08-21:14:23:06 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:23:06 [evaluation.py]: Novel images: 512
+2025-08-21:14:23:06 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0. 2328.    0.    0.    0.    0.]
+2025-08-21:14:23:06 [evaluation.py]: Top-1 accuracy: 92.19
+2025-08-21:14:23:06 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:23:18 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:23:18 [evaluation.py]: Novel images: 0
+2025-08-21:14:23:18 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-21:14:23:18 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:23:18 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:23:25 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:23:25 [evaluation.py]: Novel images: 3541
+2025-08-21:14:23:25 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-21:14:23:25 [evaluation.py]: Top-1 accuracy: 86.73
+2025-08-21:14:23:25 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:23:48 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:23:48 [evaluation.py]: Novel images: 8041
+2025-08-21:14:23:48 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:23:48 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:14:23:48 [evaluation.py]: Evaluating on SUN397
+2025-08-21:14:24:42 [evaluation.py]: Total images: 21751.0
+2025-08-21:14:24:42 [evaluation.py]: Novel images: 21751
+2025-08-21:14:24:42 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:24:42 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:14:24:42 [ours.py]: [Dataset] OxfordPet
+2025-08-21:14:24:42 [ours.py]: [LR] 0.02
+2025-08-21:14:24:43 [ours.py]: Generating GradCAM
+2025-08-21:14:25:26 [ours.py]: Iterations per epoch: 58
+2025-08-21:14:25:26 [ours.py]: Total iterations: 1000
+2025-08-21:14:25:26 [ours.py]: [Training mode] Prompts
+2025-08-21:14:25:26 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:14:25:26 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:14:25:26 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:14:25:26 [ours.py]: Using devices [0]
+2025-08-21:14:25:40 [ours.py]: Epoch 1: clf_loss: 1.711, aux_loss: 0.468, mixclf_loss: 0.24, acc: 0.886
+2025-08-21:14:25:55 [ours.py]: Epoch 2: clf_loss: 1.49, aux_loss: 0.35, mixclf_loss: 0.219, acc: 0.947
+2025-08-21:14:26:10 [ours.py]: Epoch 3: clf_loss: 1.432, aux_loss: 0.331, mixclf_loss: 0.212, acc: 0.963
+2025-08-21:14:26:24 [ours.py]: Epoch 4: clf_loss: 1.384, aux_loss: 0.323, mixclf_loss: 0.208, acc: 0.973
+2025-08-21:14:26:39 [ours.py]: Epoch 5: clf_loss: 1.349, aux_loss: 0.313, mixclf_loss: 0.203, acc: 0.981
+2025-08-21:14:26:54 [ours.py]: Epoch 6: clf_loss: 1.31, aux_loss: 0.307, mixclf_loss: 0.197, acc: 0.991
+2025-08-21:14:27:08 [ours.py]: Epoch 7: clf_loss: 1.291, aux_loss: 0.302, mixclf_loss: 0.196, acc: 0.992
+2025-08-21:14:27:23 [ours.py]: Epoch 8: clf_loss: 1.266, aux_loss: 0.298, mixclf_loss: 0.192, acc: 0.997
+2025-08-21:14:27:32 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:27:46 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:27:46 [evaluation.py]: Novel images: 0
+2025-08-21:14:27:46 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:27:46 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:27:59 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:27:59 [evaluation.py]: Novel images: 0
+2025-08-21:14:27:59 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:27:59 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:28:21 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:28:21 [evaluation.py]: Novel images: 0
+2025-08-21:14:28:21 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:28:21 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:28:28 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:28:28 [evaluation.py]: Novel images: 0
+2025-08-21:14:28:28 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:28:28 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:28:35 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:28:35 [evaluation.py]: Novel images: 0
+2025-08-21:14:28:35 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:28:35 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:28:50 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:28:50 [evaluation.py]: Novel images: 0
+2025-08-21:14:28:50 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:28:50 [evaluation.py]: Evaluating on Food
+2025-08-21:14:29:27 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:29:27 [evaluation.py]: Novel images: 0
+2025-08-21:14:29:27 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:29:27 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:29:39 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:29:39 [evaluation.py]: Novel images: 0
+2025-08-21:14:29:39 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:29:39 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:29:47 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:29:47 [evaluation.py]: Novel images: 0
+2025-08-21:14:29:47 [evaluation.py]: Top-1 accuracy: 93.81
+2025-08-21:14:29:52 [ours.py]: Epoch 9: clf_loss: 1.247, aux_loss: 0.296, mixclf_loss: 0.189, acc: 0.999
+2025-08-21:14:30:07 [ours.py]: Epoch 10: clf_loss: 1.238, aux_loss: 0.297, mixclf_loss: 0.186, acc: 1.0
+2025-08-21:14:30:22 [ours.py]: Epoch 11: clf_loss: 1.229, aux_loss: 0.299, mixclf_loss: 0.186, acc: 1.0
+2025-08-21:14:30:36 [ours.py]: Epoch 12: clf_loss: 1.223, aux_loss: 0.296, mixclf_loss: 0.182, acc: 1.0
+2025-08-21:14:30:50 [ours.py]: Epoch 13: clf_loss: 1.219, aux_loss: 0.297, mixclf_loss: 0.183, acc: 1.0
+2025-08-21:14:31:05 [ours.py]: Epoch 14: clf_loss: 1.216, aux_loss: 0.294, mixclf_loss: 0.181, acc: 1.0
+2025-08-21:14:31:20 [ours.py]: Epoch 15: clf_loss: 1.214, aux_loss: 0.291, mixclf_loss: 0.18, acc: 1.0
+2025-08-21:14:31:34 [ours.py]: Epoch 16: clf_loss: 1.212, aux_loss: 0.295, mixclf_loss: 0.181, acc: 1.0
+2025-08-21:14:31:49 [ours.py]: Epoch 17: clf_loss: 1.212, aux_loss: 0.292, mixclf_loss: 0.179, acc: 1.0
+2025-08-21:14:31:54 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:32:08 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:32:08 [evaluation.py]: Novel images: 0
+2025-08-21:14:32:08 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:32:08 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:32:21 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:32:21 [evaluation.py]: Novel images: 0
+2025-08-21:14:32:21 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:32:21 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:32:43 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:32:43 [evaluation.py]: Novel images: 0
+2025-08-21:14:32:43 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:32:43 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:32:50 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:32:50 [evaluation.py]: Novel images: 0
+2025-08-21:14:32:50 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:32:50 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:32:57 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:32:57 [evaluation.py]: Novel images: 0
+2025-08-21:14:32:57 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:32:57 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:33:12 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:33:12 [evaluation.py]: Novel images: 0
+2025-08-21:14:33:12 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:33:12 [evaluation.py]: Evaluating on Food
+2025-08-21:14:33:49 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:33:49 [evaluation.py]: Novel images: 0
+2025-08-21:14:33:49 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:33:49 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:34:01 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:34:01 [evaluation.py]: Novel images: 0
+2025-08-21:14:34:01 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:34:01 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:34:09 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:34:09 [evaluation.py]: Novel images: 0
+2025-08-21:14:34:09 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:14:34:09 [ours.py]: Computing threshold
+2025-08-21:14:34:26 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062, 0.59613246, 0.6728554, 0.6188703]
+2025-08-21:14:34:27 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/OxfordPet.pth
+2025-08-21:14:34:40 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:34:40 [evaluation.py]: Novel images: 0
+2025-08-21:14:34:40 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:34:40 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:34:40 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:34:53 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:34:53 [evaluation.py]: Novel images: 384
+2025-08-21:14:34:53 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:34:53 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:14:34:53 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:35:15 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:35:15 [evaluation.py]: Novel images: 0
+2025-08-21:14:35:15 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:35:15 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:35:15 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:35:22 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:35:22 [evaluation.py]: Novel images: 128
+2025-08-21:14:35:22 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:35:22 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:14:35:22 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:35:30 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:35:30 [evaluation.py]: Novel images: 0
+2025-08-21:14:35:30 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:35:30 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:35:30 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:35:45 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:35:45 [evaluation.py]: Novel images: 1408
+2025-08-21:14:35:45 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:14:35:45 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:14:35:45 [evaluation.py]: Evaluating on Food
+2025-08-21:14:36:22 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:36:22 [evaluation.py]: Novel images: 512
+2025-08-21:14:36:22 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0. 2328.    0.    0.    0.    0.]
+2025-08-21:14:36:22 [evaluation.py]: Top-1 accuracy: 92.19
+2025-08-21:14:36:22 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:36:34 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:36:34 [evaluation.py]: Novel images: 0
+2025-08-21:14:36:34 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-21:14:36:34 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:36:34 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:36:42 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:36:42 [evaluation.py]: Novel images: 0
+2025-08-21:14:36:42 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-21:14:36:42 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:14:36:42 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:37:08 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:37:08 [evaluation.py]: Novel images: 8041
+2025-08-21:14:37:08 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:37:08 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-21:14:37:08 [evaluation.py]: Evaluating on SUN397
+2025-08-21:14:38:08 [evaluation.py]: Total images: 21751.0
+2025-08-21:14:38:08 [evaluation.py]: Novel images: 21751
+2025-08-21:14:38:08 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:38:08 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:14:38:08 [ours.py]: [Dataset] StanfordCars
+2025-08-21:14:38:08 [ours.py]: [LR] 0.02
+2025-08-21:14:38:13 [ours.py]: Generating GradCAM
+2025-08-21:14:40:10 [ours.py]: Iterations per epoch: 128
+2025-08-21:14:40:10 [ours.py]: Total iterations: 1000
+2025-08-21:14:40:10 [ours.py]: [Training mode] Prompts
+2025-08-21:14:40:10 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:14:40:10 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:14:40:10 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:14:40:10 [ours.py]: Using devices [0]
+2025-08-21:14:40:45 [ours.py]: Epoch 1: clf_loss: 2.674, aux_loss: 0.399, mixclf_loss: 0.236, acc: 0.696
+2025-08-21:14:41:20 [ours.py]: Epoch 2: clf_loss: 2.324, aux_loss: 0.305, mixclf_loss: 0.222, acc: 0.825
+2025-08-21:14:41:55 [ours.py]: Epoch 3: clf_loss: 2.181, aux_loss: 0.291, mixclf_loss: 0.213, acc: 0.881
+2025-08-21:14:42:27 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:42:41 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:42:41 [evaluation.py]: Novel images: 0
+2025-08-21:14:42:41 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:42:41 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:42:56 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:42:56 [evaluation.py]: Novel images: 0
+2025-08-21:14:42:56 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:42:56 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:43:19 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:43:19 [evaluation.py]: Novel images: 0
+2025-08-21:14:43:19 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:43:19 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:43:27 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:43:27 [evaluation.py]: Novel images: 0
+2025-08-21:14:43:27 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:43:27 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:43:35 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:43:35 [evaluation.py]: Novel images: 0
+2025-08-21:14:43:35 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:43:35 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:43:51 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:43:51 [evaluation.py]: Novel images: 0
+2025-08-21:14:43:51 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:43:51 [evaluation.py]: Evaluating on Food
+2025-08-21:14:44:28 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:44:28 [evaluation.py]: Novel images: 0
+2025-08-21:14:44:28 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:44:28 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:44:41 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:44:41 [evaluation.py]: Novel images: 0
+2025-08-21:14:44:41 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:44:41 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:44:49 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:44:49 [evaluation.py]: Novel images: 0
+2025-08-21:14:44:49 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:14:44:49 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:45:20 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:45:20 [evaluation.py]: Novel images: 0
+2025-08-21:14:45:20 [evaluation.py]: Top-1 accuracy: 84.37
+2025-08-21:14:45:23 [ours.py]: Epoch 4: clf_loss: 2.067, aux_loss: 0.288, mixclf_loss: 0.207, acc: 0.915
+2025-08-21:14:45:59 [ours.py]: Epoch 5: clf_loss: 1.979, aux_loss: 0.286, mixclf_loss: 0.204, acc: 0.941
+2025-08-21:14:46:34 [ours.py]: Epoch 6: clf_loss: 1.908, aux_loss: 0.284, mixclf_loss: 0.2, acc: 0.962
+2025-08-21:14:47:09 [ours.py]: Epoch 7: clf_loss: 1.866, aux_loss: 0.284, mixclf_loss: 0.197, acc: 0.972
+2025-08-21:14:47:38 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:14:47:54 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:47:54 [evaluation.py]: Novel images: 0
+2025-08-21:14:47:54 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:47:54 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:48:08 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:48:08 [evaluation.py]: Novel images: 0
+2025-08-21:14:48:08 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:14:48:08 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:48:31 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:48:31 [evaluation.py]: Novel images: 0
+2025-08-21:14:48:31 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:48:31 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:48:38 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:48:38 [evaluation.py]: Novel images: 0
+2025-08-21:14:48:38 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:14:48:38 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:48:45 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:48:45 [evaluation.py]: Novel images: 0
+2025-08-21:14:48:45 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:48:45 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:49:01 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:49:01 [evaluation.py]: Novel images: 0
+2025-08-21:14:49:01 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:14:49:01 [evaluation.py]: Evaluating on Food
+2025-08-21:14:49:38 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:49:38 [evaluation.py]: Novel images: 0
+2025-08-21:14:49:38 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:14:49:38 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:49:50 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:49:50 [evaluation.py]: Novel images: 0
+2025-08-21:14:49:50 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:49:50 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:49:58 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:49:58 [evaluation.py]: Novel images: 0
+2025-08-21:14:49:58 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:14:49:58 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:50:27 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:50:27 [evaluation.py]: Novel images: 0
+2025-08-21:14:50:27 [evaluation.py]: Top-1 accuracy: 85.81
+2025-08-21:14:50:27 [ours.py]: Computing threshold
+2025-08-21:14:51:11 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062, 0.59613246, 0.6728554, 0.6188703, 0.641632]
+2025-08-21:14:51:12 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/StanfordCars.pth
+2025-08-21:14:51:27 [evaluation.py]: Total images: 3333.0
+2025-08-21:14:51:27 [evaluation.py]: Novel images: 0
+2025-08-21:14:51:27 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:51:27 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:14:51:27 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:14:51:41 [evaluation.py]: Total images: 1736.0
+2025-08-21:14:51:41 [evaluation.py]: Novel images: 384
+2025-08-21:14:51:41 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:51:41 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:14:51:41 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:14:52:04 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:52:04 [evaluation.py]: Novel images: 0
+2025-08-21:14:52:04 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:52:04 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:14:52:04 [evaluation.py]: Evaluating on DTD
+2025-08-21:14:52:11 [evaluation.py]: Total images: 1880.0
+2025-08-21:14:52:11 [evaluation.py]: Novel images: 128
+2025-08-21:14:52:11 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:52:11 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:14:52:11 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:14:52:19 [evaluation.py]: Total images: 5400.0
+2025-08-21:14:52:19 [evaluation.py]: Novel images: 0
+2025-08-21:14:52:19 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:14:52:19 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:14:52:19 [evaluation.py]: Evaluating on Flowers
+2025-08-21:14:52:34 [evaluation.py]: Total images: 6149.0
+2025-08-21:14:52:34 [evaluation.py]: Novel images: 1408
+2025-08-21:14:52:34 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:14:52:34 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:14:52:34 [evaluation.py]: Evaluating on Food
+2025-08-21:14:53:12 [evaluation.py]: Total images: 25250.0
+2025-08-21:14:53:12 [evaluation.py]: Novel images: 512
+2025-08-21:14:53:12 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0. 2328.    0.    0.    0.    0.]
+2025-08-21:14:53:12 [evaluation.py]: Top-1 accuracy: 92.19
+2025-08-21:14:53:12 [evaluation.py]: Evaluating on MNIST
+2025-08-21:14:53:24 [evaluation.py]: Total images: 10000.0
+2025-08-21:14:53:24 [evaluation.py]: Novel images: 0
+2025-08-21:14:53:24 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-21:14:53:24 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:14:53:24 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:14:53:32 [evaluation.py]: Total images: 3669.0
+2025-08-21:14:53:32 [evaluation.py]: Novel images: 0
+2025-08-21:14:53:32 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-21:14:53:32 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:14:53:32 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:14:54:01 [evaluation.py]: Total images: 8041.0
+2025-08-21:14:54:01 [evaluation.py]: Novel images: 0
+2025-08-21:14:54:01 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0.   0. 756.   0.]
+2025-08-21:14:54:01 [evaluation.py]: Top-1 accuracy: 85.81
+2025-08-21:14:54:01 [evaluation.py]: Evaluating on SUN397
+2025-08-21:14:55:00 [evaluation.py]: Total images: 21751.0
+2025-08-21:14:55:00 [evaluation.py]: Novel images: 21751
+2025-08-21:14:55:00 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-21:14:55:00 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-21:14:55:01 [ours.py]: [Dataset] SUN397
+2025-08-21:14:55:01 [ours.py]: [LR] 0.02
+2025-08-21:14:55:12 [ours.py]: Generating GradCAM
+2025-08-21:15:28:52 [ours.py]: Iterations per epoch: 1360
+2025-08-21:15:28:52 [ours.py]: Total iterations: 1000
+2025-08-21:15:28:52 [ours.py]: [Training mode] Prompts
+2025-08-21:15:28:52 [ours.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-21:15:28:52 [ours.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-21:15:28:52 [ours.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-21:15:28:52 [ours.py]: Using devices [0]
+2025-08-21:15:31:47 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:15:32:03 [evaluation.py]: Total images: 3333.0
+2025-08-21:15:32:03 [evaluation.py]: Novel images: 0
+2025-08-21:15:32:03 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:15:32:03 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:15:32:18 [evaluation.py]: Total images: 1736.0
+2025-08-21:15:32:18 [evaluation.py]: Novel images: 0
+2025-08-21:15:32:18 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:15:32:18 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:15:32:42 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:32:42 [evaluation.py]: Novel images: 0
+2025-08-21:15:32:42 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:15:32:42 [evaluation.py]: Evaluating on DTD
+2025-08-21:15:32:49 [evaluation.py]: Total images: 1880.0
+2025-08-21:15:32:49 [evaluation.py]: Novel images: 0
+2025-08-21:15:32:49 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:15:32:49 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:15:32:57 [evaluation.py]: Total images: 5400.0
+2025-08-21:15:32:57 [evaluation.py]: Novel images: 0
+2025-08-21:15:32:57 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:15:32:57 [evaluation.py]: Evaluating on Flowers
+2025-08-21:15:33:13 [evaluation.py]: Total images: 6149.0
+2025-08-21:15:33:13 [evaluation.py]: Novel images: 0
+2025-08-21:15:33:13 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:15:33:13 [evaluation.py]: Evaluating on Food
+2025-08-21:15:33:51 [evaluation.py]: Total images: 25250.0
+2025-08-21:15:33:51 [evaluation.py]: Novel images: 0
+2025-08-21:15:33:51 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:15:33:51 [evaluation.py]: Evaluating on MNIST
+2025-08-21:15:34:04 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:34:04 [evaluation.py]: Novel images: 0
+2025-08-21:15:34:04 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:15:34:04 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:15:34:13 [evaluation.py]: Total images: 3669.0
+2025-08-21:15:34:13 [evaluation.py]: Novel images: 0
+2025-08-21:15:34:13 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:15:34:13 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:15:34:45 [evaluation.py]: Total images: 8041.0
+2025-08-21:15:34:45 [evaluation.py]: Novel images: 0
+2025-08-21:15:34:45 [evaluation.py]: Top-1 accuracy: 85.81
+2025-08-21:15:34:45 [evaluation.py]: Evaluating on SUN397
+2025-08-21:15:35:51 [evaluation.py]: Total images: 21751.0
+2025-08-21:15:35:51 [evaluation.py]: Novel images: 0
+2025-08-21:15:35:51 [evaluation.py]: Top-1 accuracy: 79.86
+2025-08-21:15:38:36 [evaluation.py]: Evaluating on Aircraft
+2025-08-21:15:38:53 [evaluation.py]: Total images: 3333.0
+2025-08-21:15:38:53 [evaluation.py]: Novel images: 0
+2025-08-21:15:38:53 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:15:38:53 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:15:39:09 [evaluation.py]: Total images: 1736.0
+2025-08-21:15:39:09 [evaluation.py]: Novel images: 0
+2025-08-21:15:39:09 [evaluation.py]: Top-1 accuracy: 95.28
+2025-08-21:15:39:09 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:15:39:33 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:39:33 [evaluation.py]: Novel images: 0
+2025-08-21:15:39:33 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:15:39:33 [evaluation.py]: Evaluating on DTD
+2025-08-21:15:39:41 [evaluation.py]: Total images: 1880.0
+2025-08-21:15:39:41 [evaluation.py]: Novel images: 0
+2025-08-21:15:39:41 [evaluation.py]: Top-1 accuracy: 78.62
+2025-08-21:15:39:41 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:15:39:49 [evaluation.py]: Total images: 5400.0
+2025-08-21:15:39:49 [evaluation.py]: Novel images: 0
+2025-08-21:15:39:49 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:15:39:49 [evaluation.py]: Evaluating on Flowers
+2025-08-21:15:40:06 [evaluation.py]: Total images: 6149.0
+2025-08-21:15:40:06 [evaluation.py]: Novel images: 0
+2025-08-21:15:40:06 [evaluation.py]: Top-1 accuracy: 96.10
+2025-08-21:15:40:06 [evaluation.py]: Evaluating on Food
+2025-08-21:15:40:45 [evaluation.py]: Total images: 25250.0
+2025-08-21:15:40:45 [evaluation.py]: Novel images: 0
+2025-08-21:15:40:45 [evaluation.py]: Top-1 accuracy: 92.29
+2025-08-21:15:40:45 [evaluation.py]: Evaluating on MNIST
+2025-08-21:15:40:58 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:40:58 [evaluation.py]: Novel images: 0
+2025-08-21:15:40:58 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:15:40:58 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:15:41:06 [evaluation.py]: Total images: 3669.0
+2025-08-21:15:41:06 [evaluation.py]: Novel images: 0
+2025-08-21:15:41:06 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:15:41:06 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:15:41:36 [evaluation.py]: Total images: 8041.0
+2025-08-21:15:41:36 [evaluation.py]: Novel images: 0
+2025-08-21:15:41:36 [evaluation.py]: Top-1 accuracy: 85.81
+2025-08-21:15:41:36 [evaluation.py]: Evaluating on SUN397
+2025-08-21:15:42:43 [evaluation.py]: Total images: 21751.0
+2025-08-21:15:42:43 [evaluation.py]: Novel images: 0
+2025-08-21:15:42:43 [evaluation.py]: Top-1 accuracy: 80.89
+2025-08-21:15:42:44 [ours.py]: Computing threshold
+2025-08-21:15:51:45 [ours.py]: Novelty threshold: [0.62615013, 0.6205453, 0.60264397, 0.5758437, 0.58797985, 0.670062, 0.59613246, 0.6728554, 0.6188703, 0.641632, 0.56335604]
+2025-08-21:15:51:46 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/oursV1_guidedmixls_gengcam_lambda^2/SUN397.pth
+2025-08-21:15:52:01 [evaluation.py]: Total images: 3333.0
+2025-08-21:15:52:01 [evaluation.py]: Novel images: 0
+2025-08-21:15:52:01 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:15:52:01 [evaluation.py]: Top-1 accuracy: 54.31
+2025-08-21:15:52:01 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-21:15:52:16 [evaluation.py]: Total images: 1736.0
+2025-08-21:15:52:16 [evaluation.py]: Novel images: 384
+2025-08-21:15:52:16 [evaluation.py]: Key count: [  0. 132.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:15:52:16 [evaluation.py]: Top-1 accuracy: 94.07
+2025-08-21:15:52:16 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-21:15:52:40 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:52:40 [evaluation.py]: Novel images: 0
+2025-08-21:15:52:40 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:15:52:40 [evaluation.py]: Top-1 accuracy: 86.16
+2025-08-21:15:52:40 [evaluation.py]: Evaluating on DTD
+2025-08-21:15:52:48 [evaluation.py]: Total images: 1880.0
+2025-08-21:15:52:48 [evaluation.py]: Novel images: 128
+2025-08-21:15:52:48 [evaluation.py]: Key count: [  0.   0.   0. 168.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-21:15:52:48 [evaluation.py]: Top-1 accuracy: 75.48
+2025-08-21:15:52:48 [evaluation.py]: Evaluating on EuroSAT
+2025-08-21:15:52:55 [evaluation.py]: Total images: 5400.0
+2025-08-21:15:52:55 [evaluation.py]: Novel images: 0
+2025-08-21:15:52:55 [evaluation.py]: Key count: [  0.   0.   0.   0. 516.   0.   0.   0.   0.   0.   0.]
+2025-08-21:15:52:55 [evaluation.py]: Top-1 accuracy: 98.63
+2025-08-21:15:52:55 [evaluation.py]: Evaluating on Flowers
+2025-08-21:15:53:11 [evaluation.py]: Total images: 6149.0
+2025-08-21:15:53:11 [evaluation.py]: Novel images: 1408
+2025-08-21:15:53:11 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 456.   0.   0.   0.   0.   0.]
+2025-08-21:15:53:11 [evaluation.py]: Top-1 accuracy: 91.43
+2025-08-21:15:53:11 [evaluation.py]: Evaluating on Food
+2025-08-21:15:53:50 [evaluation.py]: Total images: 25250.0
+2025-08-21:15:53:50 [evaluation.py]: Novel images: 512
+2025-08-21:15:53:50 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0. 2328.    0.    0.    0.    0.]
+2025-08-21:15:53:50 [evaluation.py]: Top-1 accuracy: 92.19
+2025-08-21:15:53:50 [evaluation.py]: Evaluating on MNIST
+2025-08-21:15:54:03 [evaluation.py]: Total images: 10000.0
+2025-08-21:15:54:03 [evaluation.py]: Novel images: 0
+2025-08-21:15:54:03 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-21:15:54:03 [evaluation.py]: Top-1 accuracy: 99.34
+2025-08-21:15:54:03 [evaluation.py]: Evaluating on OxfordPet
+2025-08-21:15:54:11 [evaluation.py]: Total images: 3669.0
+2025-08-21:15:54:11 [evaluation.py]: Novel images: 0
+2025-08-21:15:54:11 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-21:15:54:11 [evaluation.py]: Top-1 accuracy: 93.79
+2025-08-21:15:54:11 [evaluation.py]: Evaluating on StanfordCars
+2025-08-21:15:54:42 [evaluation.py]: Total images: 8041.0
+2025-08-21:15:54:42 [evaluation.py]: Novel images: 0
+2025-08-21:15:54:42 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0.   0. 756.   0.]
+2025-08-21:15:54:42 [evaluation.py]: Top-1 accuracy: 85.81
+2025-08-21:15:54:42 [evaluation.py]: Evaluating on SUN397
+2025-08-21:15:55:48 [evaluation.py]: Total images: 21751.0
+2025-08-21:15:55:48 [evaluation.py]: Novel images: 0
+2025-08-21:15:55:48 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0.    0.    0.    0.    0. 2040.]
+2025-08-21:15:55:48 [evaluation.py]: Top-1 accuracy: 80.89
+./run.sh: line 38: unexpected EOF while looking for matching `"'
+./run.sh: line 51: syntax error: unexpected end of file

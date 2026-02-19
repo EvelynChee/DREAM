@@ -1,0 +1,1870 @@
+2025-08-25:04:42:33 [ours_semi.py]: [Dataset] Aircraft
+2025-08-25:04:42:33 [ours_semi.py]: [LR] 0.03
+2025-08-25:04:42:33 [ours_semi.py]: =====few-shot======
+Namespace(model='ViT-B/16', batch_size=32, batch_size_eval=128, lr=[0.03, 0.02, 0.02, 0.01, 0.01, 0.01, 0.001, 0.02, 0.01, 0.03, 0.02], min_lr=0.0, wd=0.0, ls=0.0, warmup_length=100, beta2=0.999, seed=42, epochs=None, iterations=300, eval_interval=150, loss_interval=1000, eval_every_epoch=False, eval_only=False, method='ours_semi', train_mode='whole', data_location='/home/evelynchee/data/', train_dataset=None, eval_datasets=None, text_datasets=None, template=None, few_shot=5, save='ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel', load=None, load_federate=None, fair=False, we=False, we_wise=False, we_wise_alpha=0.98, moving_avg=False, avg_freq=100, mv_avg_decay=0.999, mv_avg_model='n', l2=0, fc_init=False, fc_setnone=False, dataset_shift=False, n_class=10, ref_wise_alpha=0.8, ref_wise=False, ref_dataset=None, ref_model=None, ref_sentences=None, T=2.0, num=64, dataset_order=['Aircraft', 'Caltech101', 'CIFAR100', 'DTD', 'EuroSAT', 'Flowers', 'Food', 'MNIST', 'OxfordPet', 'StanfordCars', 'SUN397'], memory_size=10000, weight_adjust=False, feature_mse=False, image_loss=False, text_loss=False, ablation_loss_2=False, wise_merge=False, wise_ft=False, wise_ft_model='n', wise_ft_alpha=0.8, exp_name=None, results_db='results.jsonl', cache_dir=None, freeze_encoder=False, freeze_fc=0, lwf=False, basic_model_load=None, fc_load=None, keep_old_heads=0, baseline=False, trio=False, control_dataset=None, control_dataset_add=None, noise=True, rff=False, alpha=0.5, fisher=None, fisher_floor=1e-08, device='cuda')
+2025-08-25:04:42:39 [ours_semi.py]: Generating GradCAM
+2025-08-25:04:43:40 [ours_semi.py]: Iterations per epoch: 16
+2025-08-25:04:43:40 [ours_semi.py]: Total iterations: 300
+2025-08-25:04:43:40 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:04:43:40 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:04:43:40 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:04:43:40 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:04:43:40 [ours_semi.py]: Using devices [0]
+2025-08-25:04:43:48 [ours_semi.py]: Epoch 1: clf_loss: 3.002, aux_loss: 0.852, mixclf_loss: 1.47, acc: 0.204
+2025-08-25:04:43:54 [ours_semi.py]: Epoch 2: clf_loss: 2.262, aux_loss: 0.523, mixclf_loss: 1.211, acc: 0.304
+2025-08-25:04:44:00 [ours_semi.py]: Epoch 3: clf_loss: 1.899, aux_loss: 0.434, mixclf_loss: 1.119, acc: 0.398
+2025-08-25:04:44:06 [ours_semi.py]: Epoch 4: clf_loss: 1.642, aux_loss: 0.378, mixclf_loss: 1.023, acc: 0.48
+2025-08-25:04:44:12 [ours_semi.py]: Epoch 5: clf_loss: 1.403, aux_loss: 0.329, mixclf_loss: 0.916, acc: 0.546
+2025-08-25:04:44:20 [ours_semi.py]: Epoch 6: clf_loss: 1.257, aux_loss: 0.29, mixclf_loss: 0.862, acc: 0.57
+2025-08-25:04:44:26 [ours_semi.py]: Epoch 7: clf_loss: 1.142, aux_loss: 0.263, mixclf_loss: 0.827, acc: 0.626
+2025-08-25:04:44:32 [ours_semi.py]: Epoch 8: clf_loss: 1.022, aux_loss: 0.244, mixclf_loss: 0.74, acc: 0.653
+2025-08-25:04:44:38 [ours_semi.py]: Epoch 9: clf_loss: 0.88, aux_loss: 0.224, mixclf_loss: 0.682, acc: 0.705
+2025-08-25:04:44:41 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:04:44:48 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:44:48 [evaluation.py]: Novel images: 0
+2025-08-25:04:44:48 [evaluation.py]: Top-1 accuracy: 34.05
+2025-08-25:04:44:51 [ours_semi.py]: Epoch 10: clf_loss: 0.777, aux_loss: 0.213, mixclf_loss: 0.839, acc: 0.73
+2025-08-25:04:44:57 [ours_semi.py]: Epoch 11: clf_loss: 0.638, aux_loss: 0.206, mixclf_loss: 0.733, acc: 0.793
+2025-08-25:04:45:05 [ours_semi.py]: Epoch 12: clf_loss: 0.473, aux_loss: 0.201, mixclf_loss: 0.683, acc: 0.854
+2025-08-25:04:45:11 [ours_semi.py]: Epoch 13: clf_loss: 0.381, aux_loss: 0.195, mixclf_loss: 0.661, acc: 0.908
+2025-08-25:04:45:17 [ours_semi.py]: Epoch 14: clf_loss: 0.298, aux_loss: 0.192, mixclf_loss: 0.641, acc: 0.94
+2025-08-25:04:45:23 [ours_semi.py]: Epoch 15: clf_loss: 0.261, aux_loss: 0.198, mixclf_loss: 0.648, acc: 0.932
+2025-08-25:04:45:29 [ours_semi.py]: Epoch 16: clf_loss: 0.213, aux_loss: 0.195, mixclf_loss: 0.623, acc: 0.957
+2025-08-25:04:45:37 [ours_semi.py]: Epoch 17: clf_loss: 0.182, aux_loss: 0.185, mixclf_loss: 0.608, acc: 0.965
+2025-08-25:04:45:43 [ours_semi.py]: Epoch 18: clf_loss: 0.166, aux_loss: 0.184, mixclf_loss: 0.589, acc: 0.97
+2025-08-25:04:45:48 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:04:45:54 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:45:54 [evaluation.py]: Novel images: 0
+2025-08-25:04:45:54 [evaluation.py]: Top-1 accuracy: 37.68
+2025-08-25:04:45:55 [ours_semi.py]: Computing threshold
+2025-08-25:04:46:04 [ours_semi.py]: Novelty threshold: [0.6193445]
+2025-08-25:04:46:06 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/Aircraft.pth
+2025-08-25:04:46:12 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:46:12 [evaluation.py]: Novel images: 0
+2025-08-25:04:46:12 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:04:46:12 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:04:46:12 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:04:46:17 [evaluation.py]: Total images: 1736.0
+2025-08-25:04:46:17 [evaluation.py]: Novel images: 1736
+2025-08-25:04:46:17 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:46:17 [evaluation.py]: Top-1 accuracy: 88.36
+2025-08-25:04:46:17 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:04:46:29 [evaluation.py]: Total images: 10000.0
+2025-08-25:04:46:29 [evaluation.py]: Novel images: 10000
+2025-08-25:04:46:29 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:46:29 [evaluation.py]: Top-1 accuracy: 68.26
+2025-08-25:04:46:29 [evaluation.py]: Evaluating on DTD
+2025-08-25:04:46:32 [evaluation.py]: Total images: 1880.0
+2025-08-25:04:46:32 [evaluation.py]: Novel images: 1880
+2025-08-25:04:46:32 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:46:32 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-25:04:46:32 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:04:46:37 [evaluation.py]: Total images: 5400.0
+2025-08-25:04:46:37 [evaluation.py]: Novel images: 5400
+2025-08-25:04:46:37 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:46:37 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-25:04:46:37 [evaluation.py]: Evaluating on Flowers
+2025-08-25:04:46:45 [evaluation.py]: Total images: 6149.0
+2025-08-25:04:46:45 [evaluation.py]: Novel images: 6149
+2025-08-25:04:46:45 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:46:45 [evaluation.py]: Top-1 accuracy: 71.04
+2025-08-25:04:46:45 [evaluation.py]: Evaluating on Food
+2025-08-25:04:47:09 [evaluation.py]: Total images: 25250.0
+2025-08-25:04:47:09 [evaluation.py]: Novel images: 25250
+2025-08-25:04:47:09 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:47:09 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:04:47:09 [evaluation.py]: Evaluating on MNIST
+2025-08-25:04:47:18 [evaluation.py]: Total images: 10000.0
+2025-08-25:04:47:18 [evaluation.py]: Novel images: 10000
+2025-08-25:04:47:18 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:47:18 [evaluation.py]: Top-1 accuracy: 59.35
+2025-08-25:04:47:18 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:04:47:22 [evaluation.py]: Total images: 3669.0
+2025-08-25:04:47:22 [evaluation.py]: Novel images: 3669
+2025-08-25:04:47:22 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:47:22 [evaluation.py]: Top-1 accuracy: 89.10
+2025-08-25:04:47:22 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:04:47:33 [evaluation.py]: Total images: 8041.0
+2025-08-25:04:47:33 [evaluation.py]: Novel images: 8041
+2025-08-25:04:47:33 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:47:33 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:04:47:33 [evaluation.py]: Evaluating on SUN397
+2025-08-25:04:48:04 [evaluation.py]: Total images: 21751.0
+2025-08-25:04:48:04 [evaluation.py]: Novel images: 21751
+2025-08-25:04:48:04 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:48:04 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:04:48:04 [ours_semi.py]: [Dataset] Caltech101
+2025-08-25:04:48:04 [ours_semi.py]: [LR] 0.02
+2025-08-25:04:48:04 [ours_semi.py]: =====few-shot======
+Files already downloaded and verified
+2025-08-25:04:48:06 [ours_semi.py]: Generating GradCAM
+2025-08-25:04:49:09 [ours_semi.py]: Iterations per epoch: 16
+2025-08-25:04:49:09 [ours_semi.py]: Total iterations: 300
+2025-08-25:04:49:09 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:04:49:09 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:04:49:09 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:04:49:09 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:04:49:09 [ours_semi.py]: Using devices [0]
+2025-08-25:04:49:15 [ours_semi.py]: Epoch 1: clf_loss: 0.295, aux_loss: 0.93, mixclf_loss: 0.211, acc: 0.9
+2025-08-25:04:49:20 [ours_semi.py]: Epoch 2: clf_loss: 0.202, aux_loss: 0.659, mixclf_loss: 0.163, acc: 0.93
+2025-08-25:04:49:24 [ours_semi.py]: Epoch 3: clf_loss: 0.09, aux_loss: 0.55, mixclf_loss: 0.113, acc: 0.973
+2025-08-25:04:49:29 [ours_semi.py]: Epoch 4: clf_loss: 0.075, aux_loss: 0.51, mixclf_loss: 0.108, acc: 0.984
+2025-08-25:04:49:34 [ours_semi.py]: Epoch 5: clf_loss: 0.054, aux_loss: 0.469, mixclf_loss: 0.097, acc: 0.986
+2025-08-25:04:49:39 [ours_semi.py]: Epoch 6: clf_loss: 0.052, aux_loss: 0.436, mixclf_loss: 0.092, acc: 0.986
+2025-08-25:04:49:44 [ours_semi.py]: Epoch 7: clf_loss: 0.042, aux_loss: 0.418, mixclf_loss: 0.089, acc: 0.983
+2025-08-25:04:49:48 [ours_semi.py]: Epoch 8: clf_loss: 0.045, aux_loss: 0.405, mixclf_loss: 0.076, acc: 0.992
+2025-08-25:04:49:53 [ours_semi.py]: Epoch 9: clf_loss: 0.026, aux_loss: 0.399, mixclf_loss: 0.071, acc: 0.99
+2025-08-25:04:49:55 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:04:50:03 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:50:03 [evaluation.py]: Novel images: 0
+2025-08-25:04:50:03 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:04:50:03 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:04:50:08 [evaluation.py]: Total images: 1736.0
+2025-08-25:04:50:08 [evaluation.py]: Novel images: 0
+2025-08-25:04:50:08 [evaluation.py]: Top-1 accuracy: 91.59
+2025-08-25:04:50:12 [ours_semi.py]: Epoch 10: clf_loss: 0.015, aux_loss: 0.394, mixclf_loss: 0.373, acc: 1.0
+2025-08-25:04:50:17 [ours_semi.py]: Epoch 11: clf_loss: 0.016, aux_loss: 0.386, mixclf_loss: 0.399, acc: 0.998
+2025-08-25:04:50:21 [ours_semi.py]: Epoch 12: clf_loss: 0.008, aux_loss: 0.384, mixclf_loss: 0.401, acc: 1.0
+2025-08-25:04:50:27 [ours_semi.py]: Epoch 13: clf_loss: 0.004, aux_loss: 0.382, mixclf_loss: 0.393, acc: 1.0
+2025-08-25:04:50:31 [ours_semi.py]: Epoch 14: clf_loss: 0.003, aux_loss: 0.377, mixclf_loss: 0.389, acc: 1.0
+2025-08-25:04:50:36 [ours_semi.py]: Epoch 15: clf_loss: 0.003, aux_loss: 0.376, mixclf_loss: 0.419, acc: 1.0
+2025-08-25:04:50:40 [ours_semi.py]: Epoch 16: clf_loss: 0.004, aux_loss: 0.372, mixclf_loss: 0.39, acc: 1.0
+2025-08-25:04:50:45 [ours_semi.py]: Epoch 17: clf_loss: 0.003, aux_loss: 0.375, mixclf_loss: 0.398, acc: 1.0
+2025-08-25:04:50:50 [ours_semi.py]: Epoch 18: clf_loss: 0.003, aux_loss: 0.371, mixclf_loss: 0.393, acc: 1.0
+2025-08-25:04:50:53 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:04:51:01 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:51:01 [evaluation.py]: Novel images: 0
+2025-08-25:04:51:01 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:04:51:01 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:04:51:06 [evaluation.py]: Total images: 1736.0
+2025-08-25:04:51:06 [evaluation.py]: Novel images: 0
+2025-08-25:04:51:06 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:04:51:07 [ours_semi.py]: Computing threshold
+2025-08-25:04:51:13 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184]
+2025-08-25:04:51:14 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/Caltech101.pth
+2025-08-25:04:51:22 [evaluation.py]: Total images: 3333.0
+2025-08-25:04:51:22 [evaluation.py]: Novel images: 0
+2025-08-25:04:51:22 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:04:51:22 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:04:51:22 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:04:51:28 [evaluation.py]: Total images: 1736.0
+2025-08-25:04:51:28 [evaluation.py]: Novel images: 0
+2025-08-25:04:51:28 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:04:51:28 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:04:51:28 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:04:51:41 [evaluation.py]: Total images: 10000.0
+2025-08-25:04:51:41 [evaluation.py]: Novel images: 10000
+2025-08-25:04:51:41 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:51:41 [evaluation.py]: Top-1 accuracy: 68.26
+2025-08-25:04:51:41 [evaluation.py]: Evaluating on DTD
+2025-08-25:04:51:44 [evaluation.py]: Total images: 1880.0
+2025-08-25:04:51:44 [evaluation.py]: Novel images: 1880
+2025-08-25:04:51:44 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:51:44 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-25:04:51:44 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:04:51:50 [evaluation.py]: Total images: 5400.0
+2025-08-25:04:51:50 [evaluation.py]: Novel images: 5400
+2025-08-25:04:51:50 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:51:50 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-25:04:51:50 [evaluation.py]: Evaluating on Flowers
+2025-08-25:04:51:58 [evaluation.py]: Total images: 6149.0
+2025-08-25:04:51:58 [evaluation.py]: Novel images: 6021
+2025-08-25:04:51:58 [evaluation.py]: Key count: [ 0. 12.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:04:51:58 [evaluation.py]: Top-1 accuracy: 71.41
+2025-08-25:04:51:58 [evaluation.py]: Evaluating on Food
+2025-08-25:04:52:23 [evaluation.py]: Total images: 25250.0
+2025-08-25:04:52:23 [evaluation.py]: Novel images: 25250
+2025-08-25:04:52:23 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:52:23 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:04:52:23 [evaluation.py]: Evaluating on MNIST
+2025-08-25:04:52:35 [evaluation.py]: Total images: 10000.0
+2025-08-25:04:52:35 [evaluation.py]: Novel images: 896
+2025-08-25:04:52:35 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:04:52:35 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:04:52:35 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:04:52:40 [evaluation.py]: Total images: 3669.0
+2025-08-25:04:52:40 [evaluation.py]: Novel images: 3413
+2025-08-25:04:52:40 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:04:52:40 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:04:52:40 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:04:52:53 [evaluation.py]: Total images: 8041.0
+2025-08-25:04:52:53 [evaluation.py]: Novel images: 8041
+2025-08-25:04:52:53 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:52:53 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:04:52:53 [evaluation.py]: Evaluating on SUN397
+2025-08-25:04:53:26 [evaluation.py]: Total images: 21751.0
+2025-08-25:04:53:26 [evaluation.py]: Novel images: 21751
+2025-08-25:04:53:26 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:04:53:26 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:04:53:26 [ours_semi.py]: [Dataset] CIFAR100
+2025-08-25:04:53:26 [ours_semi.py]: [LR] 0.02
+2025-08-25:04:53:27 [ours_semi.py]: =====few-shot======
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:04:53:34 [ours_semi.py]: Generating GradCAM
+2025-08-25:05:00:19 [ours_semi.py]: Iterations per epoch: 16
+2025-08-25:05:00:19 [ours_semi.py]: Total iterations: 300
+2025-08-25:05:00:19 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:05:00:19 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:05:00:19 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:05:00:19 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:05:00:19 [ours_semi.py]: Using devices [0]
+2025-08-25:05:00:25 [ours_semi.py]: Epoch 1: clf_loss: 1.385, aux_loss: 0.932, mixclf_loss: 0.854, acc: 0.67
+2025-08-25:05:00:29 [ours_semi.py]: Epoch 2: clf_loss: 0.949, aux_loss: 0.653, mixclf_loss: 0.696, acc: 0.741
+2025-08-25:05:00:34 [ours_semi.py]: Epoch 3: clf_loss: 0.696, aux_loss: 0.541, mixclf_loss: 0.614, acc: 0.811
+2025-08-25:05:00:38 [ours_semi.py]: Epoch 4: clf_loss: 0.499, aux_loss: 0.503, mixclf_loss: 0.534, acc: 0.857
+2025-08-25:05:00:43 [ours_semi.py]: Epoch 5: clf_loss: 0.335, aux_loss: 0.469, mixclf_loss: 0.47, acc: 0.896
+2025-08-25:05:00:48 [ours_semi.py]: Epoch 6: clf_loss: 0.28, aux_loss: 0.445, mixclf_loss: 0.442, acc: 0.911
+2025-08-25:05:00:52 [ours_semi.py]: Epoch 7: clf_loss: 0.308, aux_loss: 0.431, mixclf_loss: 0.456, acc: 0.934
+2025-08-25:05:00:57 [ours_semi.py]: Epoch 8: clf_loss: 0.285, aux_loss: 0.42, mixclf_loss: 0.437, acc: 0.915
+2025-08-25:05:01:01 [ours_semi.py]: Epoch 9: clf_loss: 0.172, aux_loss: 0.413, mixclf_loss: 0.392, acc: 0.939
+2025-08-25:05:01:03 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:01:12 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:01:12 [evaluation.py]: Novel images: 0
+2025-08-25:05:01:12 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:01:12 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:01:19 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:01:19 [evaluation.py]: Novel images: 0
+2025-08-25:05:01:19 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:01:19 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:01:35 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:01:35 [evaluation.py]: Novel images: 0
+2025-08-25:05:01:35 [evaluation.py]: Top-1 accuracy: 69.56
+2025-08-25:05:01:39 [ours_semi.py]: Epoch 10: clf_loss: 0.11, aux_loss: 0.407, mixclf_loss: 0.582, acc: 0.963
+2025-08-25:05:01:43 [ours_semi.py]: Epoch 11: clf_loss: 0.047, aux_loss: 0.404, mixclf_loss: 0.555, acc: 0.996
+2025-08-25:05:01:48 [ours_semi.py]: Epoch 12: clf_loss: 0.022, aux_loss: 0.401, mixclf_loss: 0.528, acc: 0.998
+2025-08-25:05:01:52 [ours_semi.py]: Epoch 13: clf_loss: 0.015, aux_loss: 0.397, mixclf_loss: 0.52, acc: 1.0
+2025-08-25:05:01:56 [ours_semi.py]: Epoch 14: clf_loss: 0.013, aux_loss: 0.392, mixclf_loss: 0.519, acc: 0.998
+2025-08-25:05:02:01 [ours_semi.py]: Epoch 15: clf_loss: 0.009, aux_loss: 0.389, mixclf_loss: 0.489, acc: 1.0
+2025-08-25:05:02:05 [ours_semi.py]: Epoch 16: clf_loss: 0.008, aux_loss: 0.387, mixclf_loss: 0.501, acc: 1.0
+2025-08-25:05:02:10 [ours_semi.py]: Epoch 17: clf_loss: 0.006, aux_loss: 0.388, mixclf_loss: 0.508, acc: 1.0
+2025-08-25:05:02:14 [ours_semi.py]: Epoch 18: clf_loss: 0.007, aux_loss: 0.386, mixclf_loss: 0.515, acc: 1.0
+2025-08-25:05:02:17 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:02:26 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:02:26 [evaluation.py]: Novel images: 0
+2025-08-25:05:02:26 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:02:26 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:02:33 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:02:33 [evaluation.py]: Novel images: 0
+2025-08-25:05:02:33 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:02:33 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:02:49 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:02:49 [evaluation.py]: Novel images: 0
+2025-08-25:05:02:49 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:02:49 [ours_semi.py]: Computing threshold
+2025-08-25:05:02:56 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897]
+2025-08-25:05:02:57 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/CIFAR100.pth
+2025-08-25:05:03:05 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:03:05 [evaluation.py]: Novel images: 0
+2025-08-25:05:03:05 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:03:05 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:03:05 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:03:12 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:03:12 [evaluation.py]: Novel images: 0
+2025-08-25:05:03:12 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:03:12 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:03:12 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:03:29 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:03:29 [evaluation.py]: Novel images: 0
+2025-08-25:05:03:29 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:03:29 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:03:29 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:03:33 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:03:33 [evaluation.py]: Novel images: 1880
+2025-08-25:05:03:33 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:03:33 [evaluation.py]: Top-1 accuracy: 44.68
+2025-08-25:05:03:33 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:03:38 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:03:38 [evaluation.py]: Novel images: 5400
+2025-08-25:05:03:38 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:03:38 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-25:05:03:38 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:03:47 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:03:47 [evaluation.py]: Novel images: 5637
+2025-08-25:05:03:47 [evaluation.py]: Key count: [ 0. 12. 36.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:03:47 [evaluation.py]: Top-1 accuracy: 71.36
+2025-08-25:05:03:47 [evaluation.py]: Evaluating on Food
+2025-08-25:05:04:12 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:04:12 [evaluation.py]: Novel images: 25250
+2025-08-25:05:04:12 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:04:12 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:05:04:12 [evaluation.py]: Evaluating on MNIST
+2025-08-25:05:04:24 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:04:24 [evaluation.py]: Novel images: 896
+2025-08-25:05:04:24 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:04:24 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:05:04:24 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:05:04:29 [evaluation.py]: Total images: 3669.0
+2025-08-25:05:04:29 [evaluation.py]: Novel images: 3413
+2025-08-25:05:04:29 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:04:29 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:05:04:29 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:05:04:44 [evaluation.py]: Total images: 8041.0
+2025-08-25:05:04:44 [evaluation.py]: Novel images: 8041
+2025-08-25:05:04:44 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:04:44 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:05:04:44 [evaluation.py]: Evaluating on SUN397
+2025-08-25:05:05:22 [evaluation.py]: Total images: 21751.0
+2025-08-25:05:05:22 [evaluation.py]: Novel images: 21751
+2025-08-25:05:05:22 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:05:22 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:05:05:22 [ours_semi.py]: [Dataset] DTD
+2025-08-25:05:05:22 [ours_semi.py]: [LR] 0.01
+2025-08-25:05:05:22 [ours_semi.py]: =====few-shot======
+2025-08-25:05:05:25 [ours_semi.py]: Generating GradCAM
+2025-08-25:05:05:47 [ours_semi.py]: Iterations per epoch: 8
+2025-08-25:05:05:47 [ours_semi.py]: Total iterations: 300
+2025-08-25:05:05:47 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:05:05:47 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:05:05:47 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:05:05:47 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:05:05:47 [ours_semi.py]: Using devices [0]
+2025-08-25:05:05:51 [ours_semi.py]: Epoch 1: clf_loss: 2.486, aux_loss: 1.032, mixclf_loss: 1.226, acc: 0.37
+2025-08-25:05:05:54 [ours_semi.py]: Epoch 2: clf_loss: 2.275, aux_loss: 0.97, mixclf_loss: 1.139, acc: 0.417
+2025-08-25:05:05:57 [ours_semi.py]: Epoch 3: clf_loss: 1.863, aux_loss: 0.857, mixclf_loss: 1.014, acc: 0.479
+2025-08-25:05:06:00 [ours_semi.py]: Epoch 4: clf_loss: 1.446, aux_loss: 0.731, mixclf_loss: 0.911, acc: 0.603
+2025-08-25:05:06:02 [ours_semi.py]: Epoch 5: clf_loss: 0.952, aux_loss: 0.633, mixclf_loss: 0.68, acc: 0.716
+2025-08-25:05:06:05 [ours_semi.py]: Epoch 6: clf_loss: 0.532, aux_loss: 0.577, mixclf_loss: 0.611, acc: 0.829
+2025-08-25:05:06:09 [ours_semi.py]: Epoch 7: clf_loss: 0.319, aux_loss: 0.546, mixclf_loss: 0.483, acc: 0.903
+2025-08-25:05:06:12 [ours_semi.py]: Epoch 8: clf_loss: 0.144, aux_loss: 0.524, mixclf_loss: 0.381, acc: 0.98
+2025-08-25:05:06:15 [ours_semi.py]: Epoch 9: clf_loss: 0.08, aux_loss: 0.505, mixclf_loss: 0.397, acc: 0.992
+2025-08-25:05:06:18 [ours_semi.py]: Epoch 10: clf_loss: 0.044, aux_loss: 0.49, mixclf_loss: 0.363, acc: 0.992
+2025-08-25:05:06:21 [ours_semi.py]: Epoch 11: clf_loss: 0.05, aux_loss: 0.471, mixclf_loss: 0.287, acc: 0.992
+2025-08-25:05:06:24 [ours_semi.py]: Epoch 12: clf_loss: 0.103, aux_loss: 0.458, mixclf_loss: 0.367, acc: 0.984
+2025-08-25:05:06:26 [ours_semi.py]: Epoch 13: clf_loss: 0.034, aux_loss: 0.447, mixclf_loss: 0.283, acc: 0.996
+2025-08-25:05:06:31 [ours_semi.py]: Epoch 14: clf_loss: 0.058, aux_loss: 0.442, mixclf_loss: 0.288, acc: 0.98
+2025-08-25:05:06:33 [ours_semi.py]: Epoch 15: clf_loss: 0.042, aux_loss: 0.437, mixclf_loss: 0.284, acc: 0.996
+2025-08-25:05:06:36 [ours_semi.py]: Epoch 16: clf_loss: 0.027, aux_loss: 0.435, mixclf_loss: 0.296, acc: 1.0
+2025-08-25:05:06:39 [ours_semi.py]: Epoch 17: clf_loss: 0.01, aux_loss: 0.433, mixclf_loss: 0.274, acc: 1.0
+2025-08-25:05:06:42 [ours_semi.py]: Epoch 18: clf_loss: 0.006, aux_loss: 0.426, mixclf_loss: 0.25, acc: 1.0
+2025-08-25:05:06:44 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:06:55 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:06:55 [evaluation.py]: Novel images: 0
+2025-08-25:05:06:55 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:06:55 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:07:04 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:07:04 [evaluation.py]: Novel images: 0
+2025-08-25:05:07:04 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:07:04 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:07:22 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:07:22 [evaluation.py]: Novel images: 0
+2025-08-25:05:07:22 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:07:22 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:07:28 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:07:28 [evaluation.py]: Novel images: 0
+2025-08-25:05:07:28 [evaluation.py]: Top-1 accuracy: 62.39
+2025-08-25:05:07:29 [ours_semi.py]: Epoch 19: clf_loss: 0.005, aux_loss: 0.425, mixclf_loss: 0.303, acc: 1.0
+2025-08-25:05:07:34 [ours_semi.py]: Epoch 20: clf_loss: 0.004, aux_loss: 0.425, mixclf_loss: 0.686, acc: 1.0
+2025-08-25:05:07:38 [ours_semi.py]: Epoch 21: clf_loss: 0.011, aux_loss: 0.422, mixclf_loss: 0.638, acc: 1.0
+2025-08-25:05:07:42 [ours_semi.py]: Epoch 22: clf_loss: 0.006, aux_loss: 0.42, mixclf_loss: 0.612, acc: 1.0
+2025-08-25:05:07:45 [ours_semi.py]: Epoch 23: clf_loss: 0.005, aux_loss: 0.419, mixclf_loss: 0.59, acc: 1.0
+2025-08-25:05:07:47 [ours_semi.py]: Epoch 24: clf_loss: 0.003, aux_loss: 0.421, mixclf_loss: 0.583, acc: 1.0
+2025-08-25:05:07:50 [ours_semi.py]: Epoch 25: clf_loss: 0.003, aux_loss: 0.417, mixclf_loss: 0.579, acc: 1.0
+2025-08-25:05:07:53 [ours_semi.py]: Epoch 26: clf_loss: 0.004, aux_loss: 0.417, mixclf_loss: 0.565, acc: 1.0
+2025-08-25:05:07:58 [ours_semi.py]: Epoch 27: clf_loss: 0.004, aux_loss: 0.415, mixclf_loss: 0.573, acc: 1.0
+2025-08-25:05:08:01 [ours_semi.py]: Epoch 28: clf_loss: 0.002, aux_loss: 0.414, mixclf_loss: 0.563, acc: 1.0
+2025-08-25:05:08:04 [ours_semi.py]: Epoch 29: clf_loss: 0.002, aux_loss: 0.415, mixclf_loss: 0.542, acc: 1.0
+2025-08-25:05:08:07 [ours_semi.py]: Epoch 30: clf_loss: 0.002, aux_loss: 0.415, mixclf_loss: 0.557, acc: 1.0
+2025-08-25:05:08:11 [ours_semi.py]: Epoch 31: clf_loss: 0.002, aux_loss: 0.417, mixclf_loss: 0.556, acc: 1.0
+2025-08-25:05:08:14 [ours_semi.py]: Epoch 32: clf_loss: 0.002, aux_loss: 0.414, mixclf_loss: 0.546, acc: 1.0
+2025-08-25:05:08:19 [ours_semi.py]: Epoch 33: clf_loss: 0.002, aux_loss: 0.41, mixclf_loss: 0.541, acc: 1.0
+2025-08-25:05:08:22 [ours_semi.py]: Epoch 34: clf_loss: 0.002, aux_loss: 0.416, mixclf_loss: 0.565, acc: 1.0
+2025-08-25:05:08:25 [ours_semi.py]: Epoch 35: clf_loss: 0.002, aux_loss: 0.412, mixclf_loss: 0.543, acc: 1.0
+2025-08-25:05:08:28 [ours_semi.py]: Epoch 36: clf_loss: 0.002, aux_loss: 0.412, mixclf_loss: 0.526, acc: 1.0
+2025-08-25:05:08:31 [ours_semi.py]: Epoch 37: clf_loss: 0.002, aux_loss: 0.414, mixclf_loss: 0.561, acc: 1.0
+2025-08-25:05:08:34 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:08:45 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:08:45 [evaluation.py]: Novel images: 0
+2025-08-25:05:08:45 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:08:45 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:08:54 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:08:54 [evaluation.py]: Novel images: 0
+2025-08-25:05:08:54 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:08:54 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:09:12 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:09:12 [evaluation.py]: Novel images: 0
+2025-08-25:05:09:12 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:09:12 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:09:17 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:09:17 [evaluation.py]: Novel images: 0
+2025-08-25:05:09:18 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:09:18 [ours_semi.py]: Computing threshold
+2025-08-25:05:09:23 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545]
+2025-08-25:05:09:24 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/DTD.pth
+2025-08-25:05:09:34 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:09:34 [evaluation.py]: Novel images: 0
+2025-08-25:05:09:34 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:09:34 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:09:34 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:09:41 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:09:41 [evaluation.py]: Novel images: 0
+2025-08-25:05:09:41 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:09:41 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:09:41 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:09:59 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:09:59 [evaluation.py]: Novel images: 0
+2025-08-25:05:09:59 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:09:59 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:09:59 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:10:04 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:10:04 [evaluation.py]: Novel images: 384
+2025-08-25:05:10:04 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:10:04 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:05:10:04 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:10:10 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:10:10 [evaluation.py]: Novel images: 5400
+2025-08-25:05:10:10 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:10:10 [evaluation.py]: Top-1 accuracy: 55.30
+2025-08-25:05:10:10 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:10:20 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:10:20 [evaluation.py]: Novel images: 4869
+2025-08-25:05:10:20 [evaluation.py]: Key count: [ 0. 12. 36. 72.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:10:20 [evaluation.py]: Top-1 accuracy: 70.22
+2025-08-25:05:10:20 [evaluation.py]: Evaluating on Food
+2025-08-25:05:10:46 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:10:46 [evaluation.py]: Novel images: 25250
+2025-08-25:05:10:46 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:10:46 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:05:10:46 [evaluation.py]: Evaluating on MNIST
+2025-08-25:05:10:58 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:10:58 [evaluation.py]: Novel images: 896
+2025-08-25:05:10:58 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:10:58 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:05:10:58 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:05:11:04 [evaluation.py]: Total images: 3669.0
+2025-08-25:05:11:04 [evaluation.py]: Novel images: 3413
+2025-08-25:05:11:04 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:11:04 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:05:11:04 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:05:11:20 [evaluation.py]: Total images: 8041.0
+2025-08-25:05:11:20 [evaluation.py]: Novel images: 8041
+2025-08-25:05:11:20 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:11:20 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:05:11:20 [evaluation.py]: Evaluating on SUN397
+2025-08-25:05:12:02 [evaluation.py]: Total images: 21751.0
+2025-08-25:05:12:02 [evaluation.py]: Novel images: 21751
+2025-08-25:05:12:02 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:12:02 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:05:12:02 [ours_semi.py]: [Dataset] EuroSAT
+2025-08-25:05:12:02 [ours_semi.py]: [LR] 0.01
+2025-08-25:05:12:02 [ours_semi.py]: =====few-shot======
+2025-08-25:05:12:06 [ours_semi.py]: Generating GradCAM
+2025-08-25:05:15:03 [ours_semi.py]: Iterations per epoch: 2
+2025-08-25:05:15:03 [ours_semi.py]: Total iterations: 300
+2025-08-25:05:15:03 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:05:15:03 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:05:15:03 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:05:15:03 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:05:15:03 [ours_semi.py]: Using devices [0]
+2025-08-25:05:15:05 [ours_semi.py]: Epoch 1: clf_loss: 1.586, aux_loss: 1.028, mixclf_loss: 0.804, acc: 0.425
+2025-08-25:05:15:06 [ours_semi.py]: Epoch 2: clf_loss: 1.478, aux_loss: 1.021, mixclf_loss: 0.733, acc: 0.484
+2025-08-25:05:15:07 [ours_semi.py]: Epoch 3: clf_loss: 1.549, aux_loss: 1.016, mixclf_loss: 0.75, acc: 0.476
+2025-08-25:05:15:08 [ours_semi.py]: Epoch 4: clf_loss: 1.396, aux_loss: 1.005, mixclf_loss: 0.715, acc: 0.512
+2025-08-25:05:15:09 [ours_semi.py]: Epoch 5: clf_loss: 1.321, aux_loss: 0.987, mixclf_loss: 0.698, acc: 0.559
+2025-08-25:05:15:10 [ours_semi.py]: Epoch 6: clf_loss: 1.214, aux_loss: 0.969, mixclf_loss: 0.634, acc: 0.639
+2025-08-25:05:15:11 [ours_semi.py]: Epoch 7: clf_loss: 1.2, aux_loss: 0.941, mixclf_loss: 0.661, acc: 0.569
+2025-08-25:05:15:12 [ours_semi.py]: Epoch 8: clf_loss: 1.056, aux_loss: 0.914, mixclf_loss: 0.578, acc: 0.689
+2025-08-25:05:15:13 [ours_semi.py]: Epoch 9: clf_loss: 0.881, aux_loss: 0.882, mixclf_loss: 0.541, acc: 0.788
+2025-08-25:05:15:14 [ours_semi.py]: Epoch 10: clf_loss: 0.808, aux_loss: 0.851, mixclf_loss: 0.466, acc: 0.78
+2025-08-25:05:15:15 [ours_semi.py]: Epoch 11: clf_loss: 0.602, aux_loss: 0.818, mixclf_loss: 0.404, acc: 0.783
+2025-08-25:05:15:16 [ours_semi.py]: Epoch 12: clf_loss: 0.439, aux_loss: 0.786, mixclf_loss: 0.413, acc: 0.851
+2025-08-25:05:15:17 [ours_semi.py]: Epoch 13: clf_loss: 0.394, aux_loss: 0.754, mixclf_loss: 0.457, acc: 0.826
+2025-08-25:05:15:18 [ours_semi.py]: Epoch 14: clf_loss: 0.275, aux_loss: 0.72, mixclf_loss: 0.392, acc: 0.925
+2025-08-25:05:15:19 [ours_semi.py]: Epoch 15: clf_loss: 0.266, aux_loss: 0.692, mixclf_loss: 0.401, acc: 0.969
+2025-08-25:05:15:20 [ours_semi.py]: Epoch 16: clf_loss: 0.173, aux_loss: 0.664, mixclf_loss: 0.286, acc: 0.972
+2025-08-25:05:15:21 [ours_semi.py]: Epoch 17: clf_loss: 0.13, aux_loss: 0.643, mixclf_loss: 0.354, acc: 1.0
+2025-08-25:05:15:23 [ours_semi.py]: Epoch 18: clf_loss: 0.084, aux_loss: 0.616, mixclf_loss: 0.28, acc: 1.0
+2025-08-25:05:15:24 [ours_semi.py]: Epoch 19: clf_loss: 0.052, aux_loss: 0.598, mixclf_loss: 0.286, acc: 1.0
+2025-08-25:05:15:25 [ours_semi.py]: Epoch 20: clf_loss: 0.05, aux_loss: 0.582, mixclf_loss: 0.227, acc: 1.0
+2025-08-25:05:15:25 [ours_semi.py]: Epoch 21: clf_loss: 0.024, aux_loss: 0.566, mixclf_loss: 0.23, acc: 1.0
+2025-08-25:05:15:27 [ours_semi.py]: Epoch 22: clf_loss: 0.018, aux_loss: 0.552, mixclf_loss: 0.207, acc: 1.0
+2025-08-25:05:15:28 [ours_semi.py]: Epoch 23: clf_loss: 0.014, aux_loss: 0.545, mixclf_loss: 0.217, acc: 1.0
+2025-08-25:05:15:29 [ours_semi.py]: Epoch 24: clf_loss: 0.017, aux_loss: 0.538, mixclf_loss: 0.278, acc: 1.0
+2025-08-25:05:15:30 [ours_semi.py]: Epoch 25: clf_loss: 0.029, aux_loss: 0.526, mixclf_loss: 0.202, acc: 1.0
+2025-08-25:05:15:31 [ours_semi.py]: Epoch 26: clf_loss: 0.011, aux_loss: 0.518, mixclf_loss: 0.189, acc: 1.0
+2025-08-25:05:15:32 [ours_semi.py]: Epoch 27: clf_loss: 0.01, aux_loss: 0.514, mixclf_loss: 0.201, acc: 1.0
+2025-08-25:05:15:33 [ours_semi.py]: Epoch 28: clf_loss: 0.013, aux_loss: 0.511, mixclf_loss: 0.166, acc: 1.0
+2025-08-25:05:15:34 [ours_semi.py]: Epoch 29: clf_loss: 0.013, aux_loss: 0.499, mixclf_loss: 0.202, acc: 1.0
+2025-08-25:05:15:35 [ours_semi.py]: Epoch 30: clf_loss: 0.008, aux_loss: 0.499, mixclf_loss: 0.193, acc: 1.0
+2025-08-25:05:15:36 [ours_semi.py]: Epoch 31: clf_loss: 0.006, aux_loss: 0.489, mixclf_loss: 0.172, acc: 1.0
+2025-08-25:05:15:37 [ours_semi.py]: Epoch 32: clf_loss: 0.01, aux_loss: 0.487, mixclf_loss: 0.211, acc: 1.0
+2025-08-25:05:15:38 [ours_semi.py]: Epoch 33: clf_loss: 0.006, aux_loss: 0.483, mixclf_loss: 0.204, acc: 1.0
+2025-08-25:05:15:39 [ours_semi.py]: Epoch 34: clf_loss: 0.003, aux_loss: 0.487, mixclf_loss: 0.198, acc: 1.0
+2025-08-25:05:15:40 [ours_semi.py]: Epoch 35: clf_loss: 0.004, aux_loss: 0.474, mixclf_loss: 0.175, acc: 1.0
+2025-08-25:05:15:41 [ours_semi.py]: Epoch 36: clf_loss: 0.004, aux_loss: 0.476, mixclf_loss: 0.154, acc: 1.0
+2025-08-25:05:15:42 [ours_semi.py]: Epoch 37: clf_loss: 0.003, aux_loss: 0.462, mixclf_loss: 0.185, acc: 1.0
+2025-08-25:05:15:43 [ours_semi.py]: Epoch 38: clf_loss: 0.002, aux_loss: 0.46, mixclf_loss: 0.142, acc: 1.0
+2025-08-25:05:15:44 [ours_semi.py]: Epoch 39: clf_loss: 0.002, aux_loss: 0.469, mixclf_loss: 0.156, acc: 1.0
+2025-08-25:05:15:45 [ours_semi.py]: Epoch 40: clf_loss: 0.003, aux_loss: 0.462, mixclf_loss: 0.161, acc: 1.0
+2025-08-25:05:15:47 [ours_semi.py]: Epoch 41: clf_loss: 0.006, aux_loss: 0.455, mixclf_loss: 0.137, acc: 1.0
+2025-08-25:05:15:48 [ours_semi.py]: Epoch 42: clf_loss: 0.004, aux_loss: 0.448, mixclf_loss: 0.127, acc: 1.0
+2025-08-25:05:15:49 [ours_semi.py]: Epoch 43: clf_loss: 0.004, aux_loss: 0.446, mixclf_loss: 0.135, acc: 1.0
+2025-08-25:05:15:50 [ours_semi.py]: Epoch 44: clf_loss: 0.003, aux_loss: 0.442, mixclf_loss: 0.155, acc: 1.0
+2025-08-25:05:15:51 [ours_semi.py]: Epoch 45: clf_loss: 0.003, aux_loss: 0.435, mixclf_loss: 0.149, acc: 1.0
+2025-08-25:05:15:52 [ours_semi.py]: Epoch 46: clf_loss: 0.002, aux_loss: 0.439, mixclf_loss: 0.149, acc: 1.0
+2025-08-25:05:15:53 [ours_semi.py]: Epoch 47: clf_loss: 0.004, aux_loss: 0.442, mixclf_loss: 0.164, acc: 1.0
+2025-08-25:05:15:54 [ours_semi.py]: Epoch 48: clf_loss: 0.002, aux_loss: 0.432, mixclf_loss: 0.144, acc: 1.0
+2025-08-25:05:15:55 [ours_semi.py]: Epoch 49: clf_loss: 0.001, aux_loss: 0.435, mixclf_loss: 0.143, acc: 1.0
+2025-08-25:05:15:56 [ours_semi.py]: Epoch 50: clf_loss: 0.002, aux_loss: 0.428, mixclf_loss: 0.16, acc: 1.0
+2025-08-25:05:15:56 [ours_semi.py]: Epoch 51: clf_loss: 0.001, aux_loss: 0.427, mixclf_loss: 0.139, acc: 1.0
+2025-08-25:05:15:57 [ours_semi.py]: Epoch 52: clf_loss: 0.001, aux_loss: 0.429, mixclf_loss: 0.137, acc: 1.0
+2025-08-25:05:15:58 [ours_semi.py]: Epoch 53: clf_loss: 0.001, aux_loss: 0.419, mixclf_loss: 0.173, acc: 1.0
+2025-08-25:05:15:59 [ours_semi.py]: Epoch 54: clf_loss: 0.001, aux_loss: 0.417, mixclf_loss: 0.15, acc: 1.0
+2025-08-25:05:16:00 [ours_semi.py]: Epoch 55: clf_loss: 0.002, aux_loss: 0.416, mixclf_loss: 0.122, acc: 1.0
+2025-08-25:05:16:01 [ours_semi.py]: Epoch 56: clf_loss: 0.002, aux_loss: 0.415, mixclf_loss: 0.132, acc: 1.0
+2025-08-25:05:16:02 [ours_semi.py]: Epoch 57: clf_loss: 0.001, aux_loss: 0.417, mixclf_loss: 0.125, acc: 1.0
+2025-08-25:05:16:03 [ours_semi.py]: Epoch 58: clf_loss: 0.002, aux_loss: 0.42, mixclf_loss: 0.146, acc: 1.0
+2025-08-25:05:16:04 [ours_semi.py]: Epoch 59: clf_loss: 0.001, aux_loss: 0.413, mixclf_loss: 0.116, acc: 1.0
+2025-08-25:05:16:05 [ours_semi.py]: Epoch 60: clf_loss: 0.001, aux_loss: 0.416, mixclf_loss: 0.105, acc: 1.0
+2025-08-25:05:16:06 [ours_semi.py]: Epoch 61: clf_loss: 0.001, aux_loss: 0.412, mixclf_loss: 0.144, acc: 1.0
+2025-08-25:05:16:07 [ours_semi.py]: Epoch 62: clf_loss: 0.001, aux_loss: 0.415, mixclf_loss: 0.106, acc: 1.0
+2025-08-25:05:16:08 [ours_semi.py]: Epoch 63: clf_loss: 0.001, aux_loss: 0.414, mixclf_loss: 0.134, acc: 1.0
+2025-08-25:05:16:09 [ours_semi.py]: Epoch 64: clf_loss: 0.001, aux_loss: 0.408, mixclf_loss: 0.107, acc: 1.0
+2025-08-25:05:16:10 [ours_semi.py]: Epoch 65: clf_loss: 0.001, aux_loss: 0.411, mixclf_loss: 0.128, acc: 1.0
+2025-08-25:05:16:11 [ours_semi.py]: Epoch 66: clf_loss: 0.002, aux_loss: 0.414, mixclf_loss: 0.123, acc: 1.0
+2025-08-25:05:16:12 [ours_semi.py]: Epoch 67: clf_loss: 0.001, aux_loss: 0.408, mixclf_loss: 0.114, acc: 1.0
+2025-08-25:05:16:13 [ours_semi.py]: Epoch 68: clf_loss: 0.001, aux_loss: 0.409, mixclf_loss: 0.13, acc: 1.0
+2025-08-25:05:16:14 [ours_semi.py]: Epoch 69: clf_loss: 0.001, aux_loss: 0.405, mixclf_loss: 0.123, acc: 1.0
+2025-08-25:05:16:15 [ours_semi.py]: Epoch 70: clf_loss: 0.001, aux_loss: 0.413, mixclf_loss: 0.115, acc: 1.0
+2025-08-25:05:16:16 [ours_semi.py]: Epoch 71: clf_loss: 0.001, aux_loss: 0.405, mixclf_loss: 0.1, acc: 1.0
+2025-08-25:05:16:17 [ours_semi.py]: Epoch 72: clf_loss: 0.0, aux_loss: 0.411, mixclf_loss: 0.108, acc: 1.0
+2025-08-25:05:16:18 [ours_semi.py]: Epoch 73: clf_loss: 0.0, aux_loss: 0.414, mixclf_loss: 0.127, acc: 1.0
+2025-08-25:05:16:19 [ours_semi.py]: Epoch 74: clf_loss: 0.0, aux_loss: 0.404, mixclf_loss: 0.122, acc: 1.0
+2025-08-25:05:16:19 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:16:30 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:16:30 [evaluation.py]: Novel images: 0
+2025-08-25:05:16:30 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:16:30 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:16:39 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:16:39 [evaluation.py]: Novel images: 0
+2025-08-25:05:16:39 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:16:39 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:16:58 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:16:58 [evaluation.py]: Novel images: 0
+2025-08-25:05:16:58 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:16:58 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:17:04 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:17:04 [evaluation.py]: Novel images: 0
+2025-08-25:05:17:04 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:17:04 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:17:11 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:17:11 [evaluation.py]: Novel images: 0
+2025-08-25:05:17:11 [evaluation.py]: Top-1 accuracy: 85.63
+2025-08-25:05:17:11 [ours_semi.py]: Epoch 75: clf_loss: 0.001, aux_loss: 0.399, mixclf_loss: 0.099, acc: 1.0
+2025-08-25:05:17:12 [ours_semi.py]: Epoch 76: clf_loss: 0.003, aux_loss: 0.409, mixclf_loss: 1.014, acc: 1.0
+2025-08-25:05:17:13 [ours_semi.py]: Epoch 77: clf_loss: 0.004, aux_loss: 0.407, mixclf_loss: 0.96, acc: 1.0
+2025-08-25:05:17:14 [ours_semi.py]: Epoch 78: clf_loss: 0.017, aux_loss: 0.4, mixclf_loss: 0.832, acc: 1.0
+2025-08-25:05:17:15 [ours_semi.py]: Epoch 79: clf_loss: 0.011, aux_loss: 0.403, mixclf_loss: 0.812, acc: 1.0
+2025-08-25:05:17:16 [ours_semi.py]: Epoch 80: clf_loss: 0.018, aux_loss: 0.402, mixclf_loss: 0.835, acc: 1.0
+2025-08-25:05:17:17 [ours_semi.py]: Epoch 81: clf_loss: 0.004, aux_loss: 0.401, mixclf_loss: 0.762, acc: 1.0
+2025-08-25:05:17:18 [ours_semi.py]: Epoch 82: clf_loss: 0.007, aux_loss: 0.404, mixclf_loss: 0.752, acc: 1.0
+2025-08-25:05:17:19 [ours_semi.py]: Epoch 83: clf_loss: 0.004, aux_loss: 0.395, mixclf_loss: 0.876, acc: 1.0
+2025-08-25:05:17:20 [ours_semi.py]: Epoch 84: clf_loss: 0.003, aux_loss: 0.398, mixclf_loss: 0.758, acc: 1.0
+2025-08-25:05:17:21 [ours_semi.py]: Epoch 85: clf_loss: 0.005, aux_loss: 0.399, mixclf_loss: 0.799, acc: 1.0
+2025-08-25:05:17:22 [ours_semi.py]: Epoch 86: clf_loss: 0.017, aux_loss: 0.402, mixclf_loss: 0.839, acc: 1.0
+2025-08-25:05:17:23 [ours_semi.py]: Epoch 87: clf_loss: 0.004, aux_loss: 0.407, mixclf_loss: 0.814, acc: 1.0
+2025-08-25:05:17:24 [ours_semi.py]: Epoch 88: clf_loss: 0.007, aux_loss: 0.401, mixclf_loss: 0.766, acc: 1.0
+2025-08-25:05:17:25 [ours_semi.py]: Epoch 89: clf_loss: 0.014, aux_loss: 0.399, mixclf_loss: 0.826, acc: 1.0
+2025-08-25:05:17:26 [ours_semi.py]: Epoch 90: clf_loss: 0.003, aux_loss: 0.398, mixclf_loss: 0.791, acc: 1.0
+2025-08-25:05:17:27 [ours_semi.py]: Epoch 91: clf_loss: 0.003, aux_loss: 0.4, mixclf_loss: 0.733, acc: 1.0
+2025-08-25:05:17:28 [ours_semi.py]: Epoch 92: clf_loss: 0.003, aux_loss: 0.402, mixclf_loss: 0.748, acc: 1.0
+2025-08-25:05:17:29 [ours_semi.py]: Epoch 93: clf_loss: 0.004, aux_loss: 0.394, mixclf_loss: 0.766, acc: 1.0
+2025-08-25:05:17:30 [ours_semi.py]: Epoch 94: clf_loss: 0.002, aux_loss: 0.401, mixclf_loss: 0.751, acc: 1.0
+2025-08-25:05:17:31 [ours_semi.py]: Epoch 95: clf_loss: 0.001, aux_loss: 0.4, mixclf_loss: 0.75, acc: 1.0
+2025-08-25:05:17:32 [ours_semi.py]: Epoch 96: clf_loss: 0.001, aux_loss: 0.397, mixclf_loss: 0.727, acc: 1.0
+2025-08-25:05:17:34 [ours_semi.py]: Epoch 97: clf_loss: 0.001, aux_loss: 0.399, mixclf_loss: 0.759, acc: 1.0
+2025-08-25:05:17:35 [ours_semi.py]: Epoch 98: clf_loss: 0.001, aux_loss: 0.394, mixclf_loss: 0.781, acc: 1.0
+2025-08-25:05:17:36 [ours_semi.py]: Epoch 99: clf_loss: 0.021, aux_loss: 0.4, mixclf_loss: 0.65, acc: 0.984
+2025-08-25:05:17:37 [ours_semi.py]: Epoch 100: clf_loss: 0.001, aux_loss: 0.403, mixclf_loss: 0.704, acc: 1.0
+2025-08-25:05:17:38 [ours_semi.py]: Epoch 101: clf_loss: 0.001, aux_loss: 0.394, mixclf_loss: 0.751, acc: 1.0
+2025-08-25:05:17:39 [ours_semi.py]: Epoch 102: clf_loss: 0.001, aux_loss: 0.398, mixclf_loss: 0.698, acc: 1.0
+2025-08-25:05:17:40 [ours_semi.py]: Epoch 103: clf_loss: 0.002, aux_loss: 0.401, mixclf_loss: 0.721, acc: 1.0
+2025-08-25:05:17:41 [ours_semi.py]: Epoch 104: clf_loss: 0.001, aux_loss: 0.397, mixclf_loss: 0.609, acc: 1.0
+2025-08-25:05:17:42 [ours_semi.py]: Epoch 105: clf_loss: 0.001, aux_loss: 0.395, mixclf_loss: 0.74, acc: 1.0
+2025-08-25:05:17:43 [ours_semi.py]: Epoch 106: clf_loss: 0.001, aux_loss: 0.39, mixclf_loss: 0.712, acc: 1.0
+2025-08-25:05:17:44 [ours_semi.py]: Epoch 107: clf_loss: 0.001, aux_loss: 0.4, mixclf_loss: 0.722, acc: 1.0
+2025-08-25:05:17:45 [ours_semi.py]: Epoch 108: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.643, acc: 1.0
+2025-08-25:05:17:46 [ours_semi.py]: Epoch 109: clf_loss: 0.001, aux_loss: 0.394, mixclf_loss: 0.71, acc: 1.0
+2025-08-25:05:17:47 [ours_semi.py]: Epoch 110: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.668, acc: 1.0
+2025-08-25:05:17:48 [ours_semi.py]: Epoch 111: clf_loss: 0.001, aux_loss: 0.404, mixclf_loss: 0.667, acc: 1.0
+2025-08-25:05:17:49 [ours_semi.py]: Epoch 112: clf_loss: 0.0, aux_loss: 0.4, mixclf_loss: 0.696, acc: 1.0
+2025-08-25:05:17:50 [ours_semi.py]: Epoch 113: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.677, acc: 1.0
+2025-08-25:05:17:51 [ours_semi.py]: Epoch 114: clf_loss: 0.0, aux_loss: 0.392, mixclf_loss: 0.726, acc: 1.0
+2025-08-25:05:17:52 [ours_semi.py]: Epoch 115: clf_loss: 0.0, aux_loss: 0.388, mixclf_loss: 0.692, acc: 1.0
+2025-08-25:05:17:53 [ours_semi.py]: Epoch 116: clf_loss: 0.0, aux_loss: 0.39, mixclf_loss: 0.695, acc: 1.0
+2025-08-25:05:17:54 [ours_semi.py]: Epoch 117: clf_loss: 0.0, aux_loss: 0.397, mixclf_loss: 0.654, acc: 1.0
+2025-08-25:05:17:54 [ours_semi.py]: Epoch 118: clf_loss: 0.001, aux_loss: 0.395, mixclf_loss: 0.67, acc: 1.0
+2025-08-25:05:17:55 [ours_semi.py]: Epoch 119: clf_loss: 0.001, aux_loss: 0.387, mixclf_loss: 0.743, acc: 1.0
+2025-08-25:05:17:56 [ours_semi.py]: Epoch 120: clf_loss: 0.002, aux_loss: 0.395, mixclf_loss: 0.659, acc: 1.0
+2025-08-25:05:17:57 [ours_semi.py]: Epoch 121: clf_loss: 0.001, aux_loss: 0.396, mixclf_loss: 0.645, acc: 1.0
+2025-08-25:05:17:59 [ours_semi.py]: Epoch 122: clf_loss: 0.0, aux_loss: 0.4, mixclf_loss: 0.668, acc: 1.0
+2025-08-25:05:18:00 [ours_semi.py]: Epoch 123: clf_loss: 0.001, aux_loss: 0.397, mixclf_loss: 0.674, acc: 1.0
+2025-08-25:05:18:01 [ours_semi.py]: Epoch 124: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.74, acc: 1.0
+2025-08-25:05:18:02 [ours_semi.py]: Epoch 125: clf_loss: 0.0, aux_loss: 0.39, mixclf_loss: 0.686, acc: 1.0
+2025-08-25:05:18:03 [ours_semi.py]: Epoch 126: clf_loss: 0.0, aux_loss: 0.391, mixclf_loss: 0.704, acc: 1.0
+2025-08-25:05:18:04 [ours_semi.py]: Epoch 127: clf_loss: 0.0, aux_loss: 0.39, mixclf_loss: 0.694, acc: 1.0
+2025-08-25:05:18:05 [ours_semi.py]: Epoch 128: clf_loss: 0.0, aux_loss: 0.392, mixclf_loss: 0.674, acc: 1.0
+2025-08-25:05:18:06 [ours_semi.py]: Epoch 129: clf_loss: 0.0, aux_loss: 0.395, mixclf_loss: 0.701, acc: 1.0
+2025-08-25:05:18:07 [ours_semi.py]: Epoch 130: clf_loss: 0.0, aux_loss: 0.386, mixclf_loss: 0.724, acc: 1.0
+2025-08-25:05:18:08 [ours_semi.py]: Epoch 131: clf_loss: 0.0, aux_loss: 0.392, mixclf_loss: 0.666, acc: 1.0
+2025-08-25:05:18:09 [ours_semi.py]: Epoch 132: clf_loss: 0.0, aux_loss: 0.399, mixclf_loss: 0.638, acc: 1.0
+2025-08-25:05:18:10 [ours_semi.py]: Epoch 133: clf_loss: 0.0, aux_loss: 0.39, mixclf_loss: 0.704, acc: 1.0
+2025-08-25:05:18:11 [ours_semi.py]: Epoch 134: clf_loss: 0.0, aux_loss: 0.39, mixclf_loss: 0.649, acc: 1.0
+2025-08-25:05:18:12 [ours_semi.py]: Epoch 135: clf_loss: 0.0, aux_loss: 0.388, mixclf_loss: 0.667, acc: 1.0
+2025-08-25:05:18:13 [ours_semi.py]: Epoch 136: clf_loss: 0.0, aux_loss: 0.399, mixclf_loss: 0.703, acc: 1.0
+2025-08-25:05:18:14 [ours_semi.py]: Epoch 137: clf_loss: 0.0, aux_loss: 0.387, mixclf_loss: 0.637, acc: 1.0
+2025-08-25:05:18:15 [ours_semi.py]: Epoch 138: clf_loss: 0.0, aux_loss: 0.394, mixclf_loss: 0.674, acc: 1.0
+2025-08-25:05:18:16 [ours_semi.py]: Epoch 139: clf_loss: 0.0, aux_loss: 0.393, mixclf_loss: 0.626, acc: 1.0
+2025-08-25:05:18:17 [ours_semi.py]: Epoch 140: clf_loss: 0.0, aux_loss: 0.401, mixclf_loss: 0.608, acc: 1.0
+2025-08-25:05:18:18 [ours_semi.py]: Epoch 141: clf_loss: 0.0, aux_loss: 0.389, mixclf_loss: 0.652, acc: 1.0
+2025-08-25:05:18:19 [ours_semi.py]: Epoch 142: clf_loss: 0.0, aux_loss: 0.399, mixclf_loss: 0.593, acc: 1.0
+2025-08-25:05:18:20 [ours_semi.py]: Epoch 143: clf_loss: 0.0, aux_loss: 0.382, mixclf_loss: 0.679, acc: 1.0
+2025-08-25:05:18:21 [ours_semi.py]: Epoch 144: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.674, acc: 1.0
+2025-08-25:05:18:22 [ours_semi.py]: Epoch 145: clf_loss: 0.0, aux_loss: 0.4, mixclf_loss: 0.651, acc: 1.0
+2025-08-25:05:18:23 [ours_semi.py]: Epoch 146: clf_loss: 0.0, aux_loss: 0.396, mixclf_loss: 0.61, acc: 1.0
+2025-08-25:05:18:24 [ours_semi.py]: Epoch 147: clf_loss: 0.0, aux_loss: 0.389, mixclf_loss: 0.681, acc: 1.0
+2025-08-25:05:18:25 [ours_semi.py]: Epoch 148: clf_loss: 0.0, aux_loss: 0.402, mixclf_loss: 0.662, acc: 1.0
+2025-08-25:05:18:26 [ours_semi.py]: Epoch 149: clf_loss: 0.0, aux_loss: 0.397, mixclf_loss: 0.662, acc: 1.0
+2025-08-25:05:18:26 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:18:37 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:18:37 [evaluation.py]: Novel images: 0
+2025-08-25:05:18:37 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:18:37 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:18:46 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:18:46 [evaluation.py]: Novel images: 0
+2025-08-25:05:18:46 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:18:46 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:19:05 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:19:05 [evaluation.py]: Novel images: 0
+2025-08-25:05:19:05 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:19:05 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:19:10 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:19:10 [evaluation.py]: Novel images: 0
+2025-08-25:05:19:10 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:19:10 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:19:18 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:19:18 [evaluation.py]: Novel images: 0
+2025-08-25:05:19:18 [evaluation.py]: Top-1 accuracy: 89.87
+2025-08-25:05:19:18 [ours_semi.py]: Epoch 150: clf_loss: 0.0, aux_loss: 0.388, mixclf_loss: 0.69, acc: 1.0
+2025-08-25:05:19:18 [ours_semi.py]: Computing threshold
+2025-08-25:05:19:20 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826]
+2025-08-25:05:19:21 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/EuroSAT.pth
+2025-08-25:05:19:32 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:19:32 [evaluation.py]: Novel images: 0
+2025-08-25:05:19:32 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:19:32 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:19:32 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:19:41 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:19:41 [evaluation.py]: Novel images: 0
+2025-08-25:05:19:41 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:19:41 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:19:41 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:20:00 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:20:00 [evaluation.py]: Novel images: 0
+2025-08-25:05:20:00 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:20:00 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:20:00 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:20:05 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:20:05 [evaluation.py]: Novel images: 384
+2025-08-25:05:20:05 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:20:05 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:05:20:05 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:20:12 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:20:12 [evaluation.py]: Novel images: 24
+2025-08-25:05:20:12 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:20:12 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:05:20:12 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:20:24 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:20:24 [evaluation.py]: Novel images: 4869
+2025-08-25:05:20:24 [evaluation.py]: Key count: [ 0. 12. 36. 72.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:20:24 [evaluation.py]: Top-1 accuracy: 70.22
+2025-08-25:05:20:24 [evaluation.py]: Evaluating on Food
+2025-08-25:05:20:50 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:20:50 [evaluation.py]: Novel images: 25250
+2025-08-25:05:20:50 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:20:50 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:05:20:50 [evaluation.py]: Evaluating on MNIST
+2025-08-25:05:21:02 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:21:02 [evaluation.py]: Novel images: 896
+2025-08-25:05:21:02 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:21:02 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:05:21:02 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:05:21:08 [evaluation.py]: Total images: 3669.0
+2025-08-25:05:21:08 [evaluation.py]: Novel images: 3413
+2025-08-25:05:21:08 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:21:08 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:05:21:08 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:05:21:26 [evaluation.py]: Total images: 8041.0
+2025-08-25:05:21:26 [evaluation.py]: Novel images: 8041
+2025-08-25:05:21:26 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:21:26 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:05:21:26 [evaluation.py]: Evaluating on SUN397
+2025-08-25:05:22:12 [evaluation.py]: Total images: 21751.0
+2025-08-25:05:22:12 [evaluation.py]: Novel images: 21751
+2025-08-25:05:22:12 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:22:12 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:05:22:12 [ours_semi.py]: [Dataset] Flowers
+2025-08-25:05:22:12 [ours_semi.py]: [LR] 0.01
+2025-08-25:05:22:12 [ours_semi.py]: =====few-shot======
+2025-08-25:05:22:15 [ours_semi.py]: Generating GradCAM
+2025-08-25:05:22:28 [ours_semi.py]: Iterations per epoch: 16
+2025-08-25:05:22:28 [ours_semi.py]: Total iterations: 300
+2025-08-25:05:22:28 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:05:22:28 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:05:22:28 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:05:22:28 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:05:22:28 [ours_semi.py]: Using devices [0]
+2025-08-25:05:22:35 [ours_semi.py]: Epoch 1: clf_loss: 1.341, aux_loss: 0.952, mixclf_loss: 0.878, acc: 0.694
+2025-08-25:05:22:41 [ours_semi.py]: Epoch 2: clf_loss: 1.036, aux_loss: 0.714, mixclf_loss: 0.784, acc: 0.743
+2025-08-25:05:22:48 [ours_semi.py]: Epoch 3: clf_loss: 0.542, aux_loss: 0.504, mixclf_loss: 0.6, acc: 0.871
+2025-08-25:05:22:55 [ours_semi.py]: Epoch 4: clf_loss: 0.285, aux_loss: 0.431, mixclf_loss: 0.472, acc: 0.933
+2025-08-25:05:23:02 [ours_semi.py]: Epoch 5: clf_loss: 0.121, aux_loss: 0.395, mixclf_loss: 0.376, acc: 0.975
+2025-08-25:05:23:08 [ours_semi.py]: Epoch 6: clf_loss: 0.065, aux_loss: 0.365, mixclf_loss: 0.334, acc: 0.99
+2025-08-25:05:23:15 [ours_semi.py]: Epoch 7: clf_loss: 0.063, aux_loss: 0.348, mixclf_loss: 0.316, acc: 0.988
+2025-08-25:05:23:22 [ours_semi.py]: Epoch 8: clf_loss: 0.025, aux_loss: 0.343, mixclf_loss: 0.277, acc: 1.0
+2025-08-25:05:23:29 [ours_semi.py]: Epoch 9: clf_loss: 0.014, aux_loss: 0.338, mixclf_loss: 0.269, acc: 0.998
+2025-08-25:05:23:33 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:23:44 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:23:44 [evaluation.py]: Novel images: 0
+2025-08-25:05:23:44 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:23:44 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:23:55 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:23:55 [evaluation.py]: Novel images: 0
+2025-08-25:05:23:55 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:23:55 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:24:14 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:24:14 [evaluation.py]: Novel images: 0
+2025-08-25:05:24:14 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:24:14 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:24:20 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:24:20 [evaluation.py]: Novel images: 0
+2025-08-25:05:24:20 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:24:20 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:24:28 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:24:28 [evaluation.py]: Novel images: 0
+2025-08-25:05:24:28 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:05:24:28 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:24:41 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:24:41 [evaluation.py]: Novel images: 0
+2025-08-25:05:24:41 [evaluation.py]: Top-1 accuracy: 91.58
+2025-08-25:05:24:45 [ours_semi.py]: Epoch 10: clf_loss: 0.043, aux_loss: 0.333, mixclf_loss: 0.592, acc: 0.996
+2025-08-25:05:24:51 [ours_semi.py]: Epoch 11: clf_loss: 0.083, aux_loss: 0.331, mixclf_loss: 0.602, acc: 0.992
+2025-08-25:05:24:58 [ours_semi.py]: Epoch 12: clf_loss: 0.024, aux_loss: 0.327, mixclf_loss: 0.541, acc: 0.996
+2025-08-25:05:25:05 [ours_semi.py]: Epoch 13: clf_loss: 0.014, aux_loss: 0.325, mixclf_loss: 0.503, acc: 1.0
+2025-08-25:05:25:11 [ours_semi.py]: Epoch 14: clf_loss: 0.009, aux_loss: 0.323, mixclf_loss: 0.517, acc: 1.0
+2025-08-25:05:25:18 [ours_semi.py]: Epoch 15: clf_loss: 0.007, aux_loss: 0.322, mixclf_loss: 0.511, acc: 1.0
+2025-08-25:05:25:25 [ours_semi.py]: Epoch 16: clf_loss: 0.006, aux_loss: 0.32, mixclf_loss: 0.488, acc: 1.0
+2025-08-25:05:25:31 [ours_semi.py]: Epoch 17: clf_loss: 0.005, aux_loss: 0.319, mixclf_loss: 0.485, acc: 1.0
+2025-08-25:05:25:38 [ours_semi.py]: Epoch 18: clf_loss: 0.005, aux_loss: 0.319, mixclf_loss: 0.519, acc: 1.0
+2025-08-25:05:25:43 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:25:55 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:25:55 [evaluation.py]: Novel images: 0
+2025-08-25:05:25:55 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:25:55 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:26:06 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:26:06 [evaluation.py]: Novel images: 0
+2025-08-25:05:26:06 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:26:06 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:26:27 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:26:27 [evaluation.py]: Novel images: 0
+2025-08-25:05:26:27 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:26:27 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:26:34 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:26:34 [evaluation.py]: Novel images: 0
+2025-08-25:05:26:34 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:26:34 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:26:41 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:26:41 [evaluation.py]: Novel images: 0
+2025-08-25:05:26:41 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:05:26:41 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:26:55 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:26:55 [evaluation.py]: Novel images: 0
+2025-08-25:05:26:55 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:05:26:55 [ours_semi.py]: Computing threshold
+2025-08-25:05:27:03 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132]
+2025-08-25:05:27:04 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/Flowers.pth
+2025-08-25:05:27:16 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:27:16 [evaluation.py]: Novel images: 0
+2025-08-25:05:27:16 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:27:16 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:27:16 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:27:26 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:27:26 [evaluation.py]: Novel images: 0
+2025-08-25:05:27:26 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:27:26 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:27:26 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:27:46 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:27:46 [evaluation.py]: Novel images: 0
+2025-08-25:05:27:46 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:27:46 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:27:46 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:27:52 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:27:52 [evaluation.py]: Novel images: 384
+2025-08-25:05:27:52 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:27:52 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:05:27:52 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:27:59 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:27:59 [evaluation.py]: Novel images: 24
+2025-08-25:05:27:59 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:27:59 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:05:27:59 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:28:13 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:28:13 [evaluation.py]: Novel images: 1413
+2025-08-25:05:28:13 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:05:28:13 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:05:28:13 [evaluation.py]: Evaluating on Food
+2025-08-25:05:28:41 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:28:41 [evaluation.py]: Novel images: 25250
+2025-08-25:05:28:41 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:28:41 [evaluation.py]: Top-1 accuracy: 88.52
+2025-08-25:05:28:41 [evaluation.py]: Evaluating on MNIST
+2025-08-25:05:28:53 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:28:53 [evaluation.py]: Novel images: 896
+2025-08-25:05:28:53 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:28:53 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:05:28:53 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:05:28:59 [evaluation.py]: Total images: 3669.0
+2025-08-25:05:28:59 [evaluation.py]: Novel images: 3413
+2025-08-25:05:28:59 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:28:59 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:05:28:59 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:05:29:19 [evaluation.py]: Total images: 8041.0
+2025-08-25:05:29:19 [evaluation.py]: Novel images: 8041
+2025-08-25:05:29:19 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:29:19 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:05:29:19 [evaluation.py]: Evaluating on SUN397
+2025-08-25:05:30:07 [evaluation.py]: Total images: 21751.0
+2025-08-25:05:30:07 [evaluation.py]: Novel images: 21751
+2025-08-25:05:30:07 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:30:07 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:05:30:07 [ours_semi.py]: [Dataset] Food
+2025-08-25:05:30:07 [ours_semi.py]: [LR] 0.001
+2025-08-25:05:30:08 [ours_semi.py]: =====few-shot======
+2025-08-25:05:30:36 [ours_semi.py]: Generating GradCAM
+2025-08-25:05:45:13 [ours_semi.py]: Iterations per epoch: 16
+2025-08-25:05:45:13 [ours_semi.py]: Total iterations: 300
+2025-08-25:05:45:13 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:05:45:13 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:05:45:13 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:05:45:13 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:05:45:13 [ours_semi.py]: Using devices [0]
+2025-08-25:05:45:20 [ours_semi.py]: Epoch 1: clf_loss: 0.549, aux_loss: 1.023, mixclf_loss: 0.5, acc: 0.854
+2025-08-25:05:45:26 [ours_semi.py]: Epoch 2: clf_loss: 0.531, aux_loss: 0.998, mixclf_loss: 0.499, acc: 0.855
+2025-08-25:05:45:31 [ours_semi.py]: Epoch 3: clf_loss: 0.539, aux_loss: 0.945, mixclf_loss: 0.5, acc: 0.844
+2025-08-25:05:45:37 [ours_semi.py]: Epoch 4: clf_loss: 0.457, aux_loss: 0.868, mixclf_loss: 0.485, acc: 0.862
+2025-08-25:05:45:42 [ours_semi.py]: Epoch 5: clf_loss: 0.401, aux_loss: 0.773, mixclf_loss: 0.463, acc: 0.896
+2025-08-25:05:45:47 [ours_semi.py]: Epoch 6: clf_loss: 0.364, aux_loss: 0.679, mixclf_loss: 0.453, acc: 0.901
+2025-08-25:05:45:53 [ours_semi.py]: Epoch 7: clf_loss: 0.257, aux_loss: 0.602, mixclf_loss: 0.415, acc: 0.941
+2025-08-25:05:45:58 [ours_semi.py]: Epoch 8: clf_loss: 0.172, aux_loss: 0.55, mixclf_loss: 0.381, acc: 0.962
+2025-08-25:05:46:04 [ours_semi.py]: Epoch 9: clf_loss: 0.097, aux_loss: 0.52, mixclf_loss: 0.361, acc: 0.984
+2025-08-25:05:46:06 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:46:19 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:46:19 [evaluation.py]: Novel images: 0
+2025-08-25:05:46:19 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:46:19 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:46:30 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:46:30 [evaluation.py]: Novel images: 0
+2025-08-25:05:46:30 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:46:30 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:46:51 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:46:51 [evaluation.py]: Novel images: 0
+2025-08-25:05:46:51 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:46:51 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:46:57 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:46:57 [evaluation.py]: Novel images: 0
+2025-08-25:05:46:57 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:46:57 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:47:04 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:47:04 [evaluation.py]: Novel images: 0
+2025-08-25:05:47:04 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:05:47:04 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:47:18 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:47:18 [evaluation.py]: Novel images: 0
+2025-08-25:05:47:18 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:05:47:18 [evaluation.py]: Evaluating on Food
+2025-08-25:05:47:53 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:47:53 [evaluation.py]: Novel images: 0
+2025-08-25:05:47:53 [evaluation.py]: Top-1 accuracy: 87.91
+2025-08-25:05:47:57 [ours_semi.py]: Epoch 10: clf_loss: 0.066, aux_loss: 0.501, mixclf_loss: 0.554, acc: 0.99
+2025-08-25:05:48:02 [ours_semi.py]: Epoch 11: clf_loss: 0.064, aux_loss: 0.487, mixclf_loss: 0.553, acc: 0.988
+2025-08-25:05:48:08 [ours_semi.py]: Epoch 12: clf_loss: 0.043, aux_loss: 0.476, mixclf_loss: 0.533, acc: 0.996
+2025-08-25:05:48:13 [ours_semi.py]: Epoch 13: clf_loss: 0.025, aux_loss: 0.469, mixclf_loss: 0.481, acc: 0.998
+2025-08-25:05:48:19 [ours_semi.py]: Epoch 14: clf_loss: 0.021, aux_loss: 0.465, mixclf_loss: 0.533, acc: 0.998
+2025-08-25:05:48:24 [ours_semi.py]: Epoch 15: clf_loss: 0.021, aux_loss: 0.461, mixclf_loss: 0.534, acc: 0.996
+2025-08-25:05:48:30 [ours_semi.py]: Epoch 16: clf_loss: 0.02, aux_loss: 0.457, mixclf_loss: 0.524, acc: 1.0
+2025-08-25:05:48:35 [ours_semi.py]: Epoch 17: clf_loss: 0.019, aux_loss: 0.456, mixclf_loss: 0.498, acc: 1.0
+2025-08-25:05:48:40 [ours_semi.py]: Epoch 18: clf_loss: 0.017, aux_loss: 0.457, mixclf_loss: 0.511, acc: 1.0
+2025-08-25:05:48:45 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:05:48:57 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:48:57 [evaluation.py]: Novel images: 0
+2025-08-25:05:48:57 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:48:57 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:49:09 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:49:09 [evaluation.py]: Novel images: 0
+2025-08-25:05:49:09 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:49:09 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:49:29 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:49:29 [evaluation.py]: Novel images: 0
+2025-08-25:05:49:29 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:49:29 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:49:35 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:49:35 [evaluation.py]: Novel images: 0
+2025-08-25:05:49:35 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:05:49:35 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:49:42 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:49:42 [evaluation.py]: Novel images: 0
+2025-08-25:05:49:42 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:05:49:42 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:49:56 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:49:56 [evaluation.py]: Novel images: 0
+2025-08-25:05:49:56 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:05:49:56 [evaluation.py]: Evaluating on Food
+2025-08-25:05:50:31 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:50:31 [evaluation.py]: Novel images: 0
+2025-08-25:05:50:31 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:05:50:31 [ours_semi.py]: Computing threshold
+2025-08-25:05:50:39 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132, 0.52291834]
+2025-08-25:05:50:41 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/Food.pth
+2025-08-25:05:50:54 [evaluation.py]: Total images: 3333.0
+2025-08-25:05:50:54 [evaluation.py]: Novel images: 0
+2025-08-25:05:50:54 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:50:54 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:05:50:54 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:05:51:05 [evaluation.py]: Total images: 1736.0
+2025-08-25:05:51:05 [evaluation.py]: Novel images: 0
+2025-08-25:05:51:05 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:51:05 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:05:51:05 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:05:51:26 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:51:26 [evaluation.py]: Novel images: 0
+2025-08-25:05:51:26 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:51:26 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:05:51:26 [evaluation.py]: Evaluating on DTD
+2025-08-25:05:51:32 [evaluation.py]: Total images: 1880.0
+2025-08-25:05:51:32 [evaluation.py]: Novel images: 384
+2025-08-25:05:51:32 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:51:32 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:05:51:32 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:05:51:39 [evaluation.py]: Total images: 5400.0
+2025-08-25:05:51:39 [evaluation.py]: Novel images: 24
+2025-08-25:05:51:39 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:51:39 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:05:51:39 [evaluation.py]: Evaluating on Flowers
+2025-08-25:05:51:53 [evaluation.py]: Total images: 6149.0
+2025-08-25:05:51:53 [evaluation.py]: Novel images: 1413
+2025-08-25:05:51:53 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:05:51:53 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:05:51:53 [evaluation.py]: Evaluating on Food
+2025-08-25:05:52:21 [evaluation.py]: Total images: 25250.0
+2025-08-25:05:52:21 [evaluation.py]: Novel images: 21922
+2025-08-25:05:52:21 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0. 312.   0.   0.   0.   0.]
+2025-08-25:05:52:21 [evaluation.py]: Top-1 accuracy: 88.20
+2025-08-25:05:52:21 [evaluation.py]: Evaluating on MNIST
+2025-08-25:05:52:34 [evaluation.py]: Total images: 10000.0
+2025-08-25:05:52:34 [evaluation.py]: Novel images: 896
+2025-08-25:05:52:34 [evaluation.py]: Key count: [  0. 864.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:05:52:34 [evaluation.py]: Top-1 accuracy: 61.40
+2025-08-25:05:52:34 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:05:52:40 [evaluation.py]: Total images: 3669.0
+2025-08-25:05:52:40 [evaluation.py]: Novel images: 3413
+2025-08-25:05:52:40 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:05:52:40 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:05:52:40 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:05:53:01 [evaluation.py]: Total images: 8041.0
+2025-08-25:05:53:01 [evaluation.py]: Novel images: 8041
+2025-08-25:05:53:01 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:53:01 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:05:53:01 [evaluation.py]: Evaluating on SUN397
+2025-08-25:05:53:52 [evaluation.py]: Total images: 21751.0
+2025-08-25:05:53:52 [evaluation.py]: Novel images: 21751
+2025-08-25:05:53:52 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:05:53:52 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:05:53:52 [ours_semi.py]: [Dataset] MNIST
+2025-08-25:05:53:52 [ours_semi.py]: [LR] 0.02
+2025-08-25:05:53:52 [ours_semi.py]: =====few-shot======
+2025-08-25:05:53:58 [ours_semi.py]: Generating GradCAM
+2025-08-25:06:01:56 [ours_semi.py]: Iterations per epoch: 2
+2025-08-25:06:01:56 [ours_semi.py]: Total iterations: 300
+2025-08-25:06:01:56 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:06:01:56 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:06:01:56 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:06:01:56 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:06:01:56 [ours_semi.py]: Using devices [0]
+2025-08-25:06:01:58 [ours_semi.py]: Epoch 1: clf_loss: 1.946, aux_loss: 1.016, mixclf_loss: 0.827, acc: 0.37
+2025-08-25:06:01:59 [ours_semi.py]: Epoch 2: clf_loss: 1.905, aux_loss: 1.006, mixclf_loss: 0.822, acc: 0.425
+2025-08-25:06:02:00 [ours_semi.py]: Epoch 3: clf_loss: 1.874, aux_loss: 0.986, mixclf_loss: 0.828, acc: 0.477
+2025-08-25:06:02:01 [ours_semi.py]: Epoch 4: clf_loss: 1.81, aux_loss: 0.957, mixclf_loss: 0.781, acc: 0.528
+2025-08-25:06:02:02 [ours_semi.py]: Epoch 5: clf_loss: 1.722, aux_loss: 0.918, mixclf_loss: 0.741, acc: 0.59
+2025-08-25:06:02:03 [ours_semi.py]: Epoch 6: clf_loss: 1.577, aux_loss: 0.873, mixclf_loss: 0.697, acc: 0.519
+2025-08-25:06:02:04 [ours_semi.py]: Epoch 7: clf_loss: 1.205, aux_loss: 0.821, mixclf_loss: 0.59, acc: 0.658
+2025-08-25:06:02:05 [ours_semi.py]: Epoch 8: clf_loss: 0.935, aux_loss: 0.764, mixclf_loss: 0.519, acc: 0.661
+2025-08-25:06:02:06 [ours_semi.py]: Epoch 9: clf_loss: 0.734, aux_loss: 0.707, mixclf_loss: 0.445, acc: 0.767
+2025-08-25:06:02:07 [ours_semi.py]: Epoch 10: clf_loss: 0.406, aux_loss: 0.657, mixclf_loss: 0.356, acc: 0.866
+2025-08-25:06:02:08 [ours_semi.py]: Epoch 11: clf_loss: 0.19, aux_loss: 0.611, mixclf_loss: 0.283, acc: 0.953
+2025-08-25:06:02:09 [ours_semi.py]: Epoch 12: clf_loss: 0.206, aux_loss: 0.573, mixclf_loss: 0.331, acc: 0.944
+2025-08-25:06:02:10 [ours_semi.py]: Epoch 13: clf_loss: 0.18, aux_loss: 0.54, mixclf_loss: 0.26, acc: 0.957
+2025-08-25:06:02:11 [ours_semi.py]: Epoch 14: clf_loss: 0.108, aux_loss: 0.505, mixclf_loss: 0.219, acc: 0.957
+2025-08-25:06:02:12 [ours_semi.py]: Epoch 15: clf_loss: 0.065, aux_loss: 0.486, mixclf_loss: 0.292, acc: 1.0
+2025-08-25:06:02:12 [ours_semi.py]: Epoch 16: clf_loss: 0.09, aux_loss: 0.47, mixclf_loss: 0.208, acc: 0.984
+2025-08-25:06:02:13 [ours_semi.py]: Epoch 17: clf_loss: 0.037, aux_loss: 0.46, mixclf_loss: 0.146, acc: 1.0
+2025-08-25:06:02:14 [ours_semi.py]: Epoch 18: clf_loss: 0.021, aux_loss: 0.444, mixclf_loss: 0.151, acc: 1.0
+2025-08-25:06:02:15 [ours_semi.py]: Epoch 19: clf_loss: 0.014, aux_loss: 0.436, mixclf_loss: 0.163, acc: 1.0
+2025-08-25:06:02:16 [ours_semi.py]: Epoch 20: clf_loss: 0.01, aux_loss: 0.426, mixclf_loss: 0.138, acc: 1.0
+2025-08-25:06:02:17 [ours_semi.py]: Epoch 21: clf_loss: 0.007, aux_loss: 0.423, mixclf_loss: 0.12, acc: 1.0
+2025-08-25:06:02:18 [ours_semi.py]: Epoch 22: clf_loss: 0.008, aux_loss: 0.412, mixclf_loss: 0.126, acc: 1.0
+2025-08-25:06:02:19 [ours_semi.py]: Epoch 23: clf_loss: 0.004, aux_loss: 0.408, mixclf_loss: 0.127, acc: 1.0
+2025-08-25:06:02:20 [ours_semi.py]: Epoch 24: clf_loss: 0.001, aux_loss: 0.401, mixclf_loss: 0.101, acc: 1.0
+2025-08-25:06:02:21 [ours_semi.py]: Epoch 25: clf_loss: 0.001, aux_loss: 0.394, mixclf_loss: 0.086, acc: 1.0
+2025-08-25:06:02:22 [ours_semi.py]: Epoch 26: clf_loss: 0.002, aux_loss: 0.387, mixclf_loss: 0.137, acc: 1.0
+2025-08-25:06:02:23 [ours_semi.py]: Epoch 27: clf_loss: 0.002, aux_loss: 0.389, mixclf_loss: 0.141, acc: 1.0
+2025-08-25:06:02:24 [ours_semi.py]: Epoch 28: clf_loss: 0.104, aux_loss: 0.376, mixclf_loss: 0.103, acc: 0.984
+2025-08-25:06:02:25 [ours_semi.py]: Epoch 29: clf_loss: 0.078, aux_loss: 0.373, mixclf_loss: 0.16, acc: 0.984
+2025-08-25:06:02:26 [ours_semi.py]: Epoch 30: clf_loss: 0.017, aux_loss: 0.371, mixclf_loss: 0.125, acc: 1.0
+2025-08-25:06:02:27 [ours_semi.py]: Epoch 31: clf_loss: 0.073, aux_loss: 0.36, mixclf_loss: 0.141, acc: 0.972
+2025-08-25:06:02:28 [ours_semi.py]: Epoch 32: clf_loss: 0.016, aux_loss: 0.362, mixclf_loss: 0.089, acc: 1.0
+2025-08-25:06:02:29 [ours_semi.py]: Epoch 33: clf_loss: 0.029, aux_loss: 0.354, mixclf_loss: 0.172, acc: 0.984
+2025-08-25:06:02:30 [ours_semi.py]: Epoch 34: clf_loss: 0.002, aux_loss: 0.345, mixclf_loss: 0.152, acc: 1.0
+2025-08-25:06:02:31 [ours_semi.py]: Epoch 35: clf_loss: 0.004, aux_loss: 0.349, mixclf_loss: 0.123, acc: 1.0
+2025-08-25:06:02:32 [ours_semi.py]: Epoch 36: clf_loss: 0.003, aux_loss: 0.339, mixclf_loss: 0.129, acc: 1.0
+2025-08-25:06:02:33 [ours_semi.py]: Epoch 37: clf_loss: 0.006, aux_loss: 0.336, mixclf_loss: 0.105, acc: 1.0
+2025-08-25:06:02:34 [ours_semi.py]: Epoch 38: clf_loss: 0.004, aux_loss: 0.327, mixclf_loss: 0.104, acc: 1.0
+2025-08-25:06:02:35 [ours_semi.py]: Epoch 39: clf_loss: 0.009, aux_loss: 0.321, mixclf_loss: 0.091, acc: 1.0
+2025-08-25:06:02:36 [ours_semi.py]: Epoch 40: clf_loss: 0.002, aux_loss: 0.318, mixclf_loss: 0.101, acc: 1.0
+2025-08-25:06:02:37 [ours_semi.py]: Epoch 41: clf_loss: 0.001, aux_loss: 0.315, mixclf_loss: 0.131, acc: 1.0
+2025-08-25:06:02:38 [ours_semi.py]: Epoch 42: clf_loss: 0.0, aux_loss: 0.315, mixclf_loss: 0.096, acc: 1.0
+2025-08-25:06:02:39 [ours_semi.py]: Epoch 43: clf_loss: 0.001, aux_loss: 0.307, mixclf_loss: 0.11, acc: 1.0
+2025-08-25:06:02:40 [ours_semi.py]: Epoch 44: clf_loss: 0.002, aux_loss: 0.302, mixclf_loss: 0.11, acc: 1.0
+2025-08-25:06:02:41 [ours_semi.py]: Epoch 45: clf_loss: 0.001, aux_loss: 0.307, mixclf_loss: 0.089, acc: 1.0
+2025-08-25:06:02:42 [ours_semi.py]: Epoch 46: clf_loss: 0.001, aux_loss: 0.299, mixclf_loss: 0.09, acc: 1.0
+2025-08-25:06:02:43 [ours_semi.py]: Epoch 47: clf_loss: 0.0, aux_loss: 0.29, mixclf_loss: 0.104, acc: 1.0
+2025-08-25:06:02:44 [ours_semi.py]: Epoch 48: clf_loss: 0.0, aux_loss: 0.297, mixclf_loss: 0.083, acc: 1.0
+2025-08-25:06:02:45 [ours_semi.py]: Epoch 49: clf_loss: 0.0, aux_loss: 0.283, mixclf_loss: 0.073, acc: 1.0
+2025-08-25:06:02:46 [ours_semi.py]: Epoch 50: clf_loss: 0.0, aux_loss: 0.282, mixclf_loss: 0.089, acc: 1.0
+2025-08-25:06:02:47 [ours_semi.py]: Epoch 51: clf_loss: 0.0, aux_loss: 0.281, mixclf_loss: 0.092, acc: 1.0
+2025-08-25:06:02:48 [ours_semi.py]: Epoch 52: clf_loss: 0.0, aux_loss: 0.277, mixclf_loss: 0.111, acc: 1.0
+2025-08-25:06:02:49 [ours_semi.py]: Epoch 53: clf_loss: 0.0, aux_loss: 0.276, mixclf_loss: 0.071, acc: 1.0
+2025-08-25:06:02:50 [ours_semi.py]: Epoch 54: clf_loss: 0.0, aux_loss: 0.263, mixclf_loss: 0.08, acc: 1.0
+2025-08-25:06:02:51 [ours_semi.py]: Epoch 55: clf_loss: 0.0, aux_loss: 0.265, mixclf_loss: 0.067, acc: 1.0
+2025-08-25:06:02:52 [ours_semi.py]: Epoch 56: clf_loss: 0.0, aux_loss: 0.259, mixclf_loss: 0.069, acc: 1.0
+2025-08-25:06:02:53 [ours_semi.py]: Epoch 57: clf_loss: 0.001, aux_loss: 0.258, mixclf_loss: 0.071, acc: 1.0
+2025-08-25:06:02:54 [ours_semi.py]: Epoch 58: clf_loss: 0.0, aux_loss: 0.26, mixclf_loss: 0.083, acc: 1.0
+2025-08-25:06:02:55 [ours_semi.py]: Epoch 59: clf_loss: 0.0, aux_loss: 0.256, mixclf_loss: 0.08, acc: 1.0
+2025-08-25:06:02:56 [ours_semi.py]: Epoch 60: clf_loss: 0.0, aux_loss: 0.246, mixclf_loss: 0.074, acc: 1.0
+2025-08-25:06:02:57 [ours_semi.py]: Epoch 61: clf_loss: 0.0, aux_loss: 0.251, mixclf_loss: 0.069, acc: 1.0
+2025-08-25:06:02:58 [ours_semi.py]: Epoch 62: clf_loss: 0.0, aux_loss: 0.248, mixclf_loss: 0.075, acc: 1.0
+2025-08-25:06:02:59 [ours_semi.py]: Epoch 63: clf_loss: 0.0, aux_loss: 0.249, mixclf_loss: 0.062, acc: 1.0
+2025-08-25:06:03:00 [ours_semi.py]: Epoch 64: clf_loss: 0.0, aux_loss: 0.242, mixclf_loss: 0.076, acc: 1.0
+2025-08-25:06:03:01 [ours_semi.py]: Epoch 65: clf_loss: 0.0, aux_loss: 0.238, mixclf_loss: 0.068, acc: 1.0
+2025-08-25:06:03:02 [ours_semi.py]: Epoch 66: clf_loss: 0.0, aux_loss: 0.242, mixclf_loss: 0.071, acc: 1.0
+2025-08-25:06:03:03 [ours_semi.py]: Epoch 67: clf_loss: 0.0, aux_loss: 0.237, mixclf_loss: 0.073, acc: 1.0
+2025-08-25:06:03:04 [ours_semi.py]: Epoch 68: clf_loss: 0.0, aux_loss: 0.233, mixclf_loss: 0.082, acc: 1.0
+2025-08-25:06:03:04 [ours_semi.py]: Epoch 69: clf_loss: 0.0, aux_loss: 0.233, mixclf_loss: 0.076, acc: 1.0
+2025-08-25:06:03:05 [ours_semi.py]: Epoch 70: clf_loss: 0.0, aux_loss: 0.231, mixclf_loss: 0.066, acc: 1.0
+2025-08-25:06:03:06 [ours_semi.py]: Epoch 71: clf_loss: 0.0, aux_loss: 0.234, mixclf_loss: 0.074, acc: 1.0
+2025-08-25:06:03:07 [ours_semi.py]: Epoch 72: clf_loss: 0.0, aux_loss: 0.231, mixclf_loss: 0.066, acc: 1.0
+2025-08-25:06:03:08 [ours_semi.py]: Epoch 73: clf_loss: 0.0, aux_loss: 0.23, mixclf_loss: 0.083, acc: 1.0
+2025-08-25:06:03:09 [ours_semi.py]: Epoch 74: clf_loss: 0.0, aux_loss: 0.228, mixclf_loss: 0.065, acc: 1.0
+2025-08-25:06:03:10 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:03:23 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:03:23 [evaluation.py]: Novel images: 0
+2025-08-25:06:03:23 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:03:23 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:03:35 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:03:35 [evaluation.py]: Novel images: 0
+2025-08-25:06:03:35 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:03:35 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:03:57 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:03:57 [evaluation.py]: Novel images: 0
+2025-08-25:06:03:57 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:03:57 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:04:04 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:04:04 [evaluation.py]: Novel images: 0
+2025-08-25:06:04:04 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:04:04 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:04:12 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:04:12 [evaluation.py]: Novel images: 0
+2025-08-25:06:04:12 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:04:12 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:04:27 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:04:27 [evaluation.py]: Novel images: 0
+2025-08-25:06:04:27 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:04:27 [evaluation.py]: Evaluating on Food
+2025-08-25:06:05:04 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:05:04 [evaluation.py]: Novel images: 0
+2025-08-25:06:05:04 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:05:04 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:05:17 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:05:17 [evaluation.py]: Novel images: 0
+2025-08-25:06:05:17 [evaluation.py]: Top-1 accuracy: 93.91
+2025-08-25:06:05:18 [ours_semi.py]: Epoch 75: clf_loss: 0.0, aux_loss: 0.219, mixclf_loss: 0.062, acc: 1.0
+2025-08-25:06:05:19 [ours_semi.py]: Epoch 76: clf_loss: 0.0, aux_loss: 0.224, mixclf_loss: 0.826, acc: 1.0
+2025-08-25:06:05:21 [ours_semi.py]: Epoch 77: clf_loss: 0.0, aux_loss: 0.224, mixclf_loss: 0.661, acc: 1.0
+2025-08-25:06:05:23 [ours_semi.py]: Epoch 78: clf_loss: 0.002, aux_loss: 0.213, mixclf_loss: 0.657, acc: 1.0
+2025-08-25:06:05:24 [ours_semi.py]: Epoch 79: clf_loss: 0.0, aux_loss: 0.212, mixclf_loss: 0.627, acc: 1.0
+2025-08-25:06:05:26 [ours_semi.py]: Epoch 80: clf_loss: 0.003, aux_loss: 0.218, mixclf_loss: 0.715, acc: 1.0
+2025-08-25:06:05:28 [ours_semi.py]: Epoch 81: clf_loss: 0.005, aux_loss: 0.214, mixclf_loss: 0.66, acc: 1.0
+2025-08-25:06:05:29 [ours_semi.py]: Epoch 82: clf_loss: 0.002, aux_loss: 0.215, mixclf_loss: 0.657, acc: 1.0
+2025-08-25:06:05:31 [ours_semi.py]: Epoch 83: clf_loss: 0.001, aux_loss: 0.217, mixclf_loss: 0.697, acc: 1.0
+2025-08-25:06:05:33 [ours_semi.py]: Epoch 84: clf_loss: 0.006, aux_loss: 0.213, mixclf_loss: 0.675, acc: 1.0
+2025-08-25:06:05:34 [ours_semi.py]: Epoch 85: clf_loss: 0.001, aux_loss: 0.214, mixclf_loss: 0.669, acc: 1.0
+2025-08-25:06:05:36 [ours_semi.py]: Epoch 86: clf_loss: 0.0, aux_loss: 0.21, mixclf_loss: 0.624, acc: 1.0
+2025-08-25:06:05:38 [ours_semi.py]: Epoch 87: clf_loss: 0.0, aux_loss: 0.206, mixclf_loss: 0.692, acc: 1.0
+2025-08-25:06:05:40 [ours_semi.py]: Epoch 88: clf_loss: 0.001, aux_loss: 0.202, mixclf_loss: 0.667, acc: 1.0
+2025-08-25:06:05:41 [ours_semi.py]: Epoch 89: clf_loss: 0.0, aux_loss: 0.203, mixclf_loss: 0.654, acc: 1.0
+2025-08-25:06:05:43 [ours_semi.py]: Epoch 90: clf_loss: 0.0, aux_loss: 0.2, mixclf_loss: 0.626, acc: 1.0
+2025-08-25:06:05:45 [ours_semi.py]: Epoch 91: clf_loss: 0.0, aux_loss: 0.204, mixclf_loss: 0.659, acc: 1.0
+2025-08-25:06:05:46 [ours_semi.py]: Epoch 92: clf_loss: 0.0, aux_loss: 0.203, mixclf_loss: 0.609, acc: 1.0
+2025-08-25:06:05:48 [ours_semi.py]: Epoch 93: clf_loss: 0.0, aux_loss: 0.205, mixclf_loss: 0.601, acc: 1.0
+2025-08-25:06:05:50 [ours_semi.py]: Epoch 94: clf_loss: 0.0, aux_loss: 0.198, mixclf_loss: 0.584, acc: 1.0
+2025-08-25:06:05:51 [ours_semi.py]: Epoch 95: clf_loss: 0.0, aux_loss: 0.192, mixclf_loss: 0.682, acc: 1.0
+2025-08-25:06:05:53 [ours_semi.py]: Epoch 96: clf_loss: 0.0, aux_loss: 0.199, mixclf_loss: 0.648, acc: 1.0
+2025-08-25:06:05:55 [ours_semi.py]: Epoch 97: clf_loss: 0.0, aux_loss: 0.202, mixclf_loss: 0.598, acc: 1.0
+2025-08-25:06:05:56 [ours_semi.py]: Epoch 98: clf_loss: 0.0, aux_loss: 0.192, mixclf_loss: 0.632, acc: 1.0
+2025-08-25:06:05:58 [ours_semi.py]: Epoch 99: clf_loss: 0.0, aux_loss: 0.2, mixclf_loss: 0.6, acc: 1.0
+2025-08-25:06:05:59 [ours_semi.py]: Epoch 100: clf_loss: 0.0, aux_loss: 0.206, mixclf_loss: 0.633, acc: 1.0
+2025-08-25:06:06:01 [ours_semi.py]: Epoch 101: clf_loss: 0.0, aux_loss: 0.199, mixclf_loss: 0.64, acc: 1.0
+2025-08-25:06:06:03 [ours_semi.py]: Epoch 102: clf_loss: 0.0, aux_loss: 0.191, mixclf_loss: 0.665, acc: 1.0
+2025-08-25:06:06:04 [ours_semi.py]: Epoch 103: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.665, acc: 1.0
+2025-08-25:06:06:06 [ours_semi.py]: Epoch 104: clf_loss: 0.0, aux_loss: 0.195, mixclf_loss: 0.639, acc: 1.0
+2025-08-25:06:06:08 [ours_semi.py]: Epoch 105: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.626, acc: 1.0
+2025-08-25:06:06:09 [ours_semi.py]: Epoch 106: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.629, acc: 1.0
+2025-08-25:06:06:11 [ours_semi.py]: Epoch 107: clf_loss: 0.0, aux_loss: 0.196, mixclf_loss: 0.6, acc: 1.0
+2025-08-25:06:06:13 [ours_semi.py]: Epoch 108: clf_loss: 0.0, aux_loss: 0.193, mixclf_loss: 0.632, acc: 1.0
+2025-08-25:06:06:14 [ours_semi.py]: Epoch 109: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.689, acc: 1.0
+2025-08-25:06:06:16 [ours_semi.py]: Epoch 110: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.632, acc: 1.0
+2025-08-25:06:06:18 [ours_semi.py]: Epoch 111: clf_loss: 0.001, aux_loss: 0.187, mixclf_loss: 0.654, acc: 1.0
+2025-08-25:06:06:19 [ours_semi.py]: Epoch 112: clf_loss: 0.0, aux_loss: 0.199, mixclf_loss: 0.653, acc: 1.0
+2025-08-25:06:06:21 [ours_semi.py]: Epoch 113: clf_loss: 0.0, aux_loss: 0.186, mixclf_loss: 0.66, acc: 1.0
+2025-08-25:06:06:23 [ours_semi.py]: Epoch 114: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.609, acc: 1.0
+2025-08-25:06:06:24 [ours_semi.py]: Epoch 115: clf_loss: 0.0, aux_loss: 0.192, mixclf_loss: 0.606, acc: 1.0
+2025-08-25:06:06:26 [ours_semi.py]: Epoch 116: clf_loss: 0.0, aux_loss: 0.192, mixclf_loss: 0.607, acc: 1.0
+2025-08-25:06:06:27 [ours_semi.py]: Epoch 117: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.612, acc: 1.0
+2025-08-25:06:06:29 [ours_semi.py]: Epoch 118: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.652, acc: 1.0
+2025-08-25:06:06:31 [ours_semi.py]: Epoch 119: clf_loss: 0.0, aux_loss: 0.186, mixclf_loss: 0.642, acc: 1.0
+2025-08-25:06:06:32 [ours_semi.py]: Epoch 120: clf_loss: 0.0, aux_loss: 0.191, mixclf_loss: 0.613, acc: 1.0
+2025-08-25:06:06:34 [ours_semi.py]: Epoch 121: clf_loss: 0.0, aux_loss: 0.185, mixclf_loss: 0.682, acc: 1.0
+2025-08-25:06:06:36 [ours_semi.py]: Epoch 122: clf_loss: 0.0, aux_loss: 0.184, mixclf_loss: 0.598, acc: 1.0
+2025-08-25:06:06:37 [ours_semi.py]: Epoch 123: clf_loss: 0.0, aux_loss: 0.185, mixclf_loss: 0.606, acc: 1.0
+2025-08-25:06:06:39 [ours_semi.py]: Epoch 124: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.666, acc: 1.0
+2025-08-25:06:06:40 [ours_semi.py]: Epoch 125: clf_loss: 0.0, aux_loss: 0.193, mixclf_loss: 0.638, acc: 1.0
+2025-08-25:06:06:42 [ours_semi.py]: Epoch 126: clf_loss: 0.0, aux_loss: 0.182, mixclf_loss: 0.565, acc: 1.0
+2025-08-25:06:06:44 [ours_semi.py]: Epoch 127: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.598, acc: 1.0
+2025-08-25:06:06:45 [ours_semi.py]: Epoch 128: clf_loss: 0.0, aux_loss: 0.187, mixclf_loss: 0.654, acc: 1.0
+2025-08-25:06:06:47 [ours_semi.py]: Epoch 129: clf_loss: 0.0, aux_loss: 0.178, mixclf_loss: 0.584, acc: 1.0
+2025-08-25:06:06:49 [ours_semi.py]: Epoch 130: clf_loss: 0.0, aux_loss: 0.179, mixclf_loss: 0.569, acc: 1.0
+2025-08-25:06:06:50 [ours_semi.py]: Epoch 131: clf_loss: 0.0, aux_loss: 0.185, mixclf_loss: 0.598, acc: 1.0
+2025-08-25:06:06:52 [ours_semi.py]: Epoch 132: clf_loss: 0.0, aux_loss: 0.19, mixclf_loss: 0.619, acc: 1.0
+2025-08-25:06:06:53 [ours_semi.py]: Epoch 133: clf_loss: 0.0, aux_loss: 0.176, mixclf_loss: 0.604, acc: 1.0
+2025-08-25:06:06:55 [ours_semi.py]: Epoch 134: clf_loss: 0.0, aux_loss: 0.187, mixclf_loss: 0.617, acc: 1.0
+2025-08-25:06:06:57 [ours_semi.py]: Epoch 135: clf_loss: 0.0, aux_loss: 0.186, mixclf_loss: 0.645, acc: 1.0
+2025-08-25:06:06:59 [ours_semi.py]: Epoch 136: clf_loss: 0.0, aux_loss: 0.183, mixclf_loss: 0.564, acc: 1.0
+2025-08-25:06:07:00 [ours_semi.py]: Epoch 137: clf_loss: 0.0, aux_loss: 0.181, mixclf_loss: 0.603, acc: 1.0
+2025-08-25:06:07:02 [ours_semi.py]: Epoch 138: clf_loss: 0.0, aux_loss: 0.181, mixclf_loss: 0.646, acc: 1.0
+2025-08-25:06:07:04 [ours_semi.py]: Epoch 139: clf_loss: 0.0, aux_loss: 0.186, mixclf_loss: 0.588, acc: 1.0
+2025-08-25:06:07:05 [ours_semi.py]: Epoch 140: clf_loss: 0.0, aux_loss: 0.18, mixclf_loss: 0.608, acc: 1.0
+2025-08-25:06:07:07 [ours_semi.py]: Epoch 141: clf_loss: 0.0, aux_loss: 0.176, mixclf_loss: 0.596, acc: 1.0
+2025-08-25:06:07:09 [ours_semi.py]: Epoch 142: clf_loss: 0.0, aux_loss: 0.181, mixclf_loss: 0.61, acc: 1.0
+2025-08-25:06:07:10 [ours_semi.py]: Epoch 143: clf_loss: 0.0, aux_loss: 0.177, mixclf_loss: 0.606, acc: 1.0
+2025-08-25:06:07:11 [ours_semi.py]: Epoch 144: clf_loss: 0.0, aux_loss: 0.18, mixclf_loss: 0.572, acc: 1.0
+2025-08-25:06:07:12 [ours_semi.py]: Epoch 145: clf_loss: 0.0, aux_loss: 0.187, mixclf_loss: 0.596, acc: 1.0
+2025-08-25:06:07:13 [ours_semi.py]: Epoch 146: clf_loss: 0.0, aux_loss: 0.18, mixclf_loss: 0.586, acc: 1.0
+2025-08-25:06:07:14 [ours_semi.py]: Epoch 147: clf_loss: 0.0, aux_loss: 0.183, mixclf_loss: 0.591, acc: 1.0
+2025-08-25:06:07:15 [ours_semi.py]: Epoch 148: clf_loss: 0.0, aux_loss: 0.172, mixclf_loss: 0.629, acc: 1.0
+2025-08-25:06:07:17 [ours_semi.py]: Epoch 149: clf_loss: 0.0, aux_loss: 0.188, mixclf_loss: 0.568, acc: 1.0
+2025-08-25:06:07:19 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:07:32 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:07:32 [evaluation.py]: Novel images: 0
+2025-08-25:06:07:32 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:07:32 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:07:44 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:07:44 [evaluation.py]: Novel images: 0
+2025-08-25:06:07:44 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:07:44 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:08:05 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:08:05 [evaluation.py]: Novel images: 0
+2025-08-25:06:08:05 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:08:05 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:08:12 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:08:12 [evaluation.py]: Novel images: 0
+2025-08-25:06:08:12 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:08:12 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:08:19 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:08:19 [evaluation.py]: Novel images: 0
+2025-08-25:06:08:19 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:08:19 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:08:34 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:08:34 [evaluation.py]: Novel images: 0
+2025-08-25:06:08:34 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:08:34 [evaluation.py]: Evaluating on Food
+2025-08-25:06:09:09 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:09:09 [evaluation.py]: Novel images: 0
+2025-08-25:06:09:09 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:09:09 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:09:21 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:09:21 [evaluation.py]: Novel images: 0
+2025-08-25:06:09:21 [evaluation.py]: Top-1 accuracy: 94.69
+2025-08-25:06:09:22 [ours_semi.py]: Epoch 150: clf_loss: 0.0, aux_loss: 0.185, mixclf_loss: 0.56, acc: 1.0
+2025-08-25:06:09:22 [ours_semi.py]: Computing threshold
+2025-08-25:06:09:24 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132, 0.52291834, 0.69498336]
+2025-08-25:06:09:25 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/MNIST.pth
+2025-08-25:06:09:38 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:09:38 [evaluation.py]: Novel images: 0
+2025-08-25:06:09:38 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:09:38 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:09:38 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:09:50 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:09:50 [evaluation.py]: Novel images: 0
+2025-08-25:06:09:50 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:09:50 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:09:50 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:10:11 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:10:11 [evaluation.py]: Novel images: 0
+2025-08-25:06:10:11 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:10:11 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:10:11 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:10:18 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:10:18 [evaluation.py]: Novel images: 384
+2025-08-25:06:10:18 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:10:18 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:06:10:18 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:10:25 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:10:25 [evaluation.py]: Novel images: 24
+2025-08-25:06:10:25 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:10:25 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:06:10:25 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:10:39 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:10:39 [evaluation.py]: Novel images: 1413
+2025-08-25:06:10:39 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:06:10:39 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:06:10:39 [evaluation.py]: Evaluating on Food
+2025-08-25:06:11:09 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:11:09 [evaluation.py]: Novel images: 21922
+2025-08-25:06:11:09 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0. 312.   0.   0.   0.   0.]
+2025-08-25:06:11:09 [evaluation.py]: Top-1 accuracy: 88.20
+2025-08-25:06:11:09 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:11:21 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:11:21 [evaluation.py]: Novel images: 0
+2025-08-25:06:11:21 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-25:06:11:21 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:11:21 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:11:28 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:11:28 [evaluation.py]: Novel images: 3413
+2025-08-25:06:11:28 [evaluation.py]: Key count: [ 0. 24.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2025-08-25:06:11:28 [evaluation.py]: Top-1 accuracy: 89.37
+2025-08-25:06:11:28 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:06:11:51 [evaluation.py]: Total images: 8041.0
+2025-08-25:06:11:51 [evaluation.py]: Novel images: 8041
+2025-08-25:06:11:51 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:06:11:51 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:06:11:51 [evaluation.py]: Evaluating on SUN397
+2025-08-25:06:12:44 [evaluation.py]: Total images: 21751.0
+2025-08-25:06:12:44 [evaluation.py]: Novel images: 21751
+2025-08-25:06:12:44 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:06:12:44 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:06:12:44 [ours_semi.py]: [Dataset] OxfordPet
+2025-08-25:06:12:44 [ours_semi.py]: [LR] 0.01
+2025-08-25:06:12:44 [ours_semi.py]: =====few-shot======
+2025-08-25:06:12:49 [ours_semi.py]: Generating GradCAM
+2025-08-25:06:13:31 [ours_semi.py]: Iterations per epoch: 6
+2025-08-25:06:13:31 [ours_semi.py]: Total iterations: 300
+2025-08-25:06:13:31 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:06:13:31 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:06:13:31 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:06:13:31 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:06:13:31 [ours_semi.py]: Using devices [0]
+2025-08-25:06:13:34 [ours_semi.py]: Epoch 1: clf_loss: 0.524, aux_loss: 1.003, mixclf_loss: 0.529, acc: 0.837
+2025-08-25:06:13:36 [ours_semi.py]: Epoch 2: clf_loss: 0.467, aux_loss: 0.962, mixclf_loss: 0.459, acc: 0.831
+2025-08-25:06:13:38 [ours_semi.py]: Epoch 3: clf_loss: 0.351, aux_loss: 0.887, mixclf_loss: 0.408, acc: 0.876
+2025-08-25:06:13:41 [ours_semi.py]: Epoch 4: clf_loss: 0.251, aux_loss: 0.789, mixclf_loss: 0.359, acc: 0.922
+2025-08-25:06:13:43 [ours_semi.py]: Epoch 5: clf_loss: 0.185, aux_loss: 0.685, mixclf_loss: 0.369, acc: 0.941
+2025-08-25:06:13:45 [ours_semi.py]: Epoch 6: clf_loss: 0.105, aux_loss: 0.6, mixclf_loss: 0.282, acc: 0.966
+2025-08-25:06:13:47 [ours_semi.py]: Epoch 7: clf_loss: 0.056, aux_loss: 0.537, mixclf_loss: 0.303, acc: 0.99
+2025-08-25:06:13:50 [ours_semi.py]: Epoch 8: clf_loss: 0.036, aux_loss: 0.497, mixclf_loss: 0.243, acc: 0.995
+2025-08-25:06:13:52 [ours_semi.py]: Epoch 9: clf_loss: 0.014, aux_loss: 0.475, mixclf_loss: 0.198, acc: 1.0
+2025-08-25:06:13:54 [ours_semi.py]: Epoch 10: clf_loss: 0.02, aux_loss: 0.459, mixclf_loss: 0.185, acc: 0.995
+2025-08-25:06:13:56 [ours_semi.py]: Epoch 11: clf_loss: 0.092, aux_loss: 0.447, mixclf_loss: 0.212, acc: 0.967
+2025-08-25:06:13:59 [ours_semi.py]: Epoch 12: clf_loss: 0.03, aux_loss: 0.434, mixclf_loss: 0.196, acc: 0.993
+2025-08-25:06:14:01 [ours_semi.py]: Epoch 13: clf_loss: 0.034, aux_loss: 0.422, mixclf_loss: 0.172, acc: 1.0
+2025-08-25:06:14:04 [ours_semi.py]: Epoch 14: clf_loss: 0.019, aux_loss: 0.406, mixclf_loss: 0.176, acc: 1.0
+2025-08-25:06:14:06 [ours_semi.py]: Epoch 15: clf_loss: 0.008, aux_loss: 0.396, mixclf_loss: 0.169, acc: 1.0
+2025-08-25:06:14:08 [ours_semi.py]: Epoch 16: clf_loss: 0.004, aux_loss: 0.385, mixclf_loss: 0.148, acc: 1.0
+2025-08-25:06:14:10 [ours_semi.py]: Epoch 17: clf_loss: 0.007, aux_loss: 0.379, mixclf_loss: 0.161, acc: 0.995
+2025-08-25:06:14:12 [ours_semi.py]: Epoch 18: clf_loss: 0.019, aux_loss: 0.375, mixclf_loss: 0.161, acc: 0.995
+2025-08-25:06:14:16 [ours_semi.py]: Epoch 19: clf_loss: 0.011, aux_loss: 0.37, mixclf_loss: 0.144, acc: 1.0
+2025-08-25:06:14:18 [ours_semi.py]: Epoch 20: clf_loss: 0.011, aux_loss: 0.37, mixclf_loss: 0.147, acc: 1.0
+2025-08-25:06:14:21 [ours_semi.py]: Epoch 21: clf_loss: 0.005, aux_loss: 0.367, mixclf_loss: 0.134, acc: 1.0
+2025-08-25:06:14:23 [ours_semi.py]: Epoch 22: clf_loss: 0.005, aux_loss: 0.365, mixclf_loss: 0.162, acc: 1.0
+2025-08-25:06:14:25 [ours_semi.py]: Epoch 23: clf_loss: 0.002, aux_loss: 0.367, mixclf_loss: 0.142, acc: 1.0
+2025-08-25:06:14:28 [ours_semi.py]: Epoch 24: clf_loss: 0.002, aux_loss: 0.363, mixclf_loss: 0.153, acc: 1.0
+2025-08-25:06:14:30 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:14:44 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:14:44 [evaluation.py]: Novel images: 0
+2025-08-25:06:14:44 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:14:44 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:14:57 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:14:57 [evaluation.py]: Novel images: 0
+2025-08-25:06:14:57 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:14:57 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:15:19 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:15:19 [evaluation.py]: Novel images: 0
+2025-08-25:06:15:19 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:15:19 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:15:26 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:15:26 [evaluation.py]: Novel images: 0
+2025-08-25:06:15:26 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:15:26 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:15:33 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:15:33 [evaluation.py]: Novel images: 0
+2025-08-25:06:15:33 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:15:33 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:15:48 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:15:48 [evaluation.py]: Novel images: 0
+2025-08-25:06:15:48 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:15:48 [evaluation.py]: Evaluating on Food
+2025-08-25:06:16:24 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:16:24 [evaluation.py]: Novel images: 0
+2025-08-25:06:16:24 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:16:24 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:16:37 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:16:37 [evaluation.py]: Novel images: 0
+2025-08-25:06:16:37 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:16:37 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:16:44 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:16:44 [evaluation.py]: Novel images: 0
+2025-08-25:06:16:44 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:16:45 [ours_semi.py]: Epoch 25: clf_loss: 0.001, aux_loss: 0.362, mixclf_loss: 0.144, acc: 1.0
+2025-08-25:06:16:47 [ours_semi.py]: Epoch 26: clf_loss: 0.007, aux_loss: 0.362, mixclf_loss: 0.842, acc: 1.0
+2025-08-25:06:16:49 [ours_semi.py]: Epoch 27: clf_loss: 0.027, aux_loss: 0.359, mixclf_loss: 0.592, acc: 1.0
+2025-08-25:06:16:52 [ours_semi.py]: Epoch 28: clf_loss: 0.019, aux_loss: 0.358, mixclf_loss: 0.589, acc: 1.0
+2025-08-25:06:16:54 [ours_semi.py]: Epoch 29: clf_loss: 0.008, aux_loss: 0.356, mixclf_loss: 0.607, acc: 1.0
+2025-08-25:06:16:56 [ours_semi.py]: Epoch 30: clf_loss: 0.005, aux_loss: 0.358, mixclf_loss: 0.584, acc: 1.0
+2025-08-25:06:16:58 [ours_semi.py]: Epoch 31: clf_loss: 0.004, aux_loss: 0.358, mixclf_loss: 0.573, acc: 1.0
+2025-08-25:06:17:01 [ours_semi.py]: Epoch 32: clf_loss: 0.003, aux_loss: 0.355, mixclf_loss: 0.573, acc: 1.0
+2025-08-25:06:17:03 [ours_semi.py]: Epoch 33: clf_loss: 0.003, aux_loss: 0.354, mixclf_loss: 0.573, acc: 1.0
+2025-08-25:06:17:05 [ours_semi.py]: Epoch 34: clf_loss: 0.002, aux_loss: 0.354, mixclf_loss: 0.592, acc: 1.0
+2025-08-25:06:17:07 [ours_semi.py]: Epoch 35: clf_loss: 0.002, aux_loss: 0.355, mixclf_loss: 0.563, acc: 1.0
+2025-08-25:06:17:10 [ours_semi.py]: Epoch 36: clf_loss: 0.002, aux_loss: 0.353, mixclf_loss: 0.548, acc: 1.0
+2025-08-25:06:17:13 [ours_semi.py]: Epoch 37: clf_loss: 0.002, aux_loss: 0.354, mixclf_loss: 0.543, acc: 1.0
+2025-08-25:06:17:16 [ours_semi.py]: Epoch 38: clf_loss: 0.002, aux_loss: 0.352, mixclf_loss: 0.559, acc: 1.0
+2025-08-25:06:17:18 [ours_semi.py]: Epoch 39: clf_loss: 0.001, aux_loss: 0.353, mixclf_loss: 0.559, acc: 1.0
+2025-08-25:06:17:20 [ours_semi.py]: Epoch 40: clf_loss: 0.001, aux_loss: 0.351, mixclf_loss: 0.581, acc: 1.0
+2025-08-25:06:17:22 [ours_semi.py]: Epoch 41: clf_loss: 0.001, aux_loss: 0.351, mixclf_loss: 0.539, acc: 1.0
+2025-08-25:06:17:25 [ours_semi.py]: Epoch 42: clf_loss: 0.001, aux_loss: 0.347, mixclf_loss: 0.567, acc: 1.0
+2025-08-25:06:17:27 [ours_semi.py]: Epoch 43: clf_loss: 0.001, aux_loss: 0.352, mixclf_loss: 0.569, acc: 1.0
+2025-08-25:06:17:30 [ours_semi.py]: Epoch 44: clf_loss: 0.001, aux_loss: 0.352, mixclf_loss: 0.566, acc: 1.0
+2025-08-25:06:17:32 [ours_semi.py]: Epoch 45: clf_loss: 0.001, aux_loss: 0.349, mixclf_loss: 0.591, acc: 1.0
+2025-08-25:06:17:35 [ours_semi.py]: Epoch 46: clf_loss: 0.001, aux_loss: 0.348, mixclf_loss: 0.533, acc: 1.0
+2025-08-25:06:17:37 [ours_semi.py]: Epoch 47: clf_loss: 0.001, aux_loss: 0.352, mixclf_loss: 0.545, acc: 1.0
+2025-08-25:06:17:39 [ours_semi.py]: Epoch 48: clf_loss: 0.001, aux_loss: 0.354, mixclf_loss: 0.56, acc: 1.0
+2025-08-25:06:17:42 [ours_semi.py]: Epoch 49: clf_loss: 0.001, aux_loss: 0.353, mixclf_loss: 0.537, acc: 1.0
+2025-08-25:06:17:44 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:17:59 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:17:59 [evaluation.py]: Novel images: 0
+2025-08-25:06:17:59 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:17:59 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:18:12 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:18:12 [evaluation.py]: Novel images: 0
+2025-08-25:06:18:12 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:18:12 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:18:35 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:18:35 [evaluation.py]: Novel images: 0
+2025-08-25:06:18:35 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:18:35 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:18:43 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:18:43 [evaluation.py]: Novel images: 0
+2025-08-25:06:18:43 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:18:43 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:18:50 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:18:50 [evaluation.py]: Novel images: 0
+2025-08-25:06:18:50 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:18:50 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:19:06 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:19:06 [evaluation.py]: Novel images: 0
+2025-08-25:06:19:06 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:19:06 [evaluation.py]: Evaluating on Food
+2025-08-25:06:19:43 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:19:43 [evaluation.py]: Novel images: 0
+2025-08-25:06:19:43 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:19:43 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:19:55 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:19:55 [evaluation.py]: Novel images: 0
+2025-08-25:06:19:55 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:19:55 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:20:03 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:20:03 [evaluation.py]: Novel images: 0
+2025-08-25:06:20:03 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:20:03 [ours_semi.py]: Epoch 50: clf_loss: 0.001, aux_loss: 0.352, mixclf_loss: 0.561, acc: 1.0
+2025-08-25:06:20:03 [ours_semi.py]: Computing threshold
+2025-08-25:06:20:07 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132, 0.52291834, 0.69498336, 0.59967864]
+2025-08-25:06:20:08 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/OxfordPet.pth
+2025-08-25:06:20:22 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:20:22 [evaluation.py]: Novel images: 0
+2025-08-25:06:20:22 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:20:22 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:20:22 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:20:35 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:20:35 [evaluation.py]: Novel images: 0
+2025-08-25:06:20:35 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:20:35 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:20:35 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:20:57 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:20:57 [evaluation.py]: Novel images: 0
+2025-08-25:06:20:57 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:20:57 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:20:57 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:21:04 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:21:04 [evaluation.py]: Novel images: 384
+2025-08-25:06:21:04 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:21:04 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:06:21:04 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:21:11 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:21:11 [evaluation.py]: Novel images: 24
+2025-08-25:06:21:11 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:21:11 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:06:21:11 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:21:26 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:21:26 [evaluation.py]: Novel images: 1413
+2025-08-25:06:21:26 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:06:21:26 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:06:21:26 [evaluation.py]: Evaluating on Food
+2025-08-25:06:21:57 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:21:57 [evaluation.py]: Novel images: 21922
+2025-08-25:06:21:57 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0. 312.   0.   0.   0.   0.]
+2025-08-25:06:21:57 [evaluation.py]: Top-1 accuracy: 88.20
+2025-08-25:06:21:57 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:22:10 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:22:10 [evaluation.py]: Novel images: 0
+2025-08-25:06:22:10 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-25:06:22:10 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:22:10 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:22:18 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:22:18 [evaluation.py]: Novel images: 0
+2025-08-25:06:22:18 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-25:06:22:18 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:22:18 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:06:22:42 [evaluation.py]: Total images: 8041.0
+2025-08-25:06:22:42 [evaluation.py]: Novel images: 8041
+2025-08-25:06:22:42 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:06:22:42 [evaluation.py]: Top-1 accuracy: 64.71
+2025-08-25:06:22:42 [evaluation.py]: Evaluating on SUN397
+2025-08-25:06:23:38 [evaluation.py]: Total images: 21751.0
+2025-08-25:06:23:38 [evaluation.py]: Novel images: 21751
+2025-08-25:06:23:38 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:06:23:38 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:06:23:38 [ours_semi.py]: [Dataset] StanfordCars
+2025-08-25:06:23:38 [ours_semi.py]: [LR] 0.03
+2025-08-25:06:23:38 [ours_semi.py]: =====few-shot======
+2025-08-25:06:23:49 [ours_semi.py]: Generating GradCAM
+2025-08-25:06:25:50 [ours_semi.py]: Iterations per epoch: 31
+2025-08-25:06:25:50 [ours_semi.py]: Total iterations: 300
+2025-08-25:06:25:50 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:06:25:50 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:06:25:50 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:06:25:50 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:06:25:50 [ours_semi.py]: Using devices [0]
+2025-08-25:06:26:03 [ours_semi.py]: Epoch 1: clf_loss: 1.068, aux_loss: 0.559, mixclf_loss: 0.8, acc: 0.617
+2025-08-25:06:26:14 [ours_semi.py]: Epoch 2: clf_loss: 0.823, aux_loss: 0.403, mixclf_loss: 0.711, acc: 0.703
+2025-08-25:06:26:26 [ours_semi.py]: Epoch 3: clf_loss: 0.678, aux_loss: 0.369, mixclf_loss: 0.597, acc: 0.748
+2025-08-25:06:26:36 [ours_semi.py]: Epoch 4: clf_loss: 0.557, aux_loss: 0.349, mixclf_loss: 0.514, acc: 0.803
+2025-08-25:06:26:45 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:27:01 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:27:01 [evaluation.py]: Novel images: 0
+2025-08-25:06:27:01 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:27:01 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:27:16 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:27:16 [evaluation.py]: Novel images: 0
+2025-08-25:06:27:16 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:27:16 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:27:40 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:27:40 [evaluation.py]: Novel images: 0
+2025-08-25:06:27:40 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:27:40 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:27:48 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:27:48 [evaluation.py]: Novel images: 0
+2025-08-25:06:27:48 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:27:48 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:27:55 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:27:55 [evaluation.py]: Novel images: 0
+2025-08-25:06:27:55 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:27:55 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:28:11 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:28:11 [evaluation.py]: Novel images: 0
+2025-08-25:06:28:11 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:28:11 [evaluation.py]: Evaluating on Food
+2025-08-25:06:28:49 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:28:49 [evaluation.py]: Novel images: 0
+2025-08-25:06:28:49 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:28:49 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:29:02 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:29:02 [evaluation.py]: Novel images: 0
+2025-08-25:06:29:02 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:29:02 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:29:10 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:29:10 [evaluation.py]: Novel images: 0
+2025-08-25:06:29:10 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:29:10 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:06:29:39 [evaluation.py]: Total images: 8041.0
+2025-08-25:06:29:39 [evaluation.py]: Novel images: 0
+2025-08-25:06:29:39 [evaluation.py]: Top-1 accuracy: 70.96
+2025-08-25:06:29:45 [ours_semi.py]: Epoch 5: clf_loss: 0.448, aux_loss: 0.33, mixclf_loss: 0.494, acc: 0.837
+2025-08-25:06:29:56 [ours_semi.py]: Epoch 6: clf_loss: 0.289, aux_loss: 0.315, mixclf_loss: 0.513, acc: 0.904
+2025-08-25:06:30:06 [ours_semi.py]: Epoch 7: clf_loss: 0.195, aux_loss: 0.308, mixclf_loss: 0.51, acc: 0.937
+2025-08-25:06:30:18 [ours_semi.py]: Epoch 8: clf_loss: 0.125, aux_loss: 0.306, mixclf_loss: 0.507, acc: 0.978
+2025-08-25:06:30:28 [ours_semi.py]: Epoch 9: clf_loss: 0.092, aux_loss: 0.303, mixclf_loss: 0.49, acc: 0.985
+2025-08-25:06:30:36 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:06:30:51 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:30:51 [evaluation.py]: Novel images: 0
+2025-08-25:06:30:51 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:30:51 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:31:05 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:31:05 [evaluation.py]: Novel images: 0
+2025-08-25:06:31:05 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:31:05 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:31:28 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:31:28 [evaluation.py]: Novel images: 0
+2025-08-25:06:31:28 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:31:28 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:31:36 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:31:36 [evaluation.py]: Novel images: 0
+2025-08-25:06:31:36 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:06:31:36 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:31:43 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:31:43 [evaluation.py]: Novel images: 0
+2025-08-25:06:31:43 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:06:31:43 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:31:59 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:31:59 [evaluation.py]: Novel images: 0
+2025-08-25:06:31:59 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:06:31:59 [evaluation.py]: Evaluating on Food
+2025-08-25:06:32:36 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:32:36 [evaluation.py]: Novel images: 0
+2025-08-25:06:32:36 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:06:32:36 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:32:49 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:32:49 [evaluation.py]: Novel images: 0
+2025-08-25:06:32:49 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:32:49 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:32:57 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:32:57 [evaluation.py]: Novel images: 0
+2025-08-25:06:32:57 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:32:57 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:06:33:25 [evaluation.py]: Total images: 8041.0
+2025-08-25:06:33:25 [evaluation.py]: Novel images: 0
+2025-08-25:06:33:25 [evaluation.py]: Top-1 accuracy: 73.61
+2025-08-25:06:33:25 [ours_semi.py]: Computing threshold
+2025-08-25:06:33:39 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132, 0.52291834, 0.69498336, 0.59967864, 0.6486739]
+2025-08-25:06:33:41 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/StanfordCars.pth
+2025-08-25:06:33:55 [evaluation.py]: Total images: 3333.0
+2025-08-25:06:33:55 [evaluation.py]: Novel images: 0
+2025-08-25:06:33:55 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:33:55 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:06:33:55 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:06:34:10 [evaluation.py]: Total images: 1736.0
+2025-08-25:06:34:10 [evaluation.py]: Novel images: 0
+2025-08-25:06:34:10 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:34:10 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:06:34:10 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:06:34:32 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:34:32 [evaluation.py]: Novel images: 0
+2025-08-25:06:34:32 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:34:32 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:06:34:32 [evaluation.py]: Evaluating on DTD
+2025-08-25:06:34:40 [evaluation.py]: Total images: 1880.0
+2025-08-25:06:34:40 [evaluation.py]: Novel images: 384
+2025-08-25:06:34:40 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:34:40 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:06:34:40 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:06:34:47 [evaluation.py]: Total images: 5400.0
+2025-08-25:06:34:47 [evaluation.py]: Novel images: 24
+2025-08-25:06:34:47 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:06:34:47 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:06:34:47 [evaluation.py]: Evaluating on Flowers
+2025-08-25:06:35:02 [evaluation.py]: Total images: 6149.0
+2025-08-25:06:35:02 [evaluation.py]: Novel images: 1413
+2025-08-25:06:35:02 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:06:35:02 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:06:35:02 [evaluation.py]: Evaluating on Food
+2025-08-25:06:35:33 [evaluation.py]: Total images: 25250.0
+2025-08-25:06:35:33 [evaluation.py]: Novel images: 21922
+2025-08-25:06:35:33 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0. 312.   0.   0.   0.   0.]
+2025-08-25:06:35:33 [evaluation.py]: Top-1 accuracy: 88.20
+2025-08-25:06:35:33 [evaluation.py]: Evaluating on MNIST
+2025-08-25:06:35:45 [evaluation.py]: Total images: 10000.0
+2025-08-25:06:35:45 [evaluation.py]: Novel images: 0
+2025-08-25:06:35:45 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-25:06:35:45 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:06:35:45 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:06:35:53 [evaluation.py]: Total images: 3669.0
+2025-08-25:06:35:53 [evaluation.py]: Novel images: 0
+2025-08-25:06:35:53 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-25:06:35:53 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:06:35:53 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:06:36:21 [evaluation.py]: Total images: 8041.0
+2025-08-25:06:36:21 [evaluation.py]: Novel images: 0
+2025-08-25:06:36:21 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0.   0. 756.   0.]
+2025-08-25:06:36:21 [evaluation.py]: Top-1 accuracy: 73.59
+2025-08-25:06:36:21 [evaluation.py]: Evaluating on SUN397
+2025-08-25:06:37:21 [evaluation.py]: Total images: 21751.0
+2025-08-25:06:37:21 [evaluation.py]: Novel images: 21751
+2025-08-25:06:37:21 [evaluation.py]: Key count: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+2025-08-25:06:37:21 [evaluation.py]: Top-1 accuracy: 65.26
+2025-08-25:06:37:21 [ours_semi.py]: [Dataset] SUN397
+2025-08-25:06:37:21 [ours_semi.py]: [LR] 0.02
+2025-08-25:06:37:22 [ours_semi.py]: =====few-shot======
+2025-08-25:06:41:22 [ours_semi.py]: Generating GradCAM
+2025-08-25:07:17:31 [ours_semi.py]: Iterations per epoch: 63
+2025-08-25:07:17:31 [ours_semi.py]: Total iterations: 300
+2025-08-25:07:17:31 [ours_semi.py]: [Training mode] Prompts
+2025-08-25:07:17:31 [ours_semi.py]: trainable params: ['prompt_pool.key', 'prompt_pool.weights', 'prompt_pool.v_prompt_0', 'prompt_pool.v_att_0', 'prompt_pool.t_prompt_0', 'prompt_pool.t_att_0', 'prompt_pool.v_prompt_1', 'prompt_pool.v_att_1', 'prompt_pool.t_prompt_1', 'prompt_pool.t_att_1', 'prompt_pool.v_prompt_2', 'prompt_pool.v_att_2', 'prompt_pool.t_prompt_2', 'prompt_pool.t_att_2', 'prompt_pool.v_prompt_3', 'prompt_pool.v_att_3', 'prompt_pool.t_prompt_3', 'prompt_pool.t_att_3', 'prompt_pool.v_prompt_4', 'prompt_pool.v_att_4', 'prompt_pool.t_prompt_4', 'prompt_pool.t_att_4', 'prompt_pool.v_prompt_5', 'prompt_pool.v_att_5', 'prompt_pool.t_prompt_5', 'prompt_pool.t_att_5', 'prompt_pool.v_prompt_6', 'prompt_pool.v_att_6', 'prompt_pool.t_prompt_6', 'prompt_pool.t_att_6', 'prompt_pool.v_prompt_7', 'prompt_pool.v_att_7', 'prompt_pool.t_prompt_7', 'prompt_pool.t_att_7', 'prompt_pool.v_prompt_8', 'prompt_pool.v_att_8', 'prompt_pool.t_prompt_8', 'prompt_pool.t_att_8', 'prompt_pool.v_prompt_9', 'prompt_pool.v_att_9', 'prompt_pool.t_prompt_9', 'prompt_pool.t_att_9', 'prompt_pool.v_prompt_10', 'prompt_pool.v_att_10', 'prompt_pool.t_prompt_10', 'prompt_pool.t_att_10', 'prompt_pool.v_prompt_11', 'prompt_pool.v_att_11', 'prompt_pool.t_prompt_11', 'prompt_pool.t_att_11']
+2025-08-25:07:17:31 [ours_semi.py]: The number of Total Trainable Parameters------------------: 30423415
+2025-08-25:07:17:31 [ours_semi.py]: Total Trainable Parameters Memory Size: 116.06 MB
+2025-08-25:07:17:31 [ours_semi.py]: Using devices [0]
+2025-08-25:07:18:04 [ours_semi.py]: Epoch 1: clf_loss: 1.091, aux_loss: 0.807, mixclf_loss: 0.845, acc: 0.694
+2025-08-25:07:18:35 [ours_semi.py]: Epoch 2: clf_loss: 0.859, aux_loss: 0.48, mixclf_loss: 0.733, acc: 0.741
+2025-08-25:07:18:49 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:07:19:04 [evaluation.py]: Total images: 3333.0
+2025-08-25:07:19:04 [evaluation.py]: Novel images: 0
+2025-08-25:07:19:04 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:07:19:04 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:07:19:21 [evaluation.py]: Total images: 1736.0
+2025-08-25:07:19:21 [evaluation.py]: Novel images: 0
+2025-08-25:07:19:21 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:07:19:21 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:07:19:46 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:19:46 [evaluation.py]: Novel images: 0
+2025-08-25:07:19:46 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:07:19:46 [evaluation.py]: Evaluating on DTD
+2025-08-25:07:19:54 [evaluation.py]: Total images: 1880.0
+2025-08-25:07:19:54 [evaluation.py]: Novel images: 0
+2025-08-25:07:19:54 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:07:19:54 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:07:20:03 [evaluation.py]: Total images: 5400.0
+2025-08-25:07:20:03 [evaluation.py]: Novel images: 0
+2025-08-25:07:20:03 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:07:20:03 [evaluation.py]: Evaluating on Flowers
+2025-08-25:07:20:20 [evaluation.py]: Total images: 6149.0
+2025-08-25:07:20:20 [evaluation.py]: Novel images: 0
+2025-08-25:07:20:20 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:07:20:20 [evaluation.py]: Evaluating on Food
+2025-08-25:07:20:59 [evaluation.py]: Total images: 25250.0
+2025-08-25:07:20:59 [evaluation.py]: Novel images: 0
+2025-08-25:07:20:59 [evaluation.py]: Top-1 accuracy: 87.64
+2025-08-25:07:20:59 [evaluation.py]: Evaluating on MNIST
+2025-08-25:07:21:13 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:21:13 [evaluation.py]: Novel images: 0
+2025-08-25:07:21:13 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:07:21:13 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:07:21:22 [evaluation.py]: Total images: 3669.0
+2025-08-25:07:21:22 [evaluation.py]: Novel images: 0
+2025-08-25:07:21:22 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:07:21:22 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:07:21:54 [evaluation.py]: Total images: 8041.0
+2025-08-25:07:21:54 [evaluation.py]: Novel images: 0
+2025-08-25:07:21:54 [evaluation.py]: Top-1 accuracy: 73.59
+2025-08-25:07:21:54 [evaluation.py]: Evaluating on SUN397
+2025-08-25:07:23:03 [evaluation.py]: Total images: 21751.0
+2025-08-25:07:23:03 [evaluation.py]: Novel images: 0
+2025-08-25:07:23:03 [evaluation.py]: Top-1 accuracy: 71.82
+2025-08-25:07:23:28 [ours_semi.py]: Epoch 3: clf_loss: 0.592, aux_loss: 0.385, mixclf_loss: 0.557, acc: 0.812
+2025-08-25:07:23:54 [ours_semi.py]: Epoch 4: clf_loss: 0.334, aux_loss: 0.367, mixclf_loss: 0.443, acc: 0.895
+2025-08-25:07:24:17 [evaluation.py]: Evaluating on Aircraft
+2025-08-25:07:24:33 [evaluation.py]: Total images: 3333.0
+2025-08-25:07:24:33 [evaluation.py]: Novel images: 0
+2025-08-25:07:24:33 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:07:24:33 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:07:24:50 [evaluation.py]: Total images: 1736.0
+2025-08-25:07:24:50 [evaluation.py]: Novel images: 0
+2025-08-25:07:24:50 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:07:24:50 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:07:25:14 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:25:14 [evaluation.py]: Novel images: 0
+2025-08-25:07:25:14 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:07:25:14 [evaluation.py]: Evaluating on DTD
+2025-08-25:07:25:21 [evaluation.py]: Total images: 1880.0
+2025-08-25:07:25:21 [evaluation.py]: Novel images: 0
+2025-08-25:07:25:21 [evaluation.py]: Top-1 accuracy: 63.09
+2025-08-25:07:25:21 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:07:25:29 [evaluation.py]: Total images: 5400.0
+2025-08-25:07:25:29 [evaluation.py]: Novel images: 0
+2025-08-25:07:25:29 [evaluation.py]: Top-1 accuracy: 89.83
+2025-08-25:07:25:29 [evaluation.py]: Evaluating on Flowers
+2025-08-25:07:25:46 [evaluation.py]: Total images: 6149.0
+2025-08-25:07:25:46 [evaluation.py]: Novel images: 0
+2025-08-25:07:25:46 [evaluation.py]: Top-1 accuracy: 94.00
+2025-08-25:07:25:46 [evaluation.py]: Evaluating on Food
+2025-08-25:07:26:23 [evaluation.py]: Total images: 25250.0
+2025-08-25:07:26:23 [evaluation.py]: Novel images: 0
+2025-08-25:07:26:23 [evaluation.py]: Top-1 accuracy: 87.65
+2025-08-25:07:26:23 [evaluation.py]: Evaluating on MNIST
+2025-08-25:07:26:35 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:26:35 [evaluation.py]: Novel images: 0
+2025-08-25:07:26:35 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:07:26:35 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:07:26:44 [evaluation.py]: Total images: 3669.0
+2025-08-25:07:26:44 [evaluation.py]: Novel images: 0
+2025-08-25:07:26:44 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:07:26:44 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:07:27:14 [evaluation.py]: Total images: 8041.0
+2025-08-25:07:27:14 [evaluation.py]: Novel images: 0
+2025-08-25:07:27:14 [evaluation.py]: Top-1 accuracy: 73.59
+2025-08-25:07:27:14 [evaluation.py]: Evaluating on SUN397
+2025-08-25:07:28:21 [evaluation.py]: Total images: 21751.0
+2025-08-25:07:28:21 [evaluation.py]: Novel images: 0
+2025-08-25:07:28:21 [evaluation.py]: Top-1 accuracy: 72.40
+2025-08-25:07:28:21 [ours_semi.py]: Computing threshold
+2025-08-25:07:28:57 [ours_semi.py]: Novelty threshold: [0.6193445, 0.60884184, 0.59074897, 0.57529545, 0.59070826, 0.6586132, 0.52291834, 0.69498336, 0.59967864, 0.6486739, 0.5545231]
+2025-08-25:07:29:01 [evaluation.py]: Evaluating on Aircraft
+Checkpoint saved to ckpts/5shot_semi_oursV1_guidedmixls0_gengcam_bs32_iter300_lr_lambda^2_pseudomix_thlabel/SUN397.pth
+2025-08-25:07:29:16 [evaluation.py]: Total images: 3333.0
+2025-08-25:07:29:16 [evaluation.py]: Novel images: 0
+2025-08-25:07:29:16 [evaluation.py]: Key count: [324.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:07:29:16 [evaluation.py]: Top-1 accuracy: 37.74
+2025-08-25:07:29:16 [evaluation.py]: Evaluating on Caltech101
+Files already downloaded and verified
+2025-08-25:07:29:31 [evaluation.py]: Total images: 1736.0
+2025-08-25:07:29:31 [evaluation.py]: Novel images: 0
+2025-08-25:07:29:31 [evaluation.py]: Key count: [  0. 168.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:07:29:31 [evaluation.py]: Top-1 accuracy: 92.34
+2025-08-25:07:29:31 [evaluation.py]: Evaluating on CIFAR100
+Files already downloaded and verified
+Files already downloaded and verified
+2025-08-25:07:29:55 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:29:55 [evaluation.py]: Novel images: 0
+2025-08-25:07:29:55 [evaluation.py]: Key count: [  0.   0. 948.   0.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:07:29:55 [evaluation.py]: Top-1 accuracy: 77.38
+2025-08-25:07:29:55 [evaluation.py]: Evaluating on DTD
+2025-08-25:07:30:03 [evaluation.py]: Total images: 1880.0
+2025-08-25:07:30:03 [evaluation.py]: Novel images: 384
+2025-08-25:07:30:03 [evaluation.py]: Key count: [  0.   0.   0. 144.   0.   0.   0.   0.   0.   0.   0.]
+2025-08-25:07:30:03 [evaluation.py]: Top-1 accuracy: 58.88
+2025-08-25:07:30:03 [evaluation.py]: Evaluating on EuroSAT
+2025-08-25:07:30:11 [evaluation.py]: Total images: 5400.0
+2025-08-25:07:30:11 [evaluation.py]: Novel images: 24
+2025-08-25:07:30:11 [evaluation.py]: Key count: [  0.   0.   0.   0. 504.   0.   0.   0.   0.   0.   0.]
+2025-08-25:07:30:11 [evaluation.py]: Top-1 accuracy: 89.69
+2025-08-25:07:30:11 [evaluation.py]: Evaluating on Flowers
+2025-08-25:07:30:27 [evaluation.py]: Total images: 6149.0
+2025-08-25:07:30:27 [evaluation.py]: Novel images: 1413
+2025-08-25:07:30:27 [evaluation.py]: Key count: [  0.   0.   0.   0.   0. 444.   0.   0.   0.   0.   0.]
+2025-08-25:07:30:27 [evaluation.py]: Top-1 accuracy: 89.45
+2025-08-25:07:30:27 [evaluation.py]: Evaluating on Food
+2025-08-25:07:30:59 [evaluation.py]: Total images: 25250.0
+2025-08-25:07:30:59 [evaluation.py]: Novel images: 21922
+2025-08-25:07:30:59 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0. 312.   0.   0.   0.   0.]
+2025-08-25:07:30:59 [evaluation.py]: Top-1 accuracy: 88.20
+2025-08-25:07:30:59 [evaluation.py]: Evaluating on MNIST
+2025-08-25:07:31:12 [evaluation.py]: Total images: 10000.0
+2025-08-25:07:31:12 [evaluation.py]: Novel images: 0
+2025-08-25:07:31:12 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0. 948.   0.   0.   0.]
+2025-08-25:07:31:12 [evaluation.py]: Top-1 accuracy: 94.70
+2025-08-25:07:31:12 [evaluation.py]: Evaluating on OxfordPet
+2025-08-25:07:31:20 [evaluation.py]: Total images: 3669.0
+2025-08-25:07:31:20 [evaluation.py]: Novel images: 0
+2025-08-25:07:31:20 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0. 348.   0.   0.]
+2025-08-25:07:31:20 [evaluation.py]: Top-1 accuracy: 91.55
+2025-08-25:07:31:20 [evaluation.py]: Evaluating on StanfordCars
+2025-08-25:07:31:50 [evaluation.py]: Total images: 8041.0
+2025-08-25:07:31:50 [evaluation.py]: Novel images: 0
+2025-08-25:07:31:50 [evaluation.py]: Key count: [  0.   0.   0.   0.   0.   0.   0.   0.   0. 756.   0.]
+2025-08-25:07:31:50 [evaluation.py]: Top-1 accuracy: 73.59
+2025-08-25:07:31:50 [evaluation.py]: Evaluating on SUN397
+2025-08-25:07:32:55 [evaluation.py]: Total images: 21751.0
+2025-08-25:07:32:55 [evaluation.py]: Novel images: 0
+2025-08-25:07:32:55 [evaluation.py]: Key count: [   0.    0.    0.    0.    0.    0.    0.    0.    0.    0. 2040.]
+2025-08-25:07:32:55 [evaluation.py]: Top-1 accuracy: 72.41
